@@ -94,11 +94,11 @@
                             <i class="fa fa-leaf"></i> Plant
                             <span class="fa-angle-right fa right-arrow text-right"></span>
                         </a>
-                        <ul class="nav nav-list tree">
+                       <ul class="nav nav-list tree">
                             <li><a href="Division.html">Division</a></li>
                             <li><a href="Class.html">Class</a></li>
-                            <li><a href="~/admin/ALecture/Table">Order</a></li>
-                            <li><a href="~/admin/ALecture/Table">Family</a></li>
+                            <li><a href="Order.html">Order</a></li>
+                            <li><a href="Family.html">Family</a></li>
                             <li><a href="Genus.html">Genus</a></li>
                             <li><a href="Species.html">Species</a></li>
                         </ul>
@@ -129,7 +129,7 @@
                 <div class="col-md-12">
                     <div class="panel">
                         <div class="panel-heading">
-                            <h3>Class Management</h3>
+                            <h3>Genus Management</h3>
                         </div>
                         <div class="panel-body">
                             <div class="responsive-table">
@@ -140,7 +140,7 @@
                                             <th>ID</th>
                                             <th>Scientific Name</th>
                                             <th>Latin Name</th>
-                                            <th>Divisoon</th>
+                                            <th>Familia</th>
                                             <th>Description</th>
                                         </tr>
                                     </thead>
@@ -149,7 +149,7 @@
                                             <td>Id</td>
                                             <td>Category</td>
                                             <td>Create Date</td>
-                                            <td>Division</td>
+                                            <td>Familia</td>
                                             <td>Description</td>
                                         </tr>
                                     </tbody>
@@ -165,7 +165,7 @@
                 <div class="col-md-8">
                     <div class="panel">
                         <div class="panel-heading">
-                            <h3>Add New Division</h3>
+                            <h3>Add New Genus</h3>
                         </div>
                         <div class="panel-body">
                             <div>
@@ -187,10 +187,10 @@
                                 </div>
                                 <div class="form-group" style="width: 100%; margin-top:20px; text-align:left;">
                                     <label class="control-label text-right"
-                                        style="margin-right:10px; display:inline-block; color:#918C8C; font-size:150%;">Division</label>
+                                        style="margin-right:10px; display:inline-block; color:#918C8C; font-size:150%;">Familia</label>
                                     <br />
                                     <div style="width:100%; display:inline-block;">
-                                        <select name="txtDivisionId" class="form-control" style="width:100%;">
+                                        <select name="txtFamiliaId" class="form-control" style="width:100%;">
                                             <option value="1">abc</option>
                                             <option value="2">asac</option>
                                             <option value="1">afdf</option>
@@ -211,7 +211,7 @@
                                         <button class="btn ripple btn-round" style="background-color:#2196F3;"
                                             type="submit" data-toggle="modal" data-target="#edit">
                                             <div>
-                                                <span style="color:white;">Add Division</span>
+                                                <span style="color:white;">Add Genus</span>
                                             </div>
                                         </button>
                                     </div>
@@ -225,7 +225,7 @@
                 <div class="col-md-4">
                     <div class="panel">
                         <div class="panel-heading">
-                            <h3>Delete A Class</h3>
+                            <h3>Delete A Genus</h3>
                         </div>
                         <div class="panel-body">
                             <div>
@@ -264,7 +264,7 @@
 
                                     <div class="form-group" style="width: 100%; margin-top:20px; text-align:left;">
                                         <label class="control-label text-right"
-                                            style="margin-right:20px; display:inline-block; color:#918C8C; font-size:150%;">Division</label>
+                                            style="margin-right:20px; display:inline-block; color:#918C8C; font-size:150%;">Familia</label>
                                         <br />
                                         <div style="width:100%; display:inline-block;">
                                             <input name="txtDivision" style="width:100%;" type="text"
@@ -318,7 +318,7 @@
                                     <h4 class="modal-title">Delete</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <h5> Are you sure to delete this Division?</h5>
+                                    <h5> Are you sure to delete this Genus?</h5>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="submit" name="btnDelUp" value="delete" class="btn btn-default"
