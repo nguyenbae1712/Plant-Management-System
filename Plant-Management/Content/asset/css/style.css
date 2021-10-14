@@ -598,7 +598,7 @@ p.quote{
 
 .form-control.android[type='text'],
 .form-control.android[type='password'] {
-  width: 100%%;
+  width: 100%;
   font-family: "Roboto", "Droid Sans", sans-serif;
   font-size: 16px;
   margin: 0;
@@ -1952,7 +1952,7 @@ ul li a:focus {
 /*-----Left menu-------*/
 #left-menu{}
 #left-menu .left-bg {
-  background: url('../img/left-bg.png');
+  /* background: url('../img/left-bg.png'); */
   background-repeat: repeat-x;
   height: 100px;
   left: 0;
@@ -5125,11 +5125,11 @@ ul li a:focus {
   -ms-transition: -webkit-transform 0.2s ease-in;
   -o-transition: -webkit-transform 0.2s ease-in;
   transition: -webkit-transform 0.2s ease-in;
-  -webkit-transition: transform: 0.2s ease-in;
+  /* -webkit-transition: transform: 0.2s ease-in;
   -moz-transition: transform: 0.2s ease-in;
   -ms-transition: transform: 0.2s ease-in;
   -o-transition: transform: 0.2s ease-in;
-  transition: transform: 0.2s ease-in;
+  transition: transform: 0.2s ease-in; */
 }
 
 .nav-tabs.nav-tabs-v1 li a:focus {
@@ -6396,7 +6396,7 @@ ul li a:focus {
   .responsive-table td:before { content: attr(data-title); }
 
   .search-nav{
-    display: none !Im;
+    display: none !important;
   }
 
   #quote-carousel .carousel-indicators {

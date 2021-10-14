@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url('/Content/asset/img/loginBackground.jpg');
+    /* background-image: url('/assets/images/7FbFtgb.jpg'); */
+    background-size:cover;
+    display: flex;
+    align-items: center;
+}
+.container{
+    height: 100%;
+    margin-top: 120px;
+    text-align: center;
+}
+.card{
+    height: 420px;
+    margin: auto;
+    width: 350px;
+    background-color: rgba(0,0,0,0.5) !important;
+    display: block;
+    border-radius: 2%;
+}
+
+h1.tittle{
+    color: white;
+    padding-top: 30px;
+    font-family: 'Pacifico', cursive;
+    font-size: 70px ;
+}
+
+.card p{
+    color: white;
+    opacity: 0.9;
+    padding-top: 15px ;
+    font-weight: 100;
+}
+.loginForm{
+    padding: 10px 40px ;
+}
+
+.form-group{
+    padding-bottom: 5px;
+}
+.input-group-prepend span{
+    width: 40px;
+    background-color: #FFC312;
+    color: black;
+    border:0 !important;
+    transition: 0.3s
+}
+
+.input-group-prepend span:hover i{
+    transform: scale(1.4);
+    transition: 0.3s
+}
+
+input:focus{
+    outline: 0 0 0 0  !important;
+    box-shadow: 0 0 0 0 !important;
+}
+
+.remember{
+    color: white;
+}
+
+.remember input{
+    width: 15px;
+    height: 15px;
+    margin-left: 15px;
+    margin-right: 5px;
+}
+
+.login_btn{ 
+    color: black;
+    background-color: #FFC312;
+    width: 100px;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: 0.2s
+}
+
+.login_btn:hover{
+    color: black;
+    background-color: rgb(217 109 56);
+    transform: scale(1.05);
+    color: white;
+    transition: 0.2s;
+}

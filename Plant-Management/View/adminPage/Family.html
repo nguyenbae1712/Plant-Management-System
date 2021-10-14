@@ -10,18 +10,18 @@
   <title>Plant Management</title>
 
   <!-- start: Css -->
-  <link rel="stylesheet" type="text/css" href="../Content/asset/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="/Content/asset/css/bootstrap.min.css" />
 
   <!-- plugins -->
-  <link rel="stylesheet" type="text/css" href="../Content/asset/css/plugins/font-awesome.min.css" />
-  <link rel="stylesheet" type="text/css" href="../Content/asset/css/plugins/simple-line-icons.css" />
-  <link rel="stylesheet" type="text/css" href="../Content/asset/css/plugins/animate.min.css" />
-  <link rel="stylesheet" type="text/css" href="../Content/asset/css/plugins/fullcalendar.min.css" />
-  <link href="../Content/asset/css/style.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="/Content/asset/css/plugins/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="/Content/asset/css/plugins/simple-line-icons.css" />
+  <link rel="stylesheet" type="text/css" href="/Content/asset/css/plugins/animate.min.css" />
+  <link rel="stylesheet" type="text/css" href="/Content/asset/css/plugins/fullcalendar.min.css" />
+  <link href="/Content/asset/css/style.css" rel="stylesheet" />
 
   <!-- end: Css -->
 
-  <link rel="shortcut icon" href="../Content/asset/img/logomi.png" />
+  <link rel="shortcut icon" href="/Content/asset/img/logo1.png" />
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -60,14 +60,14 @@
         <ul class="nav navbar-nav navbar-right user-nav">
           <li class="user-name"><span>ADMIN</span></li>
           <li class="dropdown avatar-dropdown">
-            <img src="../Content/asset/UploadFile/avatar.jpg" class="img-circle avatar" alt="user name"
+            <img src="/Content/asset/UploadFile/avatar.jpg" class="img-circle avatar" alt="user name"
               data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" />
             <ul class="dropdown-menu user-dropdown">
               <li>
                 <a href="Profile.html"><span class="fa fa-user"></span> My Profile</a>
               </li>
               <li>
-                <a href="~/admin/Account/Logout"><span class="fa fa-sign-out"></span> Log out</a>
+                <a href="../loginPage/index.html"><span class="fa fa-sign-out"></span> Log out</a>
               </li>
             </ul>
           </li>
@@ -104,7 +104,7 @@
             </ul>
           </li>
           <li class="ripple">
-            <a href="~/admin/Employee/Index">
+            <a href="ManagerAccount.html">
               <span class="fa fa-user"></span> Account
             </a>
           </li>
@@ -129,7 +129,7 @@
         <div class="col-md-12">
           <div class="panel">
             <div class="panel-heading">
-              <h3>Division Management</h3>
+              <h3>Family Management</h3>
             </div>
             <div class="panel-body">
               <div class="responsive-table">
@@ -139,6 +139,7 @@
                       <th>ID</th>
                       <th>Scientific Name</th>
                       <th>Latin Name</th>
+                      <th>Order</th>
                       <th>Description</th>
                     </tr>
                   </thead>
@@ -147,6 +148,7 @@
                       <td>Id</td>
                       <td>Category</td>
                       <td>Create Date</td>
+                      <td>....</td>
                       <td>@Description</td>
                     </tr>
                   </tbody>
@@ -162,7 +164,7 @@
         <div class="col-md-8">
           <div class="panel">
             <div class="panel-heading">
-              <h3>Add New Division</h3>
+              <h3>Add New Family</h3>
             </div>
             <div class="panel-body">
               <div>
@@ -182,6 +184,18 @@
                       type="text" class="form-control"></div>
                 </div>
                 <div class="form-group" style="width: 100%; margin-top:20px; text-align:left;">
+                    <label class="control-label text-right"
+                        style="margin-right:10px; display:inline-block; color:#918C8C; font-size:150%;">Order</label>
+                    <br />
+                    <div style="width:100%; display:inline-block;">
+                        <select name="txtDivisionId" class="form-control" style="width:100%;">
+                            <option value="1">abc</option>
+                            <option value="2">asac</option>
+                            <option value="1">afdf</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group" style="width: 100%; margin-top:20px; text-align:left;">
                   <label class="control-label text-right"
                     style="margin-right:20px; display:inline-block; color:#918C8C; font-size:150%;">Description</label>
                   <br />
@@ -194,7 +208,7 @@
                     <button class="btn ripple btn-round" style="background-color:#2196F3;" type="submit"
                       data-toggle="modal" data-target="#edit">
                       <div>
-                        <span style="color:white;">Add Division</span>
+                        <span style="color:white;">Add Family</span>
                       </div>
                     </button>
                   </div>
@@ -208,7 +222,7 @@
         <div class="col-md-4">
           <div class="panel">
             <div class="panel-heading">
-              <h3>Delete A Division</h3>
+              <h3>Delete A Family</h3>
             </div>
             <div class="panel-body">
               <div>
@@ -240,6 +254,19 @@
                       <input name="txtCreatedDate" style="width:100%;" type="text" class="form-control dateCate">
                     </div>
                   </div>
+
+                  <div class="form-group" style="width: 100%; margin-top:20px; text-align:left;">
+                    <label class="control-label text-right"
+                        style="margin-right:20px; display:inline-block; color:#918C8C; font-size:150%;">Order</label>
+                    <br />
+                    <div style="width:100%; display:inline-block;">
+                        <select name="txtDivisionId" class="form-control" style="width:100%;">
+                            <option value="1">abc</option>
+                            <option value="2">asac</option>
+                            <option value="1">afdf</option>
+                        </select>
+                    </div>
+                </div>
 
                   <div class="form-group" style="width: 100%; margin-top:20px; text-align:left;">
                     <label class="control-label text-right"
@@ -444,21 +471,21 @@
       <!-- end: Mobile -->
       <!-- start: Javascript -->
 
-      <script src="../Content/asset/js/jquery.min.js"></script>
-      <script src="../Content/asset/js/jquery.ui.min.js"></script>
-      <script src="../Content/asset/js/bootstrap.min.js"></script>
+      <script src="/Content/asset/js/jquery.min.js"></script>
+      <script src="/Content/asset/js/jquery.ui.min.js"></script>
+      <script src="/Content/asset/js/bootstrap.min.js"></script>
 
       <!-- plugins -->
-      <script src="../Content/asset/js/plugins/moment.min.js"></script>
-      <script src="../Content/asset/js/plugins/fullcalendar.min.js"></script>
-      <script src="../Content/asset/js/plugins/jquery.nicescroll.js"></script>
-      <script src="../Content/asset/js/plugins/jquery.vmap.min.js"></script>
-      <script src="../Content/asset/js/plugins/maps/jquery.vmap.world.js"></script>
-      <script src="../Content/asset/js/plugins/jquery.vmap.sampledata.js"></script>
-      <script src="../Content/asset/js/plugins/chart.min.js"></script>
+      <script src="/Content/asset/js/plugins/moment.min.js"></script>
+      <script src="/Content/asset/js/plugins/fullcalendar.min.js"></script>
+      <script src="/Content/asset/js/plugins/jquery.nicescroll.js"></script>
+      <script src="/Content/asset/js/plugins/jquery.vmap.min.js"></script>
+      <script src="/Content/asset/js/plugins/maps/jquery.vmap.world.js"></script>
+      <script src="/Content/asset/js/plugins/jquery.vmap.sampledata.js"></script>
+      <script src="/Content/asset/js/plugins/chart.min.js"></script>
 
       <!-- custom -->
-      <script src="../Content/asset/js/main.js"></script>
+      <script src="/Content/asset/js/main.js"></script>
       <script type="text/javascript">
         (function (jQuery) {
           // start: Chart =============
@@ -752,4 +779,4 @@
       <!-- end: Javascript -->
 </body>
 
-</html>
+</html> 
