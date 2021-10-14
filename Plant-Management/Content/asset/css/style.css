@@ -5,9 +5,9 @@
 body {
   font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 13px;
-  background-color:#f0f3f4;
+  background-color:#d6dadc;
   line-height: 1.42857143 !important;
-  color: #58666e !important;
+  color: #d6dadc82 !important;
 }
 
 a,
@@ -475,11 +475,16 @@ p.quote{
   color: #58666e !important;
 }
 
+.panel-heading h3{
+  font-size: 30px;
+}
 .panel-heading,.fc-head{
   padding: 0px;
   background: #F9F9F9;
   padding: 5px;
   padding-left: 20px;
+  /* font-size: 50px; */
+  text-align: center;
   border-bottom: 1px solid #ddd;
 }
 
@@ -1781,7 +1786,7 @@ ul li a:focus {
 
   .navbar {
     height: 55px;
-    background-color: #2196F3;
+    background-color: #1381167d;
     color: #fff;
     border: none;
   }
@@ -1821,8 +1826,9 @@ ul li a:focus {
 
   .navbar .search {
     padding-top: 15px;
-    padding-left: 10px;
-    color: #0c66ae;
+    padding-left: 30px;
+    /* color: #0c66ae; */
+    /* color: #1381167d; */
   }
 
   .navbar .search .form-animate-text{
@@ -1830,6 +1836,7 @@ ul li a:focus {
     margin-top: -10px;
     margin-left: 5px;
     width: 200px;
+    /* color: white; */
   }
 
 
@@ -1851,8 +1858,10 @@ ul li a:focus {
 
 
 .navbar .search .form-animate-text label{
-  color:#0c66ae;
-  font-size: 15px !important;
+  /* color: gray; */
+  color: white;
+  font-weight: 100;
+  font-size: 18px !important;
 }
 
 
@@ -2039,7 +2048,7 @@ ul li a:focus {
   float: left;
   padding: 20px;
   padding-top: 35px;
-  background-color: #2196F3;
+  /* background-color: #2196F3; */
   padding-bottom: 11px;
   color: #C62828;
   cursor: pointer;
