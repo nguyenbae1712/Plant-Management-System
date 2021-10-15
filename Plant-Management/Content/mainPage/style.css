@@ -14,9 +14,10 @@
   padding: 0; }
 
 body {
+  background-color: #5daf582e;
   font-family: "Dosis", sans-serif;
   font-size: 16px;
-  color: #707070; }
+  color: black ;}
 
 h1,
 h2,
@@ -123,11 +124,11 @@ img {
 
 /* :: 3.3.0 Section Padding */
 .section-padding-100 {
-  padding-top: 100px;
-  padding-bottom: 100px; }
-
+  /* padding-top: 100px; */
+  padding-bottom: 50px;
+}
 .section-padding-100-0 {
-  padding-top: 100px;
+  padding-top: 50px;
   padding-bottom: 0; }
 
 .section-padding-0-100 {
@@ -544,7 +545,7 @@ img {
 
 .single-hero-post {
   width: 100%;
-  height: 930px;
+  height: 650px;
   position: relative;
   z-index: 3;
   overflow: hidden; }
@@ -1549,7 +1550,11 @@ img {
   z-index: 1;
   margin-bottom: 50px; }
   .single-benefits-area img {
-    margin-bottom: 30px; }
+    margin-bottom: 30px; 
+    height: 150px;
+    width: auto;
+    border-radius: 50%;
+  }
   .single-benefits-area p {
     margin-bottom: 0; }
 
@@ -1557,7 +1562,9 @@ img {
 .single-service-area {
   position: relative;
   z-index: 1;
-  margin-bottom: 50px; }
+  margin-top: 50px;
+  margin-bottom: 50px; 
+}
   .single-service-area:last-child {
     margin-bottom: 0; }
   .single-service-area .service-icon {
@@ -1651,7 +1658,7 @@ img {
     transition-duration: 300ms;
     padding: 0;
     font-size: 20px;
-    color: #707070;
+    color: #282525;
     font-weight: 500;
     background-color: transparent;
     padding: 0 20px; }
@@ -2072,7 +2079,7 @@ img {
       z-index: 1;
       display: inline-block;
       font-size: 14px;
-      color: #b7b7b7;
+      color: black;
       margin-right: 30px; }
       .single-blog-post .post-content .post-meta a:last-child::after {
         content: '/';
@@ -2435,7 +2442,7 @@ img {
       z-index: 1;
       display: inline-block;
       font-size: 18px;
-      color: #b7b7b7;
+      color: #423d3d;
       margin-right: 30px; }
       .single-post-details-area .post-content .post-meta a:last-child::after {
         content: '/';

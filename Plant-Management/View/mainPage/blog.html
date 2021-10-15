@@ -9,13 +9,18 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Alazea - Gardening &amp; Landscaping HTML Template</title>
+    <title>Plants Management System</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Favicon -->
-    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="icon" href="/Content/mainPage/img/core-img/favicon.ico">
 
     <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="/Content/mainPage/style.css">
 
 </head>
 
@@ -24,7 +29,7 @@
     <div class="preloader d-flex align-items-center justify-content-center">
         <div class="preloader-circle"></div>
         <div class="preloader-img">
-            <img src="img/core-img/leaf.png" alt="">
+            <img src="/Content/mainPage/img/core-img/leaf.png" alt="">
         </div>
     </div>
 
@@ -39,33 +44,15 @@
                         <div class="top-header-content d-flex align-items-center justify-content-between">
                             <!-- Top Header Content -->
                             <div class="top-header-meta">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="infodeercreative@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: infodeercreative@gmail.com</span></a>
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="+1 234 122 122"><i class="fa fa-phone" aria-hidden="true"></i> <span>Call Us: +1 234 122 122</span></a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="infodeercreative@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span style="font-size: 15px;">Email: plants.dn@gmail.com</span></a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="+1 234 122 122"><i class="fa fa-phone" style="font-size: 15px;" aria-hidden="true"></i> <span style="font-size: 15px;">Call Us: +0987654321</span></a>
                             </div>
 
                             <!-- Top Header Content -->
                             <div class="top-header-meta d-flex">
-                                <!-- Language Dropdown -->
-                                <div class="language-dropdown">
-                                    <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle mr-30" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Language</button>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item" href="#">USA</a>
-                                            <a class="dropdown-item" href="#">UK</a>
-                                            <a class="dropdown-item" href="#">Bangla</a>
-                                            <a class="dropdown-item" href="#">Hindi</a>
-                                            <a class="dropdown-item" href="#">Spanish</a>
-                                            <a class="dropdown-item" href="#">Latin</a>
-                                        </div>
-                                    </div>
-                                </div>
                                 <!-- Login -->
                                 <div class="login">
-                                    <a href="#"><i class="fa fa-user" aria-hidden="true"></i> <span>Login</span></a>
-                                </div>
-                                <!-- Cart -->
-                                <div class="cart">
-                                    <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Cart <span class="cart-quantity">(1)</span></span></a>
+                                    <a href="../loginPage/index.html"><i class="fa fa-user" aria-hidden="true"></i> <span style="font-size: 15px;">Login</span></a>
                                 </div>
                             </div>
                         </div>
@@ -82,12 +69,12 @@
                     <nav class="classy-navbar justify-content-between" id="alazeaNav">
 
                         <!-- Nav Brand -->
-                        <a href="index.html" class="nav-brand"><img src="img/core-img/logo.png" alt=""></a>
+                        <a href="index.html" class="nav-brand" style="color: white;">Plants System Management</a>
 
                         <!-- Navbar Toggler -->
-                        <div class="classy-navbar-toggler">
+                        <!-- <div class="classy-navbar-toggler">
                             <span class="navbarToggler"><span></span><span></span><span></span></span>
-                        </div>
+                        </div> -->
 
                         <!-- Menu -->
                         <div class="classy-menu">
@@ -102,35 +89,18 @@
                                 <ul>
                                     <li><a href="index.html">Home</a></li>
                                     <li><a href="about.html">About</a></li>
-                                    <li><a href="#">Pages</a>
+                                    <li><a href="plants.html">Plants</a>
                                         <ul class="dropdown">
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="about.html">About</a></li>
-                                            <li><a href="shop.html">Shop</a>
-                                                <ul class="dropdown">
-                                                    <li><a href="shop.html">Shop</a></li>
-                                                    <li><a href="shop-details.html">Shop Details</a></li>
-                                                    <li><a href="cart.html">Shopping Cart</a></li>
-                                                    <li><a href="checkout.html">Checkout</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="portfolio.html">Portfolio</a>
-                                                <ul class="dropdown">
-                                                    <li><a href="portfolio.html">Portfolio</a></li>
-                                                    <li><a href="single-portfolio.html">Portfolio Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="blog.html">Blog</a>
-                                                <ul class="dropdown">
-                                                    <li><a href="blog.html">Blog</a></li>
-                                                    <li><a href="single-post.html">Blog Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="plants.html">Division</a></li>
+                                            <li><a href="plants.html">Class</a></li>
+                                            <li><a href="plants.html">Order</a></li>
+                                            <li><a href="plants.html">Family</a></li>
+                                            <li><a href="plants.html">Genus</a></li>
+                                            <li><a href="plants.html">Species</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="shop.html">Shop</a></li>
-                                    <li><a href="portfolio.html">Portfolio</a></li>
+                                    <!-- <li><a href="shop.html">Shop</a></li> -->
+                                    <li><a href="blog.html">Blogs</a></li>
                                     <li><a href="contact.html">Contact</a></li>
                                 </ul>
 
@@ -162,7 +132,7 @@
     <!-- ##### Breadcrumb Area Start ##### -->
     <div class="breadcrumb-area">
         <!-- Top Breadcrumb Area -->
-        <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(img/bg-img/24.jpg);">
+        <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(/Content/mainPage/img/bg-img/24.jpg);">
             <h2>BLOG DEFAULT</h2>
         </div>
 
@@ -171,7 +141,7 @@
                 <div class="col-12">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                            <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Blog</li>
                         </ol>
                     </nav>
@@ -185,14 +155,14 @@
     <section class="alazea-blog-area mb-100">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-md-8">
+                <div class="col-12 col-md-9">
                     <div class="row">
 
                         <!-- Single Blog Post Area -->
                         <div class="col-12 col-lg-6">
                             <div class="single-blog-post mb-50">
                                 <div class="post-thumbnail mb-30">
-                                    <a href="single-post.html"><img src="img/bg-img/6.jpg" alt=""></a>
+                                    <a href="single-post.html"><img src="/Content/mainPage/img/bg-img/6.jpg" alt=""></a>
                                 </div>
                                 <div class="post-content">
                                     <a href="single-post.html" class="post-title">
@@ -211,7 +181,7 @@
                         <div class="col-12 col-lg-6">
                             <div class="single-blog-post mb-50">
                                 <div class="post-thumbnail mb-30">
-                                    <a href="single-post.html"><img src="img/bg-img/7.jpg" alt=""></a>
+                                    <a href="single-post.html"><img src="/Content/mainPage/img/bg-img/7.jpg" alt=""></a>
                                 </div>
                                 <div class="post-content">
                                     <a href="single-post.html" class="post-title">
@@ -230,7 +200,7 @@
                         <div class="col-12 col-lg-6">
                             <div class="single-blog-post mb-50">
                                 <div class="post-thumbnail mb-30">
-                                    <a href="single-post.html"><img src="img/bg-img/8.jpg" alt=""></a>
+                                    <a href="single-post.html"><img src="/Content/mainPage/img/bg-img/8.jpg" alt=""></a>
                                 </div>
                                 <div class="post-content">
                                     <a href="single-post.html" class="post-title">
@@ -249,7 +219,7 @@
                         <div class="col-12 col-lg-6">
                             <div class="single-blog-post mb-50">
                                 <div class="post-thumbnail mb-30">
-                                    <a href="single-post.html"><img src="img/bg-img/6.jpg" alt=""></a>
+                                    <a href="single-post.html"><img src="/Content/mainPage/img/bg-img/6.jpg" alt=""></a>
                                 </div>
                                 <div class="post-content">
                                     <a href="single-post.html" class="post-title">
@@ -268,7 +238,7 @@
                         <div class="col-12 col-lg-6">
                             <div class="single-blog-post mb-50">
                                 <div class="post-thumbnail mb-30">
-                                    <a href="single-post.html"><img src="img/bg-img/7.jpg" alt=""></a>
+                                    <a href="single-post.html"><img src="/Content/mainPage/img/bg-img/7.jpg" alt=""></a>
                                 </div>
                                 <div class="post-content">
                                     <a href="single-post.html" class="post-title">
@@ -287,7 +257,7 @@
                         <div class="col-12 col-lg-6">
                             <div class="single-blog-post mb-50">
                                 <div class="post-thumbnail mb-30">
-                                    <a href="single-post.html"><img src="img/bg-img/8.jpg" alt=""></a>
+                                    <a href="single-post.html"><img src="/Content/mainPage/img/bg-img/8.jpg" alt=""></a>
                                 </div>
                                 <div class="post-content">
                                     <a href="single-post.html" class="post-title">
@@ -317,7 +287,7 @@
                     </div>
                 </div>
                 
-                <div class="col-12 col-md-4">
+                <div class="col-12 col-md-3">
                     <div class="post-sidebar-area">
 
                         <!-- ##### Single Widget Area ##### -->
@@ -338,7 +308,7 @@
                             <!-- Single Latest Posts -->
                             <div class="single-latest-post d-flex align-items-center">
                                 <div class="post-thumb">
-                                    <img src="img/bg-img/30.jpg" alt="">
+                                    <img src="/Content/mainPage/img/bg-img/30.jpg" alt="">
                                 </div>
                                 <div class="post-content">
                                     <a href="#" class="post-title">
@@ -351,7 +321,7 @@
                             <!-- Single Latest Posts -->
                             <div class="single-latest-post d-flex align-items-center">
                                 <div class="post-thumb">
-                                    <img src="img/bg-img/31.jpg" alt="">
+                                    <img src="/Content/mainPage/img/bg-img/31.jpg" alt="">
                                 </div>
                                 <div class="post-content">
                                     <a href="#" class="post-title">
@@ -364,7 +334,7 @@
                             <!-- Single Latest Posts -->
                             <div class="single-latest-post d-flex align-items-center">
                                 <div class="post-thumb">
-                                    <img src="img/bg-img/32.jpg" alt="">
+                                    <img src="/Content/mainPage/img/bg-img/32.jpg" alt="">
                                 </div>
                                 <div class="post-content">
                                     <a href="#" class="post-title">
@@ -377,7 +347,7 @@
                             <!-- Single Latest Posts -->
                             <div class="single-latest-post d-flex align-items-center">
                                 <div class="post-thumb">
-                                    <img src="img/bg-img/33.jpg" alt="">
+                                    <img src="/Content/mainPage/img/bg-img/33.jpg" alt="">
                                 </div>
                                 <div class="post-content">
                                     <a href="#" class="post-title">
@@ -408,67 +378,6 @@
                         </div>
 
                         <!-- ##### Single Widget Area ##### -->
-                        <div class="single-widget-area">
-                            <!-- Title -->
-                            <div class="widget-title">
-                                <h4>BEST SELLER</h4>
-                            </div>
-
-                            <!-- Single Best Seller Products -->
-                            <div class="single-best-seller-product d-flex align-items-center">
-                                <div class="product-thumbnail">
-                                    <a href="shop-details.html"><img src="img/bg-img/4.jpg" alt=""></a>
-                                </div>
-                                <div class="product-info">
-                                    <a href="shop-details.html">Cactus Flower</a>
-                                    <p>$10.99</p>
-                                    <div class="ratings">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Best Seller Products -->
-                            <div class="single-best-seller-product d-flex align-items-center">
-                                <div class="product-thumbnail">
-                                    <a href="shop-details.html"><img src="img/bg-img/5.jpg" alt=""></a>
-                                </div>
-                                <div class="product-info">
-                                    <a href="shop-details.html">Tulip Flower</a>
-                                    <p>$11.99</p>
-                                    <div class="ratings">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Best Seller Products -->
-                            <div class="single-best-seller-product d-flex align-items-center">
-                                <div class="product-thumbnail">
-                                    <a href="shop-details.html"><img src="img/bg-img/34.jpg" alt=""></a>
-                                </div>
-                                <div class="product-info">
-                                    <a href="shop-details.html">Recuerdos Plant</a>
-                                    <p>$9.99</p>
-                                    <div class="ratings">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
                     </div>
                 </div>
             </div>
@@ -477,19 +386,19 @@
     <!-- ##### Blog Area End ##### -->
 
     <!-- ##### Footer Area Start ##### -->
-    <footer class="footer-area bg-img" style="background-image: url(img/bg-img/3.jpg);">
+    <footer class="footer-area bg-img" style="background-image: url(/Content/mainPage/img/bg-img/3.jpg);">
         <!-- Main Footer Area -->
         <div class="main-footer-area">
             <div class="container">
                 <div class="row">
 
                     <!-- Single Footer Widget -->
-                    <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="col-12 col-sm-6 col-lg-4">
                         <div class="single-footer-widget">
-                            <div class="footer-logo mb-30">
-                                <a href="#"><img src="img/core-img/logo.png" alt=""></a>
+                            <div class="widget-title">
+                                <h5>PLANTS MANAGEMENT SYSTEM</h5>
                             </div>
-                            <p>Lorem ipsum dolor sit samet, consectetur adipiscing elit. India situs atione mantor</p>
+                            <p>Plant management system in Da Nang city</p>
                             <div class="social-info">
                                 <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                                 <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
@@ -501,127 +410,57 @@
                     </div>
 
                     <!-- Single Footer Widget -->
-                    <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="col-12 col-sm-6 col-lg-4 " style="padding-left: 100px;">
                         <div class="single-footer-widget">
                             <div class="widget-title">
                                 <h5>QUICK LINK</h5>
                             </div>
                             <nav class="widget-nav">
                                 <ul>
-                                    <li><a href="#">Purchase</a></li>
-                                    <li><a href="#">FAQs</a></li>
-                                    <li><a href="#">Payment</a></li>
-                                    <li><a href="#">News</a></li>
-                                    <li><a href="#">Return</a></li>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="">Blogs</a></li>
+                                    <li><a href="plants.html">Plants</a></li>
+                                    <li><a href="about.html">About us</a></li>
+                                    <!-- <li><a href="#">Return</a></li>
                                     <li><a href="#">Advertise</a></li>
                                     <li><a href="#">Shipping</a></li>
                                     <li><a href="#">Career</a></li>
                                     <li><a href="#">Orders</a></li>
-                                    <li><a href="#">Policities</a></li>
+                                    <li><a href="#">Policities</a></li> -->
                                 </ul>
                             </nav>
                         </div>
                     </div>
 
                     <!-- Single Footer Widget -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="single-footer-widget">
-                            <div class="widget-title">
-                                <h5>BEST SELLER</h5>
-                            </div>
-
-                            <!-- Single Best Seller Products -->
-                            <div class="single-best-seller-product d-flex align-items-center">
-                                <div class="product-thumbnail">
-                                    <a href="shop-details.html"><img src="img/bg-img/4.jpg" alt=""></a>
-                                </div>
-                                <div class="product-info">
-                                    <a href="shop-details.html">Cactus Flower</a>
-                                    <p>$10.99</p>
-                                </div>
-                            </div>
-
-                            <!-- Single Best Seller Products -->
-                            <div class="single-best-seller-product d-flex align-items-center">
-                                <div class="product-thumbnail">
-                                    <a href="shop-details.html"><img src="img/bg-img/5.jpg" alt=""></a>
-                                </div>
-                                <div class="product-info">
-                                    <a href="shop-details.html">Tulip Flower</a>
-                                    <p>$11.99</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Footer Widget -->
-                    <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="col-12 col-sm-6 col-lg-4" style="padding-left: 100px;">
                         <div class="single-footer-widget">
                             <div class="widget-title">
                                 <h5>CONTACT</h5>
                             </div>
-
                             <div class="contact-information">
-                                <p><span>Address:</span> 505 Silk Rd, New York</p>
-                                <p><span>Phone:</span> +1 234 122 122</p>
-                                <p><span>Email:</span> info.deercreative@gmail.com</p>
-                                <p><span>Open hours:</span> Mon - Sun: 8 AM to 9 PM</p>
-                                <p><span>Happy hours:</span> Sat: 2 PM to 4 PM</p>
+                                <p><span>Phone:</span> 0987654321</p>
+                                <p><span>Email:</span> plants.dn@gmail.com</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Footer Bottom Area -->
-        <div class="footer-bottom-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="border-line"></div>
-                    </div>
-                    <!-- Copywrite Text -->
-                    <div class="col-12 col-md-6">
-                        <div class="copywrite-text">
-                            <p>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-</p>
-                        </div>
-                    </div>
-                    <!-- Footer Nav -->
-                    <div class="col-12 col-md-6">
-                        <div class="footer-nav">
-                            <nav>
-                                <ul>
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">Service</a></li>
-                                    <li><a href="#">Portfolio</a></li>
-                                    <li><a href="#">Blog</a></li>
-                                    <li><a href="#">Contact</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    </footer> 
     <!-- ##### Footer Area End ##### -->
 
     <!-- ##### All Javascript Files ##### -->
     <!-- jQuery-2.2.4 js -->
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="/Content/mainPage/js/jquery/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->
-    <script src="js/bootstrap/popper.min.js"></script>
+    <script src="/Content/mainPage/js/bootstrap/popper.min.js"></script>
     <!-- Bootstrap js -->
-    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="/Content/mainPage/js/bootstrap/bootstrap.min.js"></script>
     <!-- All Plugins js -->
-    <script src="js/plugins/plugins.js"></script>
+    <script src="/Content/mainPage/js/plugins/plugins.js"></script>
     <!-- Active js -->
-    <script src="js/active.js"></script>
+    <script src="/Content/mainPage/js/active.js"></script>
 </body>
 
 </html>

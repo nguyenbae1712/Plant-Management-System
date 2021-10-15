@@ -3,17 +3,6 @@
 @import 'mixin';
 @import 'responsive';
 
-/* [Master Stylesheet] */
-
-/*
-Template Name: Alazea - Gardening &amp; Landscaping HTML Template
-Template Author: Colorlib
-Template Author URI: http://colorlib.com
-Text Domain: Alazea, Gardening & Landscaping
-Version: - v1.0
-*/
-
-/* :: 1.0 Import Fonts */
 
 @import url('https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800');
 
@@ -2192,7 +2181,7 @@ img {
     .main-footer-area {
         position: relative;
         z-index: 1;
-        padding-top: 80px;
+        padding-top: 30px;
     }
     .single-footer-widget {
         position: relative;
@@ -2463,7 +2452,7 @@ img {
                 z-index: 1;
                 display: inline-block;
                 font-size: 14px;
-                color: $secondary-color;
+                // color: $secondary-color;
                 margin-right: 30px;
                 &:last-child::after {
                     content: '/';

@@ -9,13 +9,18 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Alazea - Gardening &amp; Landscaping HTML Template</title>
+    <title>Plants Management System</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Favicon -->
-    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="icon" href="/Content/mainPage/img/core-img/favicon.ico">
 
     <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="/Content/mainPage/style.css">
 
 </head>
 
@@ -24,7 +29,7 @@
     <div class="preloader d-flex align-items-center justify-content-center">
         <div class="preloader-circle"></div>
         <div class="preloader-img">
-            <img src="img/core-img/leaf.png" alt="">
+            <img src="/Content/mainPage/img/core-img/leaf.png" alt="">
         </div>
     </div>
 
@@ -39,33 +44,15 @@
                         <div class="top-header-content d-flex align-items-center justify-content-between">
                             <!-- Top Header Content -->
                             <div class="top-header-meta">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="infodeercreative@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: infodeercreative@gmail.com</span></a>
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="+1 234 122 122"><i class="fa fa-phone" aria-hidden="true"></i> <span>Call Us: +1 234 122 122</span></a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="infodeercreative@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span style="font-size: 15px;">Email: plants.dn@gmail.com</span></a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="+1 234 122 122"><i class="fa fa-phone" style="font-size: 15px;" aria-hidden="true"></i> <span style="font-size: 15px;">Call Us: +0987654321</span></a>
                             </div>
 
                             <!-- Top Header Content -->
                             <div class="top-header-meta d-flex">
-                                <!-- Language Dropdown -->
-                                <div class="language-dropdown">
-                                    <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle mr-30" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Language</button>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item" href="#">USA</a>
-                                            <a class="dropdown-item" href="#">UK</a>
-                                            <a class="dropdown-item" href="#">Bangla</a>
-                                            <a class="dropdown-item" href="#">Hindi</a>
-                                            <a class="dropdown-item" href="#">Spanish</a>
-                                            <a class="dropdown-item" href="#">Latin</a>
-                                        </div>
-                                    </div>
-                                </div>
                                 <!-- Login -->
                                 <div class="login">
-                                    <a href="#"><i class="fa fa-user" aria-hidden="true"></i> <span>Login</span></a>
-                                </div>
-                                <!-- Cart -->
-                                <div class="cart">
-                                    <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Cart <span class="cart-quantity">(1)</span></span></a>
+                                    <a href="../loginPage/index.html"><i class="fa fa-user" aria-hidden="true"></i> <span style="font-size: 15px;">Login</span></a>
                                 </div>
                             </div>
                         </div>
@@ -82,12 +69,12 @@
                     <nav class="classy-navbar justify-content-between" id="alazeaNav">
 
                         <!-- Nav Brand -->
-                        <a href="index.html" class="nav-brand"><img src="img/core-img/logo.png" alt=""></a>
+                        <a href="index.html" class="nav-brand" style="color: white;">Plants System Management</a>
 
                         <!-- Navbar Toggler -->
-                        <div class="classy-navbar-toggler">
+                        <!-- <div class="classy-navbar-toggler">
                             <span class="navbarToggler"><span></span><span></span><span></span></span>
-                        </div>
+                        </div> -->
 
                         <!-- Menu -->
                         <div class="classy-menu">
@@ -102,35 +89,18 @@
                                 <ul>
                                     <li><a href="index.html">Home</a></li>
                                     <li><a href="about.html">About</a></li>
-                                    <li><a href="#">Pages</a>
+                                    <li><a href="plants.html">Plants</a>
                                         <ul class="dropdown">
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="about.html">About</a></li>
-                                            <li><a href="shop.html">Shop</a>
-                                                <ul class="dropdown">
-                                                    <li><a href="shop.html">Shop</a></li>
-                                                    <li><a href="shop-details.html">Shop Details</a></li>
-                                                    <li><a href="cart.html">Shopping Cart</a></li>
-                                                    <li><a href="checkout.html">Checkout</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="portfolio.html">Portfolio</a>
-                                                <ul class="dropdown">
-                                                    <li><a href="portfolio.html">Portfolio</a></li>
-                                                    <li><a href="single-portfolio.html">Portfolio Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="blog.html">Blog</a>
-                                                <ul class="dropdown">
-                                                    <li><a href="blog.html">Blog</a></li>
-                                                    <li><a href="single-post.html">Blog Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="plants.html">Division</a></li>
+                                            <li><a href="plants.html">Class</a></li>
+                                            <li><a href="plants.html">Order</a></li>
+                                            <li><a href="plants.html">Family</a></li>
+                                            <li><a href="plants.html">Genus</a></li>
+                                            <li><a href="plants.html">Species</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="shop.html">Shop</a></li>
-                                    <li><a href="portfolio.html">Portfolio</a></li>
+                                    <!-- <li><a href="shop.html">Shop</a></li> -->
+                                    <li><a href="blog.html">Blogs</a></li>
                                     <li><a href="contact.html">Contact</a></li>
                                 </ul>
 
@@ -162,8 +132,8 @@
     <!-- ##### Breadcrumb Area Start ##### -->
     <div class="breadcrumb-area">
         <!-- Top Breadcrumb Area -->
-        <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(img/bg-img/24.jpg);">
-            <h2>SHOP DETAILS</h2>
+        <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(/Content/mainPage/img/bg-img/24.jpg);">
+            <h2>PLANTS DETAILS</h2>
         </div>
 
         <div class="container">
@@ -171,9 +141,9 @@
                 <div class="col-12">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">Shop</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Shop Details</li>
+                            <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+                            <li class="breadcrumb-item"><a href="plants.html">Plants</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Plants Details</li>
                         </ol>
                     </nav>
                 </div>
@@ -193,27 +163,27 @@
                             <div id="product_details_slider" class="carousel slide" data-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <a class="product-img" href="img/bg-img/49.jpg" title="Product Image">
-                                        <img class="d-block w-100" src="img/bg-img/49.jpg" alt="1">
+                                        <a class="product-img" href="/Content/mainPage/img/bg-img/49.jpg" title="Product Image">
+                                        <img class="d-block w-100" src="/Content/mainPage/img/bg-img/49.jpg" alt="1">
                                     </a>
                                     </div>
                                     <div class="carousel-item">
-                                        <a class="product-img" href="img/bg-img/49.jpg" title="Product Image">
-                                        <img class="d-block w-100" src="img/bg-img/49.jpg" alt="1">
+                                        <a class="product-img" href="/Content/mainPage/img/bg-img/49.jpg" title="Product Image">
+                                        <img class="d-block w-100" src="/Content/mainPage/img/bg-img/49.jpg" alt="1">
                                     </a>
                                     </div>
                                     <div class="carousel-item">
-                                        <a class="product-img" href="img/bg-img/49.jpg" title="Product Image">
-                                        <img class="d-block w-100" src="img/bg-img/49.jpg" alt="1">
+                                        <a class="product-img" href="/Content/mainPage/img/bg-img/49.jpg" title="Product Image">
+                                        <img class="d-block w-100" src="/Content/mainPage/img/bg-img/49.jpg" alt="1">
                                     </a>
                                     </div>
                                 </div>
                                 <ol class="carousel-indicators">
-                                    <li class="active" data-target="#product_details_slider" data-slide-to="0" style="background-image: url(img/bg-img/49.jpg);">
+                                    <li class="active" data-target="#product_details_slider" data-slide-to="0" style="background-image: url(/Content/mainPage/img/bg-img/49.jpg);">
                                     </li>
-                                    <li data-target="#product_details_slider" data-slide-to="1" style="background-image: url(img/bg-img/49.jpg);">
+                                    <li data-target="#product_details_slider" data-slide-to="1" style="background-image: url(/Content/mainPage/img/bg-img/49.jpg);">
                                     </li>
-                                    <li data-target="#product_details_slider" data-slide-to="2" style="background-image: url(img/bg-img/49.jpg);">
+                                    <li data-target="#product_details_slider" data-slide-to="2" style="background-image: url(/Content/mainPage/img/bg-img/49.jpg);">
                                     </li>
                                 </ol>
                             </div>
@@ -223,33 +193,18 @@
                     <div class="col-12 col-md-6">
                         <div class="single_product_desc">
                             <h4 class="title">Recuerdos Plant</h4>
-                            <h4 class="price">$9.99</h4>
                             <div class="short_overview">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pellem malesuada in nibh selama euismod. Curabitur a rhoncus dui. Nunc lobortis cursus magna utrum faucibus. Vivamus justo nibh, pharetra non risus accumsan, tincidunt suscipit leo.</p>
-                            </div>
-
-                            <div class="cart--area d-flex flex-wrap align-items-center">
-                                <!-- Add to Cart Form -->
-                                <form class="cart clearfix d-flex align-items-center" method="post">
-                                    <div class="quantity">
-                                        <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                        <input type="number" class="qty-text" id="qty" step="1" min="1" max="12" name="quantity" value="1">
-                                        <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                                    </div>
-                                    <button type="submit" name="addtocart" value="5" class="btn alazea-btn ml-15">Add to cart</button>
-                                </form>
-                                <!-- Wishlist & Compare -->
-                                <div class="wishlist-compare d-flex flex-wrap align-items-center">
-                                    <a href="#" class="wishlist-btn ml-15"><i class="icon_heart_alt"></i></a>
-                                    <a href="#" class="compare-btn ml-15"><i class="arrow_left-right_alt"></i></a>
-                                </div>
+                                <p style="font-size: 16px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pellem malesuada in nibh selama euismod. Curabitur a rhoncus dui. Nunc lobortis cursus magna utrum faucibus. Vivamus justo nibh, pharetra non risus accumsan, tincidunt suscipit leo.</p>
                             </div>
 
                             <div class="products--meta">
-                                <p><span>SKU:</span> <span>CT201807</span></p>
-                                <p><span>Category:</span> <span>Outdoor Plants</span></p>
-                                <p><span>Tags:</span> <span>plants, green, cactus </span></p>
-                                <p>
+                                <p><span>Divison</span> <span>/-----/</span></p>
+                                <p><span>Class</span> <span>/-----/</span></p>
+                                <p><span>Order</span> <span>/-----/</span></p>
+                                <p><span>Family</span> <span>/-----/</span></p>
+                                <p><span>Genus</span> <span>/-----/</span></p>
+                                <p><span>Species</span> <span>/-----/</span></p>
+                                <!-- <p>
                                     <span>Share on:</span>
                                     <span>
                                     <a href="#"><i class="fa fa-facebook"></i></a>
@@ -257,7 +212,7 @@
                                     <a href="#"><i class="fa fa-pinterest"></i></a>
                                     <a href="#"><i class="fa fa-google-plus"></i></a>
                                 </span>
-                                </p>
+                                </p> -->
                             </div>
 
                         </div>
@@ -276,11 +231,11 @@
                                 <a href="#description" class="nav-link active" data-toggle="tab" role="tab">Description</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#addi-info" class="nav-link" data-toggle="tab" role="tab">Additional Information</a>
+                                <a href="#addi-info" class="nav-link" data-toggle="tab" role="tab">Helpful advice</a>
                             </li>
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <a href="#reviews" class="nav-link" data-toggle="tab" role="tab">Reviews <span class="text-muted">(1)</span></a>
-                            </li>
+                            </li> -->
                         </ul>
                         <!-- Tab Content -->
                         <div class="tab-content">
@@ -302,7 +257,7 @@
                                         <br> <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum eius eum, minima!</span></p>
                                 </div>
                             </div>
-                            <div role="tabpanel" class="tab-pane fade" id="reviews">
+                            <!-- <div role="tabpanel" class="tab-pane fade" id="reviews">
                                 <div class="reviews_area">
                                     <ul>
                                         <li>
@@ -401,7 +356,7 @@
                                         </div>
                                     </form>
                                 </div>
-                            </div>
+                            </div> -->
 
                         </div>
                     </div>
@@ -412,134 +367,22 @@
     <!-- ##### Single Product Details Area End ##### -->
 
     <!-- ##### Related Product Area Start ##### -->
-    <div class="related-products-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <!-- Section Heading -->
-                    <div class="section-heading text-center">
-                        <h2>Related Products</h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-
-                <!-- Single Product Area -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-product-area mb-100">
-                        <!-- Product Image -->
-                        <div class="product-img">
-                            <a href="shop-details.html"><img src="img/bg-img/40.png" alt=""></a>
-                            <!-- Product Tag -->
-                            <div class="product-tag">
-                                <a href="#">Hot</a>
-                            </div>
-                            <div class="product-meta d-flex">
-                                <a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>
-                                <a href="cart.html" class="add-to-cart-btn">Add to cart</a>
-                                <a href="#" class="compare-btn"><i class="arrow_left-right_alt"></i></a>
-                            </div>
-                        </div>
-                        <!-- Product Info -->
-                        <div class="product-info mt-15 text-center">
-                            <a href="shop-details.html">
-                                <p>Cactus Flower</p>
-                            </a>
-                            <h6>$10.99</h6>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Product Area -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-product-area mb-100">
-                        <!-- Product Image -->
-                        <div class="product-img">
-                            <a href="shop-details.html"><img src="img/bg-img/41.png" alt=""></a>
-                            <div class="product-meta d-flex">
-                                <a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>
-                                <a href="cart.html" class="add-to-cart-btn">Add to cart</a>
-                                <a href="#" class="compare-btn"><i class="arrow_left-right_alt"></i></a>
-                            </div>
-                        </div>
-                        <!-- Product Info -->
-                        <div class="product-info mt-15 text-center">
-                            <a href="shop-details.html">
-                                <p>Cactus Flower</p>
-                            </a>
-                            <h6>$10.99</h6>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Product Area -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-product-area mb-100">
-                        <!-- Product Image -->
-                        <div class="product-img">
-                            <a href="shop-details.html"><img src="img/bg-img/42.png" alt=""></a>
-                            <div class="product-meta d-flex">
-                                <a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>
-                                <a href="cart.html" class="add-to-cart-btn">Add to cart</a>
-                                <a href="#" class="compare-btn"><i class="arrow_left-right_alt"></i></a>
-                            </div>
-                        </div>
-                        <!-- Product Info -->
-                        <div class="product-info mt-15 text-center">
-                            <a href="shop-details.html">
-                                <p>Cactus Flower</p>
-                            </a>
-                            <h6>$10.99</h6>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Product Area -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-product-area mb-100">
-                        <!-- Product Image -->
-                        <div class="product-img">
-                            <a href="shop-details.html"><img src="img/bg-img/43.png" alt=""></a>
-                            <!-- Product Tag -->
-                            <div class="product-tag sale-tag">
-                                <a href="#">Hot</a>
-                            </div>
-                            <div class="product-meta d-flex">
-                                <a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>
-                                <a href="cart.html" class="add-to-cart-btn">Add to cart</a>
-                                <a href="#" class="compare-btn"><i class="arrow_left-right_alt"></i></a>
-                            </div>
-                        </div>
-                        <!-- Product Info -->
-                        <div class="product-info mt-15 text-center">
-                            <a href="shop-details.html">
-                                <p>Cactus Flower</p>
-                            </a>
-                            <h6>$10.99</h6>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
     <!-- ##### Related Product Area End ##### -->
 
     <!-- ##### Footer Area Start ##### -->
-    <footer class="footer-area bg-img" style="background-image: url(img/bg-img/3.jpg);">
+    <footer class="footer-area bg-img" style="background-image: url(/Content/mainPage/img/bg-img/3.jpg);">
         <!-- Main Footer Area -->
         <div class="main-footer-area">
             <div class="container">
                 <div class="row">
 
                     <!-- Single Footer Widget -->
-                    <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="col-12 col-sm-6 col-lg-4">
                         <div class="single-footer-widget">
-                            <div class="footer-logo mb-30">
-                                <a href="#"><img src="img/core-img/logo.png" alt=""></a>
+                            <div class="widget-title">
+                                <h5>PLANTS MANAGEMENT SYSTEM</h5>
                             </div>
-                            <p>Lorem ipsum dolor sit samet, consectetur adipiscing elit. India situs atione mantor</p>
+                            <p>Plant management system in Da Nang city</p>
                             <div class="social-info">
                                 <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                                 <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
@@ -551,127 +394,57 @@
                     </div>
 
                     <!-- Single Footer Widget -->
-                    <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="col-12 col-sm-6 col-lg-4 " style="padding-left: 100px;">
                         <div class="single-footer-widget">
                             <div class="widget-title">
                                 <h5>QUICK LINK</h5>
                             </div>
                             <nav class="widget-nav">
                                 <ul>
-                                    <li><a href="#">Purchase</a></li>
-                                    <li><a href="#">FAQs</a></li>
-                                    <li><a href="#">Payment</a></li>
-                                    <li><a href="#">News</a></li>
-                                    <li><a href="#">Return</a></li>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="">Blogs</a></li>
+                                    <li><a href="plants.html">Plants</a></li>
+                                    <li><a href="about.html">About us</a></li>
+                                    <!-- <li><a href="#">Return</a></li>
                                     <li><a href="#">Advertise</a></li>
                                     <li><a href="#">Shipping</a></li>
                                     <li><a href="#">Career</a></li>
                                     <li><a href="#">Orders</a></li>
-                                    <li><a href="#">Policities</a></li>
+                                    <li><a href="#">Policities</a></li> -->
                                 </ul>
                             </nav>
                         </div>
                     </div>
 
                     <!-- Single Footer Widget -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="single-footer-widget">
-                            <div class="widget-title">
-                                <h5>BEST SELLER</h5>
-                            </div>
-
-                            <!-- Single Best Seller Products -->
-                            <div class="single-best-seller-product d-flex align-items-center">
-                                <div class="product-thumbnail">
-                                    <a href="shop-details.html"><img src="img/bg-img/4.jpg" alt=""></a>
-                                </div>
-                                <div class="product-info">
-                                    <a href="shop-details.html">Cactus Flower</a>
-                                    <p>$10.99</p>
-                                </div>
-                            </div>
-
-                            <!-- Single Best Seller Products -->
-                            <div class="single-best-seller-product d-flex align-items-center">
-                                <div class="product-thumbnail">
-                                    <a href="shop-details.html"><img src="img/bg-img/5.jpg" alt=""></a>
-                                </div>
-                                <div class="product-info">
-                                    <a href="shop-details.html">Tulip Flower</a>
-                                    <p>$11.99</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Footer Widget -->
-                    <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="col-12 col-sm-6 col-lg-4" style="padding-left: 100px;">
                         <div class="single-footer-widget">
                             <div class="widget-title">
                                 <h5>CONTACT</h5>
                             </div>
-
                             <div class="contact-information">
-                                <p><span>Address:</span> 505 Silk Rd, New York</p>
-                                <p><span>Phone:</span> +1 234 122 122</p>
-                                <p><span>Email:</span> info.deercreative@gmail.com</p>
-                                <p><span>Open hours:</span> Mon - Sun: 8 AM to 9 PM</p>
-                                <p><span>Happy hours:</span> Sat: 2 PM to 4 PM</p>
+                                <p><span>Phone:</span> 0987654321</p>
+                                <p><span>Email:</span> plants.dn@gmail.com</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Footer Bottom Area -->
-        <div class="footer-bottom-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="border-line"></div>
-                    </div>
-                    <!-- Copywrite Text -->
-                    <div class="col-12 col-md-6">
-                        <div class="copywrite-text">
-                            <p>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-</p>
-                        </div>
-                    </div>
-                    <!-- Footer Nav -->
-                    <div class="col-12 col-md-6">
-                        <div class="footer-nav">
-                            <nav>
-                                <ul>
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">Service</a></li>
-                                    <li><a href="#">Portfolio</a></li>
-                                    <li><a href="#">Blog</a></li>
-                                    <li><a href="#">Contact</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    </footer> 
     <!-- ##### Footer Area End ##### -->
 
     <!-- ##### All Javascript Files ##### -->
     <!-- jQuery-2.2.4 js -->
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="/Content/mainPage/js/jquery/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->
-    <script src="js/bootstrap/popper.min.js"></script>
+    <script src="/Content/mainPage/js/bootstrap/popper.min.js"></script>
     <!-- Bootstrap js -->
-    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="/Content/mainPage/js/bootstrap/bootstrap.min.js"></script>
     <!-- All Plugins js -->
-    <script src="js/plugins/plugins.js"></script>
+    <script src="/Content/mainPage/js/plugins/plugins.js"></script>
     <!-- Active js -->
-    <script src="js/active.js"></script>
+    <script src="/Content/mainPage/js/active.js"></script>
 </body>
 
 </html>
