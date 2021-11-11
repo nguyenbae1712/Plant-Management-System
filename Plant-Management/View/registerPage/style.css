@@ -17,7 +17,7 @@ body{
 .homePage{
     float: left;
     margin-left: 10px;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 .homePage a{
     color: #FFC312;
@@ -35,9 +35,9 @@ body{
     transform:scale(1.5);
 }
 .card{
-    height: 420px;
+    height: 460px;
     margin: auto;
-    width: 400px;
+    width: 390px;
     background-color: rgba(0,0,0,0.5) !important;
     display: block;
     border-radius: 2%;
@@ -45,7 +45,7 @@ body{
 
 h1.tittle{
     color: white;
-    padding-top: 40px;
+    padding-top: 30px;
     font-family: 'Pacifico', cursive;
     font-size: 70px ;
 }
@@ -56,7 +56,7 @@ h1.tittle{
     padding-top: 15px ;
     font-weight: 100;
 }
-.loginForm{
+.registerForm{
     padding: 10px 50px ;
 }
 
@@ -80,6 +80,7 @@ input:focus{
     outline: 0 0 0 0  !important;
     box-shadow: 0 0 0 0 !important;
 }
+
 
 .login_btn{ 
     color: black;
