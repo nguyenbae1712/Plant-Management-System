@@ -12,7 +12,7 @@
   padding: 0; }
 
 body {
-  background-color: #5daf582e;
+  background-color: #8fd98a1a;
   font-family: "Dosis", sans-serif;
   font-size: 16px;
   color: black ;}
@@ -1649,12 +1649,14 @@ img {
 .alazea-portfolio-filter {
   position: relative;
   z-index: 1;
-  text-align: center;
+  text-align: left;
   margin-bottom: 30px; }
   .alazea-portfolio-filter .btn {
     -webkit-transition-duration: 300ms;
     transition-duration: 300ms;
     padding: 0;
+    width: 100px;
+    text-align: left;
     font-size: 20px;
     color: #282525;
     font-weight: 500;
@@ -1666,6 +1668,7 @@ img {
         padding: 0 5px; } }
     .alazea-portfolio-filter .btn:hover, .alazea-portfolio-filter .btn:focus {
       color: #70c745;
+      /* background-color: #70c745; */
       box-shadow: none; }
 
 .alazea-portfolio.row {
@@ -2636,6 +2639,13 @@ img {
   .portfolio-details-meta:last-child {
     margin-bottom: 0; }
 
+
+.filterDiv{
+  display: none;
+}
+.show {
+  display: block;
+}
 /* ======= The End ======= */
 
 /*# sourceMappingURL=style.css.map */

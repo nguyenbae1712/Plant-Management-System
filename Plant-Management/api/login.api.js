@@ -14,7 +14,7 @@ let button = form.submit.addEventListener("click", (e) => {
     alert("Vui lòng nhập đầy đủ email và password");
   }
   else{
-  const login = "http://134.209.106.33:8888/v1/auth/login";
+   login = "http://134.209.106.33:8888/v1/auth/login";
 
   fetch(login, {
     method: "POST",
