@@ -1,3 +1,7 @@
+window.onload = function(){
+  document.getElementById('divisioClick').click();
+}
+
 function filterSelection(c) {
   var x, i;
   x = document.getElementsByClassName("filterDiv");
@@ -39,8 +43,8 @@ var btnContainer = document.getElementById("myBtnContainer");
 var btns = btnContainer.getElementsByClassName("btn");
 for (var i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
+    // var current = document.getElementsByClassName("active");
+    // current[0].className = current[0].className.replace(" active", "");
+    // this.className += " active";
   });
 }

@@ -78,14 +78,14 @@
                                     <li><a href="index.html">Home</a></li>
                                     <li><a href="about.html">About</a></li>
                                     <li><a href="plants.html">Plants</a>
-                                        <ul class="dropdown">
-                                            <li><a href="plants.html">Division</a></li>
-                                            <li><a href="plants.html">Class</a></li>
-                                            <li><a href="plants.html">Order</a></li>
-                                            <li><a href="plants.html">Family</a></li>
-                                            <li><a href="plants.html">Genus</a></li>
-                                            <li><a href="plants.html">Species</a></li>
-                                        </ul>
+                                        <!-- <ul class="dropdown">
+                                            <li><a href="?division">Division</a></li>
+                                            <li><a href="?class">Class</a></li>
+                                            <li><a href="?order">Order</a></li> 
+                                            <li><a href="?family">Family</a></li>
+                                            <li><a href="?genus">Genus</a></li>
+                                            <li><a href="?species">Species</a></li>
+                                        </ul> -->
                                     </li>
                                     <!-- <li><a href="shop.html">Shop</a></li> -->
                                     <li><a href="blog.html">Blogs</a></li>
@@ -157,10 +157,9 @@
             <div class="row">
                 <div class="col-2">
                     <div class="alazea-portfolio-filter">
-                        <div class="portfolio-filter" style="text-align: left" id="myBtnContainer">
-                            <!-- <button style="padding: 10px 20px;" class="btn active" onclick="filterSelection('all')">Division</button> -->
-                            <button style="padding: 10px 20px;" class="btn active" onload="filterSelection('divisio')" onclick="filterSelection('divisio')">Division</button>
-                            <button style="padding: 10px 20px;" class="btn" onclick="filterSelection('class')" >Class</button>
+                        <div class="portfolio-filter" style="float: left; flex-direction: column; text-align: left" id="myBtnContainer">
+                            <button style="padding: 10px 20px;" id="divisioClick" class="btn active" onclick="filterSelection('divisio')"></a>Division</button>
+                            <button style="padding: 10px 20px;" class="btn" onclick="filterSelection('class')" > Class</button>
                             <button style="padding: 10px 20px;" class="btn" onclick="filterSelection('order')" >Order</button>
                             <button style="padding: 10px 20px;" class="btn" onclick="filterSelection('family')">Family</button>     
                             <button style="padding: 10px 20px;" class="btn" onclick="filterSelection('genus')" >Genus</button>
@@ -168,44 +167,19 @@
                         </div>
                     </div>
                 </div>
-            
-            <div class="col-10 container" style="overflow: auto;">
+            <div class="col-9 container">
             <div class="filterDiv divisio">
-                <table class="table table-borderless">
+                <table style="text-align: left;" class="table table-borderless">
                     <thead>
                       <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">STT</th>
                         <th scope="col">Tên khoa học</th>
                         <th scope="col">Tên La tinh</th>
-                        <th scope="col">Mô tả</th>
                       </tr>
                     </thead>
                     <tbody id="divisonBody"></tbody>
                   </table>
-                  <script>
-                    
-                    var myArray = [
-                    {'name':'Michael', 'age':'30', 'birthdate':'11/10/1989'},
-                    {'name':'Mila', 'age':'32', 'birthdate':'10/1/1989'},
-                    {'name':'Paul', 'age':'29', 'birthdate':'10/14/1990'},
-                    {'name':'Dennis', 'age':'25', 'birthdate':'11/29/1993'},
-                    {'name':'Tim', 'age':'27', 'birthdate':'3/12/1991'},
-                    {'name':'Erik', 'age':'24', 'birthdate':'10/31/1995'},
-                  ]
-                  console.log(myArray)
-	                  buildTable(myArray)
-                    function buildTable(data){
-                      var table = document.getElementById('divisonBody')
-                      for (var i = 0; i < data.length; i++){
-                        var row = `<tr>
-                        <td>${data[i].name}</td>
-                        <td>${data[i].age}</td>
-                        <td>${data[i].birthdate}</td>
-                      </tr>`
-                table.innerHTML += row
-		}
-	}
-                  </script>
+                  
             </div>
             <div class="filterDiv class">
                 <table class="table table-borderless">
