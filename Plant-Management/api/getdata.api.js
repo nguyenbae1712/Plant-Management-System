@@ -1,204 +1,95 @@
-//---------------- GET DATA OF DIVISION----------------------------//
-const divisionData = "http://134.209.106.33:8888/v1/divisio?limit=20";
+const divisionData = "http://134.209.106.33:8888/v1/divisio?page=1";
 var myHeaders = new Headers();
 var requestOptions = {
     method: 'GET',
     headers: myHeaders,
     redirect: 'follow'
-    };
-    fetch(divisionData,requestOptions)
-        .then(function (response){
-            response.json().then(function (data) {
-            for(var i = 0; i < data.results.length; i++){
-                // console.log(data.results[i]);
-            }
-                buildTable(data.results[i]);
-                function buildTable(){
-                var table = document.getElementById('divisonBody')      
-                for (var j = 0; j < data.results.length; j++)
-                {
-                var row = `<tr>
-                    <td>${j+1}</td>
+};
+
+fetch(divisionData,requestOptions)
+    .then(function (response){
+        response.json().then(function (data) {
+            var table = document.getElementById('divisonBody')  
+            localStorage.setItem('divison',data);    
+            for (var j = 0; j < data.results.length; j++)
+            {
+                var row = `<tr onclick="myFunction(this)">
+                    <td>${j + 1}</td>
                     <td>${data.results[j].Ten_KH}</td>
                     <td>${data.results[j].Ten_TV}</td>
                 </tr>`
                 table.innerHTML += row
-                    }
-                    }
-                  })
-                })
-        .catch(function (err) {
-            console.log('error: ' + err);
-        })
-//---------------------------------------------------------
-
-//---------------- GET DATA OF CLASS----------------------------//
-const classData = "http://134.209.106.33:8888/v1/classis?limit=30";
-var myHeaders = new Headers();
-var requestOptions = {
-    method: 'GET',
-    headers: myHeaders,
-    redirect: 'follow'
-    };
-    fetch(classData,requestOptions)
-        .then(function (response){
-            response.json().then(function (data) {
-            for(var i = 0; i < data.results.length; i++){
-                // console.log(data.results[i]);
             }
-                buildTable(data.results[i]);
-                function buildTable(){
-                var table = document.getElementById('classBody')      
-                for (var j = 0; j < data.results.length; j++)
-                {
-                var row = `<tr>
-                    <td>${j+1}</td>
+        })
+    })
+    .catch(function (err) {
+        console.log('error: ' + err);
+    })
+
+let perPage = 10;
+let division = JSON.parse(localStorage.getItem('division'))
+function renderpagination (){
+    var pagin = document.getElementById('pagination')
+    pagin.innerHTML += '<a href="#"> << </a>'
+    for(var i = 1; i <= division.totalPages; i++){
+        pagin.innerHTML += '<a class="page-number" href="#">' + i + '</a>'
+    }
+    pagin.innerHTML += '<a href="#"> >> </a>'
+};
+
+
+let currentPage = 1;
+
+
+function renderdivision (page){
+    var divisionDataPage = "http://134.209.106.33:8888/v1/divisio?page=" + page;
+    fetch(divisionDataPage,requestOptions)
+    .then(function (response){
+        response.json().then(function (data) {
+
+            // localStorage.setItem("division", JSON.stringify(data))
+
+            var table = document.getElementById('divisonBody')  
+            var idShow = (page - 1) * 10 + 1
+            for (var j = 0; j < data.results.length; j++)
+            {
+                
+                var row = `<tr onclick="myFunction(this)">
+                    <td>${idShow}</td>
                     <td>${data.results[j].Ten_KH}</td>
                     <td>${data.results[j].Ten_TV}</td>
                 </tr>`
-                table.innerHTML += row
-                    }
-                    }
-                  })
-                })
-        .catch(function (err) {
-            console.log('error: ' + err);
-        })
-
-//---------------------------------------------------------
-
-//---------------- GET DATA OF ORDER----------------------------//
-
-const orderData = "http://134.209.106.33:8888/v1/ordo?limit=100";
-var myHeaders = new Headers();
-var requestOptions = {
-    method: 'GET',
-    headers: myHeaders,
-    redirect: 'follow'
-    };
-    fetch(orderData,requestOptions)
-        .then(function (response){
-            response.json().then(function (data) {
-            for(var i = 0; i < data.results.length; i++){
-                // console.log(data.results[i]);
+                idShow += 1
+                if (j == 0) {
+                    table.innerHTML = row
+                } else {
+                    table.innerHTML += row
+                }
             }
-                buildTable(data.results[i]);
-                function buildTable(){
-                var table = document.getElementById('orderBody')      
-                for (var j = 0; j < data.results.length; j++)
-                {
-                var row = `<tr>
-                    <td>${j+1}</td>
-                    <td>${data.results[j].Ten_KH}</td>
-                    <td>${data.results[j].Ten_TV}</td>
-                </tr>`
-                table.innerHTML += row
-                    }
-                    }
-                  })
-                })
-        .catch(function (err) {
-            console.log('error: ' + err);
         })
+    })
+    .catch(function (err) {
+        console.log('error: ' + err);
+    })
+};
 
-//---------------- GET DATA OF Family----------------------------//
-const familyData = "http://134.209.106.33:8888/v1/familia?limit=350";
-var myHeaders = new Headers();
-var requestOptions = {
-    method: 'GET',
-    headers: myHeaders,
-    redirect: 'follow'
-    };
-    fetch(familyData,requestOptions)
-        .then(function (response){
-            response.json().then(function (data) {
-            for(var i = 0; i < data.results.length; i++){
-                // console.log(data.results[i]);
-            }
-                buildTable(data.results[i]);
-                function buildTable(){
-                var table = document.getElementById('familyBody')      
-                for (var j = 0; j < data.results.length; j++)
-                {
-                var row = `<tr>
-                    <td>${j+1}</td>
-                    <td>${data.results[j].Ten_KH}</td>
-                    <td>${data.results[j].Ten_TV}</td>
-                </tr>`
-                table.innerHTML += row
-                    }
-                    }
-                  })
-                })
-        .catch(function (err) {
-            console.log('error: ' + err);
-        })
 
-//---------------- GET DATA OF GENUS----------------------------//
-const genusData = "http://134.209.106.33:8888/v1/genus?limit=500";
-var myHeaders = new Headers();
-var requestOptions = {
-    method: 'GET',
-    headers: myHeaders,
-    redirect: 'follow'
-    };
-    fetch(genusData,requestOptions)
-        .then(function (response){
-            response.json().then(function (data) {
-            for(var i = 0; i < data.results.length; i++){
-                // console.log(data.results[i]);
-            }
-                buildTable(data.results[i]);
-                function buildTable(){
-                var table = document.getElementById('genusBody')      
-                for (var j = 0; j < data.results.length; j++)
-                {       
-                var row = `<tr>
-                    <td>${j+1}</td>
-                    <td>${data.results[j].Ten_KH}</td>
-                    <td>${data.results[j].Ten_TV}</td>
-                </tr>`
-                table.innerHTML += row
-                    }
-                    }
-                  })
-                })
-        .catch(function (err) {
-            console.log('error: ' + err);
-        })
+function myFunction(x) {
+    tenKH = x.getElementsByTagName('td')[1].innerHTML;
+    console.log('tenKH: ' + tenKH);
+}
 
-//---------------- GET DATA OF SPECIES----------------------------//
+renderpagination();
 
-const speciesData = "http://134.209.106.33:8888/v1/species?limit=500";
-var myHeaders = new Headers();
-var requestOptions = {
-    method: 'GET',
-    headers: myHeaders,
-    redirect: 'follow'
-    };
-    fetch(speciesData,requestOptions)
-        .then(function (response){
-            response.json().then(function (data) {
-            for(var i = 0; i < data.results.length; i++){
-                // console.log(data.results[i]);
-            }
-                buildTable(data.results[i]);
-                function buildTable(){
-                var table = document.getElementById('spiecesBody')      
-                for (var j = 0; j < data.results.length; j++)
-                {
-                    if(data.results[j] !=0 ){
+$('.page-number').click( function(e) {
+    e.preventDefault(); 
+    // var table = document.getElementById('divisonBody');
+    // lenTable = table.getElementsByTagName("tr").length;
+    // console.log('lenght tr '+ d)
+    // r = d.getElementsByTagName("td")[0].innerHTML;
+    // console.log(r)
+    renderdivision($(this).text());
+    return false; 
+});
 
-                var row = `<tr>
-                    <td>${j+1}</td>
-                    <td>${data.results[j].Ten_KH}</td>
-                    <td>${data.results[j].Ten_TV}</td>
-                </tr>`
-                table.innerHTML += row
-                    }
-                    }
-                  }})
-                })
-        .catch(function (err) {
-            console.log('error: ' + err);
-        })
+
