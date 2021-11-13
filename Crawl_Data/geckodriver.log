@@ -1,0 +1,162 @@
+1633529645190	geckodriver	INFO	Listening on 127.0.0.1:60690
+1633529648232	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--no-sandbox" "-foreground" "-no-remote" "-profile" "C:\\Users\\LePhuong\\AppData\\Local\\Temp\\rust_mozprofileHF10B1"
+1633529648979	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\LePhuong\\AppData\\Local\\Temp\\rust_mozprofileHF10B1\\search.json.mozlz4", (void 0)))
+1633529651485	Marionette	INFO	Listening on port 60698
+1633529652002	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://data.bvsrv.com/webpush/scripts/v1.1/adkwebpush.js, line 4: ReferenceError: utils is not defined
+1633529654936	Marionette	INFO	Stopped listening on port 60698
+JavaScript error: resource:///modules/Interactions.jsm, line 201: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+[Parent 19480, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1633529929215	geckodriver	INFO	Listening on 127.0.0.1:54136
+1633529932265	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--no-sandbox" "-foreground" "-no-remote" "-profile" "C:\\Users\\LePhuong\\AppData\\Local\\Temp\\rust_mozprofileXyG8MC"
+1633529932611	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\LePhuong\\AppData\\Local\\Temp\\rust_mozprofileXyG8MC\\search.json.mozlz4", (void 0)))
+1633529934525	Marionette	INFO	Listening on port 59720
+1633529934970	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://data.bvsrv.com/webpush/scripts/v1.1/adkwebpush.js, line 4: ReferenceError: utils is not defined
+console.log: WebExtensions: reset-default-search: starting.
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1633531848914	Marionette	INFO	Stopped listening on port 59720
+JavaScript error: resource:///modules/Interactions.jsm, line 201: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+rrors will be ignored for this session
+JavaScript error: http://data.bvsrv.com/webpush/scripts/v1.1/adkwebpush.js, line 4: ReferenceError: utils is not defined
+1633529989631	Marionette	INFO	Stopped listening on port 54725
+JavaScript error: resource:///modules/Interactions.jsm, line 201: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x590008,name=PHttpChannel::Msg_DeletingChannel) Channel closing: too late to send/recv, messages will be lost
+
+1633530004600	geckodriver	INFO	Listening on 127.0.0.1:61832
+1633530007673	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--no-sandbox" "-foreground" "-no-remote" "-profile" "C:\\Users\\LePhuong\\AppData\\Local\\Temp\\rust_mozprofileSYiCrM"
+1633530008009	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\LePhuong\\AppData\\Local\\Temp\\rust_mozprofileSYiCrM\\search.json.mozlz4", (void 0)))
+1633530010273	Marionette	INFO	Listening on port 50903
+1633530010399	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://data.bvsrv.com/webpush/scripts/v1.1/adkwebpush.js, line 4: ReferenceError: utils is not defined
+JavaScript error: http://data.bvsrv.com/webpush/scripts/v1.1/adkwebpush.js, line 4: ReferenceError: utils is not defined
+1633530019000	Marionette	INFO	Stopped listening on port 50903
+JavaScript error: resource:///modules/Interactions.jsm, line 201: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1633530586086	geckodriver	INFO	Listening on 127.0.0.1:60709
+1633530589160	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--no-sandbox" "-foreground" "-no-remote" "-profile" "C:\\Users\\LePhuong\\AppData\\Local\\Temp\\rust_mozprofileZBdX6M"
+1633530589603	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\LePhuong\\AppData\\Local\\Temp\\rust_mozprofileZBdX6M\\search.json.mozlz4", (void 0)))
+1633530591994	Marionette	INFO	Listening on port 60717
+1633530592401	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://data.bvsrv.com/webpush/scripts/v1.1/adkwebpush.js, line 4: ReferenceError: utils is not defined
+JavaScript error: http://data.bvsrv.com/webpush/scripts/v1.1/adkwebpush.js, line 4: ReferenceError: utils is not defined
+1633530599963	Marionette	INFO	Stopped listening on port 60717
+JavaScript error: resource:///modules/Interactions.jsm, line 201: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+1633531806016	geckodriver	INFO	Listening on 127.0.0.1:50346
+1633531809070	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--no-sandbox" "-foreground" "-no-remote" "-profile" "C:\\Users\\LePhuong\\AppData\\Local\\Temp\\rust_mozprofileai1YGd"
+1633531809602	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\LePhuong\\AppData\\Local\\Temp\\rust_mozprofileai1YGd\\search.json.mozlz4", (void 0)))
+1633531811822	Marionette	INFO	Listening on port 54260
+1633531812307	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://data.bvsrv.com/webpush/scripts/v1.1/adkwebpush.js, line 4: ReferenceError: utils is not defined
+1633531847870	Marionette	INFO	Stopped listening on port 54260
+JavaScript error: resource:///modules/Interactions.jsm, line 201: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+:\\Users\\LePhuong\\AppData\\Local\\Temp\\rust_mozprofileqCehUA\\search.json.mozlz4", (void 0)))
+1633531847800	Marionette	INFO	Listening on port 51526
+1633531848168	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://data.bvsrv.com/webpush/scripts/v1.1/adkwebpush.js, line 4: ReferenceError: utils is not defined
+1633531856339	Marionette	INFO	Stopped listening on port 51526
+JavaScript error: resource:///modules/Interactions.jsm, line 201: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+1633533904178	geckodriver	INFO	Listening on 127.0.0.1:49455
+1633533907260	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--no-sandbox" "-foreground" "-no-remote" "-profile" "C:\\Users\\LePhuong\\AppData\\Local\\Temp\\rust_mozprofileF5aYAJ"
+1633533908139	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\LePhuong\\AppData\\Local\\Temp\\rust_mozprofileF5aYAJ\\search.json.mozlz4", (void 0)))
+1633533910670	Marionette	INFO	Listening on port 55084
+1633533911018	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://data.bvsrv.com/webpush/scripts/v1.1/adkwebpush.js, line 4: ReferenceError: utils is not defined
+console.log: WebExtensions: reset-default-search: starting.
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.
+1633534443197	Marionette	INFO	Stopped listening on port 55084
+JavaScript error: resource:///modules/Interactions.jsm, line 201: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+92
+1633534414122	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://data.bvsrv.com/webpush/scripts/v1.1/adkwebpush.js, line 4: ReferenceError: utils is not defined
+1633534441449	Marionette	INFO	Stopped listening on port 55192
+JavaScript error: resource:///modules/Interactions.jsm, line 201: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attemptingconsole.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\LePhuong\\AppData\\Local\\Temp\\rust_mozprofileHIB7Os\\search.json.mozlz4", (void 0)))
+1633534443392	Marionette	INFO	Listening on port 59830
+1633534443848	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://data.bvsrv.com/webpush/scripts/v1.1/adkwebpush.js, line 4: ReferenceError: utils is not defined
+1633534477318	Marionette	INFO	Stopped listening on port 59830
+JavaScript error: resource:///modules/Interactions.jsm, line 201: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1633534547928	geckodriver	INFO	Listening on 127.0.0.1:50112
+1633534550960	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--no-sandbox" "-foreground" "-no-remote" "-profile" "C:\\Users\\LePhuong\\AppData\\Local\\Temp\\rust_mozprofileRPEpvc"
+1633534551269	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\LePhuong\\AppData\\Local\\Temp\\rust_mozprofileRPEpvc\\search.json.mozlz4", (void 0)))
+1633534553345	Marionette	INFO	Listening on port 51175
+1633534553669	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://data.bvsrv.com/webpush/scripts/v1.1/adkwebpush.js, line 4: ReferenceError: utils is not defined
+1633534587117	Marionette	INFO	Stopped listening on port 51175
+JavaScript error: resource:///modules/Interactions.jsm, line 201: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+[Parent 14644, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+1633534710734	geckodriver	INFO	Listening on 127.0.0.1:60919
+1633534713793	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--no-sandbox" "-foreground" "-no-remote" "-profile" "C:\\Users\\LePhuong\\AppData\\Local\\Temp\\rust_mozprofileA0WMG9"
+1633534714103	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\LePhuong\\AppData\\Local\\Temp\\rust_mozprofileA0WMG9\\search.json.mozlz4", (void 0)))
+1633534716235	Marionette	INFO	Listening on port 65447
+1633534716503	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://data.bvsrv.com/webpush/scripts/v1.1/adkwebpush.js, line 4: ReferenceError: utils is not defined
+JavaScript error: http://data.bvsrv.com/webpush/scripts/v1.1/adkwebpush.js, line 4: ReferenceError: utils is not defined
+1633534723498	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript error: https://static-global-s-msn-com.akamaized.net/hp-eas/vi-vn/homepage/_sc/js/d7cb56b9-a48e39f/direction=ltr.locales=vi-vn.themes=start.dpi=resolution1x/7e-dab54c-68ddb2ab/cb-5871c4-73ce48b7/e4-c22b5d-d2427eaa/e2-064fcc-68ddb2ab/a5-6f908a-446d9077/46-736d08-68ddb2ab/2f-8d79ab-68ddb2ab/45-5d3d50-cae48929/3b-5fdca4-9af6c056/ae-d521a8-26e07530/a5-cc5510-ac792570/cc-373628-90333605/68-4d16fb-68ddb2ab/52-478955-68ddb2ab?ver=20211001_24816374&fdhead=msnallexpusers,muidflt10cf,muidflt13cf,muidflt16cf,muidflt27cf,muidflt48cf,muidflt49cf,moneyedge2cf,bingcollabedge3cf,compliancehp1cf,starthz1cf,platagyhz1cf,audexhz3cf,article4cf,gallery2cf,msnapp1cf,1s-bing-news,vebudumu04302020,bbh20200521msn,weather5cf,csmoney2cf,1s-br30min,1s-winauthservice&csopd=20210722164117&csopdb=20211004194641, line 1: TypeError: f.body is null
+JavaScript warning: https://pagead2.googlesyndication.com/bg/BPTeJxusP8cOnE_s5L3ABe2tIpKd1NVDJBlhKS7pwaI.js line 1 > eval line 6431 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1633535042497	Marionette	INFO	Stopped listening on port 65447
+JavaScript error: resource:///modules/Interactions.jsm, line 201: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+ole.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\LePhuong\\AppData\\Local\\Temp\\rust_mozprofileJTmLNP\\search.json.mozlz4", (void 0)))
+1633534815768	Marionette	INFO	Listening on port 60837
+1633534816236	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://data.bvsrv.com/webpush/scripts/v1.1/adkwebpush.js, line 4: ReferenceError: utils is not defined
+JavaScript error: http://data.bvsrv.com/webpush/scripts/v1.1/adkwebpush.js, line 4: ReferenceError: utils is not defined
+1633534822362	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript warning: https://adaranth.com/afu.php?zoneid=1562864&var=1568106, line 27: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://yonhelioliskor.com/pfe/current/micro.tag.min.js?z=2660706&ymid=469641695042998759&var=1562864&sw=/sw-check-permissions/2660706, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 9: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://yonhelioliskor.com/pfe/current/micro.tag.min.js?z=2660706&ymid=469641695042998759&var=1562864&sw=/sw-check-permissions/2660706, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1633535035535	Marionette	INFO	Stopped listening on port 60837
+JavaScript error: resource:///modules/Interactions.jsm, line 201: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+ettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\LePhuong\\AppData\\Local\\Temp\\rust_mozprofilesnr7b1\\search.json.mozlz4", (void 0)))
+1633534915820	Marionette	INFO	Listening on port 54023
+1633534916049	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://data.bvsrv.com/webpush/scripts/v1.1/adkwebpush.js, line 4: ReferenceError: utils is not defined
+JavaScript error: http://data.bvsrv.com/webpush/scripts/v1.1/adkwebpush.js, line 4: ReferenceError: utils is not defined
+1633534922241	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript warning: https://adaranth.com/afu.php?zoneid=1562864&var=1568106, line 27: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://yonhelioliskor.com/pfe/current/micro.tag.min.js?z=2660706&ymid=469642112971838037&var=1562864&sw=/sw-check-permissions/2660706, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 9: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://yonhelioliskor.com/pfe/current/micro.tag.min.js?z=2660706&ymid=469642112971838037&var=1562864&sw=/sw-check-permissions/2660706, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: http://data.bvsrv.com/webpush/scripts/v1.1/adkwebpush.js, line 4: ReferenceError: utils is not defined
+JavaScript error: http://data.bvsrv.com/webpush/scripts/v1.1/adkwebpush.js, line 4: ReferenceError: utils is not defined
+JavaScript error: http://data.bvsrv.com/webpush/scripts/v1.1/adkwebpush.js, line 4: ReferenceError: utils is not defined
+1633534987149	Marionette	INFO	Stopped listening on port 54023
+JavaScript error: resource:///modules/Interactions.jsm, line 201: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
