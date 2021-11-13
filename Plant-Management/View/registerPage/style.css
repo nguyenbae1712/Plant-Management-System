@@ -11,19 +11,19 @@ body{
 }
 .container{
     height: 100%;
-    margin-top: 120px;
-    text-align: center;
+    margin-top: 100px;
 }
 .homePage{
     float: left;
     margin-left: 10px;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 .homePage a{
     color: #FFC312;
     transition: 0.3s;
     text-decoration: none;
 }
+
 .homePage a:hover{
     color: #70c745;
     transition: 0.3s;
@@ -35,19 +35,20 @@ body{
     transform:scale(1.5);
 }
 .card{
-    height: 460px;
+    height: 480px;
     margin: auto;
-    width: 390px;
+    width: 400px;
     background-color: rgba(0,0,0,0.5) !important;
-    display: block;
+    /* display: block; */
     border-radius: 2%;
 }
 
 h1.tittle{
     color: white;
-    padding-top: 30px;
+    padding-top: 25px;
     font-family: 'Pacifico', cursive;
     font-size: 70px ;
+    text-align: center;
 }
 
 .card p{
@@ -55,6 +56,7 @@ h1.tittle{
     opacity: 0.9;
     padding-top: 15px ;
     font-weight: 100;
+    text-align: center;
 }
 .registerForm{
     padding: 10px 50px ;

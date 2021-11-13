@@ -2667,6 +2667,10 @@ img {
   /*Thiết kế hình tròn với CSS*/
   border-radius: 50%;
 }
+.pagination a:focus{
+  background-color: #a9db90;
+  border-radius: 60%;
+}
 /* ======= The End ======= */
 
 /*# sourceMappingURL=style.css.map */

@@ -1,5 +1,6 @@
 function register(){
   window.open("../registerPage/index.html") ;
+  alert("Hello")
 }
 
 const form = {

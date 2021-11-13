@@ -3,7 +3,7 @@
     padding: 0;
 }
 body{
-    background-image: url('/Plant-Management/Content/asset/img/loginBackground.jpg');
+    background-image: url('/Content/asset/img/loginBackground.jpg');
     /* background-image: url('/assets/images/7FbFtgb.jpg'); */
     background-size:cover;
     display: flex;

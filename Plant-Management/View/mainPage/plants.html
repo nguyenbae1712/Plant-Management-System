@@ -18,10 +18,10 @@
     rel="stylesheet">
 
   <!-- Favicon -->
-  <link rel="icon" href="/Plant-Management/Content/mainPage/img/core-img/favicon.ico">
+  <link rel="icon" href="/Content/mainPage/img/core-img/favicon.ico">
 
   <!-- Core Stylesheet -->
-  <link rel="stylesheet" type="text/css" href="/Plant-Management/Content/mainPage/style.css">
+  <link rel="stylesheet" type="text/css" href="/Content/mainPage/style.css">
 
 </head>
 
@@ -83,48 +83,18 @@
                 <ul>
                   <li><a href="index.html">Home</a></li>
                   <li><a href="about.html">About</a></li>
-                  <li><a href="plants.html">Plants</a>
-                    <!-- <ul class="dropdown">
-                                            <li><a href="?division">Division</a></li>
-                                            <li><a href="?class">Class</a></li>
-                                            <li><a href="?order">Order</a></li> 
-                                            <li><a href="?family">Family</a></li>
-                                            <li><a href="?genus">Genus</a></li>
-                                            <li><a href="?species">Species</a></li>
-                                        </ul> -->
-<<<<<<< HEAD
-                                    </li>
-                                    <li><a href="blog.html">Blogs</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                </ul>
-
-                                <!-- Search Icon -->
-                                <div id="searchIcon">
-                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                </div>
-
-                            </div>
-                            <!-- Navbar End -->
-                        </div>
-                    </nav>
-=======
-                  </li>
-                  <!-- <li><a href="shop.html">Shop</a></li> -->
+                  <li><a href="plants.html">Plants</a></li>
                   <li><a href="blog.html">Blogs</a></li>
                   <li><a href="contact.html">Contact</a></li>
                 </ul>
->>>>>>> Phuong
-
                 <!-- Search Icon -->
                 <div id="searchIcon">
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </div>
-
               </div>
-              <!-- Navbar End -->
+              <!-- Navbar End -->                  
             </div>
           </nav>
-
           <!-- Search Form -->
           <div class="search-form">
             <form action="#" method="get">
@@ -144,7 +114,7 @@
   <div class="breadcrumb-area">
     <!-- Top Breadcrumb Area -->
     <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center"
-      style="background-image: url(/Plant-Management/Content/mainPage/img/bg-img/24.jpg);">
+      style="background-image: url(/Content/mainPage/img/bg-img/24.jpg);">
       <h2>Plants</h2>
     </div>
 
@@ -153,7 +123,7 @@
         <div class="col-12">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
+              <li class="breadcrumb-item"><a href="/index.html"><i class="fa fa-home"></i> Home</a></li>
               <li class="breadcrumb-item active" aria-current="page">Plants</li>
             </ol>
           </nav>
@@ -167,18 +137,13 @@
   <section class="alazea-portfolio-area portfolio-page section-padding-0-100">
     <div class="container" style="height: 75px;">
       <div class="row">
-        <!-- <div class="col-12"> -->
         <!-- Section Heading -->
         <div class="section-heading text-center"
           style="width: 100%; padding-bottom: 20px; border-bottom: 1px solid #70c74561;">
           <h2>PLANTS</h2>
-          <!-- <p>We devote all of our experience and efforts for creation</p> -->
         </div>
-        <!-- </div> -->
       </div>
     </div>
-
-<<<<<<< HEAD
         <div class="container">
             <div class="row">
                 <div class="col-2">
@@ -205,7 +170,10 @@
                     </thead>
                     <tbody id="divisonBody"></tbody>
                   </table>
-                  
+                  <div style="width: 100%;" class="row">
+                    <div style="padding-left: 45px; width: 100%;;border-top: #70c74561 solid 2px;" class="pagination" id="pagination">
+                      </div>
+                  </div>
             </div>
             <div class="filterDiv class">
                 <table style="float: left;" class="table table-hover">
@@ -267,205 +235,10 @@
                     <tbody id="spiecesBody"> 
                     </tbody>
                   </table>
-=======
-    <div class="container">
-      <div class="row">
-        <div class="col-2">
-          <div class="alazea-portfolio-filter">
-            <div class="portfolio-filter" style="float: left; flex-direction: column; text-align: left"
-              id="myBtnContainer">
-              <button style="padding: 10px 20px;" id="divisioClick" class="btn active"
-                onclick="filterSelection('divisio')"></a>Division</button>
-              <button style="padding: 10px 20px;" class="btn" onclick="filterSelection('class')"> Class</button>
-              <button style="padding: 10px 20px;" class="btn" onclick="filterSelection('order')">Order</button>
-              <button style="padding: 10px 20px;" class="btn" onclick="filterSelection('family')">Family</button>
-              <button style="padding: 10px 20px;" class="btn" onclick="filterSelection('genus')">Genus</button>
-              <button style="padding: 10px 20px;" class="btn" onclick="filterSelection('species')">Species</button>
->>>>>>> Phuong
             </div>
           </div>
         </div>
-        <div class="col-9 container">
-          <div class="filterDiv divisio">
-            <table style="text-align: left;" class="table table-borderless">
-              <thead>
-                <tr>
-                  <th scope="col">STT</th>
-                  <th scope="col">Tên khoa học</th>
-                  <th scope="col">Tên La tinh</th>
-                </tr>
-              </thead>
-              <tbody id="divisonBody"></tbody>
-            </table>
-            </div>
-          </div>
-          <div class="pagination" id="pagination">
-          <div id="data-container"></div>
-          <div id="pagination-container"></div>
-            <!-- <a href="#">«</a>
-            <a href="#">1</a>
-            <a class="active" href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <a href="#">5</a>
-            <a href="#">6</a>
-            <a href="#">»</a> -->
-          </div>
-          <div class="filterDiv class">
-            <table class="table table-borderless">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">First</th>
-                  <th scope="col">Last</th>
-                  <th scope="col">Handle</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td colspan="2">Larry the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="filterDiv order">
-            <table class="table table-borderless">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">First</th>
-                  <th scope="col">Last</th>
-                  <th scope="col">Handle</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td colspan="2">Larry the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="filterDiv family">
-            <table class="table table-borderless ">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">First</th>
-                  <th scope="col">Last</th>
-                  <th scope="col">Handle</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td colspan="2">Larry the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="filterDiv genus">
-            <table class="table table-borderless">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">First</th>
-                  <th scope="col">Last</th>
-                  <th scope="col">Handle</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td colspan="2">Larry the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="filterDiv species">
-            <table class="table table-borderless ">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">First</th>
-                  <th scope="col">Last</th>
-                  <th scope="col">Handle</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td colspan="2">Larry the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        
         </div>
       </div>
   </section>
@@ -473,7 +246,7 @@
 
   <!-- ##### Footer Area Start ##### -->
   <footer class="footer-area bg-img"
-    style="background-image: url(/Plant-Management/Content/mainPage/img/bg-img/3.jpg);">
+    style="background-image: url(/Content/mainPage/img/bg-img/3.jpg);">
     <!-- Main Footer Area -->
     <div class="main-footer-area">
       <div class="container">
@@ -504,16 +277,10 @@
               </div>
               <nav class="widget-nav">
                 <ul>
-                  <li><a href="index.html">Home</a></li>
+                  <li><a href="/index.html">Home</a></li>
                   <li><a href="blog.html">Blogs</a></li>
                   <li><a href="plants.html">Plants</a></li>
                   <li><a href="about.html">About us</a></li>
-                  <!-- <li><a href="#">Return</a></li>
-                                    <li><a href="#">Advertise</a></li>
-                                    <li><a href="#">Shipping</a></li>
-                                    <li><a href="#">Career</a></li>
-                                    <li><a href="#">Orders</a></li>
-                                    <li><a href="#">Policities</a></li> -->
                 </ul>
               </nav>
             </div>
@@ -538,18 +305,18 @@
 
   <!-- ##### All Javascript Files ##### -->
   <!-- jQuery-2.2.4 js -->
-  <script src="/Plant-Management/Content/mainPage/js/jquery/jquery-2.2.4.min.js"></script>
+  <script src="/Content/mainPage/js/jquery/jquery-2.2.4.min.js"></script>
   <!-- Popper js -->
-  <script src="/Plant-Management/Content/mainPage/js/bootstrap/popper.min.js"></script>
+  <script src="/Content/mainPage/js/bootstrap/popper.min.js"></script>
   <!-- Bootstrap js -->
-  <script src="/Plant-Management/Content/mainPage/js/bootstrap/bootstrap.min.js"></script>
+  <script src="/Content/mainPage/js/bootstrap/bootstrap.min.js"></script>
   <!-- All Plugins js -->
-  <script src="/Plant-Management/Content/mainPage/js/plugins/plugins.js"></script>
+  <script src="/Content/mainPage/js/plugins/plugins.js"></script>
   <!-- Active js -->
-  <script src="/Plant-Management/Content/mainPage/js/active.js"></script>
+  <script src="/Content/mainPage/js/active.js"></script>
 
-  <script src="/Plant-Management/Content/mainPage/js/main.js"></script>
-  <script src="/Plant-Management/api/getdata.api.js"></script>
+  <script src="/Content/mainPage/js/main.js"></script>
+  <script src="/api/getData/getDivision.js"></script>
   <!-- <script src="/Plant-Management/api/pagination.js"></script> -->
 </body>
 
