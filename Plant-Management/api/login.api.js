@@ -40,11 +40,14 @@ let button = form.submit.addEventListener("click", (e) => {
           else {
             var x = data.user.role  ;
             console.log(x);
-            if (x = "user"){
-              window.location.replace("/index.html");
-            }
-            else{
+            if (x == "admin"){
+              
               window.location.replace("../adminPage/index.html");
+              console.log(x)
+            }
+            else {
+              // console.log(x)
+              window.location.replace("/index.html");
             // if (data)
             }
             // window.location.replace("../adminPage/index.html");

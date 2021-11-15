@@ -1,6 +1,10 @@
 function divisionbyId(id){
     var id = localStorage.getItem("idDivision");
     console.log(id);
+    // if(id = undefined){
+    //     return false;
+    // }
+    // else{
     const divisionData = "http://134.209.106.33:8888/v1/divisio";
     var myHeaders = new Headers();
     var requestOptions = {
@@ -33,4 +37,5 @@ function divisionbyId(id){
 
 
 })
-}
+    }
+// }
