@@ -1,7 +1,8 @@
 function myFunction(x) {
     console.log(x);
-    // localStorage.setItem("idClass",x);
-    // window.location.replace("classDetail.html");
+    console.log('from myclass function');
+    localStorage.setItem("idClass",x);
+    window.location.replace("classDetail.html");
 }
 
 // var el = document.getElementById("classClick");
