@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Plants Management System</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/Content/mainPage/img/core-img/favicon.ico">
+
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="/Content/mainPage/style.css">
+
+</head>
+
+<body>
+
+    <!-- ##### Header Area Start ##### -->
+    <div w3-include-html="./layouts/header.html"></div>
+    <!-- ##### Header Area End ##### -->
+
+    <!-- ##### Breadcrumb Area Start ##### -->
+    <div class="breadcrumb-area">
+        <!-- Top Breadcrumb Area -->
+        <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(/Content/mainPage/img/bg-img/24.jpg);">
+            <h2>CLASS DETAILS</h2>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+                            <li class="breadcrumb-item"><a href="plants.html">Plants</a></li>
+                            <li class="breadcrumb-item active"><a href="classDetail.html">Class Details</a></li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Breadcrumb Area End ##### -->
+
+    <!-- ##### Single Product Details Area Start ##### -->
+    <section class="single_product_details_area mb-50">
+        <div class="produts-details--content mb-50">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <!-- <div class="col-12 col-md-6 col-lg-5">
+                        <div class="single_product_thumb">
+                            <div id="product_details_slider" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <a class="product-img" href="/Content/mainPage/img/bg-img/49.jpg" title="Product Image">
+                                        <img class="d-block w-100" src="/Content/mainPage/img/bg-img/49.jpg" alt="1">
+                                    </a>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <a class="product-img" href="/Content/mainPage/img/bg-img/49.jpg" title="Product Image">
+                                        <img class="d-block w-100" src="/Content/mainPage/img/bg-img/49.jpg" alt="1">
+                                    </a>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <a class="product-img" href="/Content/mainPage/img/bg-img/49.jpg" title="Product Image">
+                                        <img class="d-block w-100" src="/Content/mainPage/img/bg-img/49.jpg" alt="1">
+                                    </a>
+                                    </div>
+                                </div>
+                                <ol class="carousel-indicators">
+                                    <li class="active" data-target="#product_details_slider" data-slide-to="0" style="background-image: url(/Content/mainPage/img/bg-img/49.jpg);">
+                                    </li>
+                                    <li data-target="#product_details_slider" data-slide-to="1" style="background-image: url(/Content/mainPage/img/bg-img/49.jpg);">
+                                    </li>
+                                    <li data-target="#product_details_slider" data-slide-to="2" style="background-image: url(/Content/mainPage/img/bg-img/49.jpg);">
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <div class="col-12 col-md-12">
+                        <div class="single_product_desc">
+                            <h3 id="title" class="title"></h3>
+                            <h4 id="tenKH"></h4>
+                            <h4 id="tenTV"></h4>
+                            <div class="short_overview">
+                                <p id="mota" style="font-size: 18px;"></p>
+                            </div>
+
+                            <!-- <div class="products--meta">
+                                <p><span>Divison</span> <span>/-----/</span></p>
+                                <p><span>Class</span> <span>/-----/</span></p>
+                                <p><span>Order</span> <span>/-----/</span></p>
+                                <p><span>Family</span> <span>/-----/</span></p>
+                                <p><span>Genus</span> <span>/-----/</span></p>
+                                <p><span>Species</span> <span>/-----/</span></p>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </section>
+    <!-- ##### Single Product Details Area End ##### -->
+
+
+    <!-- ##### Footer Area Start ##### -->
+    <div w3-include-html="./layouts/footer.html"></div>
+    <!-- ##### Footer Area End ##### -->
+
+    <!-- ##### All Javascript Files ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="/Content/mainPage/js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="/Content/mainPage/js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="/Content/mainPage/js/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="/Content/mainPage/js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="/Content/mainPage/js/active.js"></script>
+
+    <script src="/Content/mainPage/js/csi.js"></script>
+
+    <script src="/api/getData/getClassbyId.js"></script>
+    <script>
+        classbyId();
+    </script>
+    <script>
+        includeHTML();
+    </script>
+</body>
+
+</html>

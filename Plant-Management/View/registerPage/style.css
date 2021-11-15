@@ -35,7 +35,7 @@ body{
     transform:scale(1.5);
 }
 .card{
-    height: 480px;
+    height: 500px;
     margin: auto;
     width: 400px;
     background-color: rgba(0,0,0,0.5) !important;

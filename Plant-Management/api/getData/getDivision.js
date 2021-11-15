@@ -1,7 +1,12 @@
 function myFunction(x) {
-    tenKH = x.getElementsByTagName('td')[1].innerHTML;
-    console.log('tenKH: ' + tenKH);
+    console.log(x);
+    // localStorage.setItem("idDivision",x);
+    // window.location.replace("divisionDetail.html");
 }
+// document.getElementById('divisioClick').onclick = function () {
+//     getDivision();
+// }
+// function getDivision() {
 const divisionData = "http://134.209.106.33:8888/v1/divisio?page=1";
 var myHeaders = new Headers();
 var requestOptions = {
@@ -15,10 +20,12 @@ fetch(divisionData,requestOptions)
         response.json().then(function (data) {
             var table = document.getElementById('divisonBody')  
             // localStorage.setItem('divisio',data);    
-            console.log(data.totalPages)
+            // console.log(data.totalPages)
             for (var j = 0; j < data.results.length; j++)
             {
-                var row = `<tr onclick="myFunction(this)">
+                // console.log(data.results[j].id);
+                var row = `<tr onclick="myFunction('${data.results[j].id}')">
+                
                     <td>${j + 1}</td>
                     <td>${data.results[j].Ten_KH}</td>
                     <td>${data.results[j].Ten_TV}</td>
@@ -26,16 +33,12 @@ fetch(divisionData,requestOptions)
                 table.innerHTML += row
             }
             
-            let perPage = 10;
-            // var division = JSON.parse(JSON.stringify(localStorage.getItem('divisio')))
+            // let perPage = 10;
             function renderpagination (){
             var pagin = document.getElementById('pagination')
-            // pagin.innerHTML += '<a href="#"> << </a>'
-            // console.log(division.totalPages)
             for(var i = 1; i <= data.totalPages; i++){
                 pagin.innerHTML += '<a class="page-number" href="#">' + i + '</a>'
             }
-            // pagin.innerHTML += '<a href="#"> >> </a>'
         };
         let currentPage = 1;
         function renderdivision (page){
@@ -44,14 +47,12 @@ fetch(divisionData,requestOptions)
         .then(function (response){
             response.json().then(function (data) {
 
-            // localStorage.setItem("division", JSON.stringify(data))
-
             var table = document.getElementById('divisonBody')  
             var idShow = (page - 1) * 10 + 1
             for (var j = 0; j < data.results.length; j++)
             {
                 
-                var row = `<tr onclick="myFunction(this)">
+                var row = `<tr onclick="myFunction('${data.results[j].id}')">
                     <td>${idShow}</td>
                     <td>${data.results[j].Ten_KH}</td>
                     <td>${data.results[j].Ten_TV}</td>
@@ -81,11 +82,9 @@ $('.page-number').click( function(e) {
     return false; 
 });
 })
-            })
+    })
     .catch(function (err) {
         console.log('error: ' + err);
     })
 
-
-
-
+// }

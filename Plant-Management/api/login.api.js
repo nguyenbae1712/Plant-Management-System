@@ -1,6 +1,6 @@
 function register(){
   window.open("../registerPage/index.html") ;
-  alert("Hello")
+  // alert("Hello")
 }
 
 const form = {
@@ -12,7 +12,7 @@ const form = {
 let button = form.submit.addEventListener("click", (e) => {
   e.preventDefault();
   if (email.value == 0 || password.value == 0){
-    alert("Vui lòng nhập đầy đủ email và password");
+    alert("Please enter your full email and password!!!");
   }
   else{
    login = "http://134.209.106.33:8888/v1/auth/login";
@@ -30,17 +30,28 @@ let button = form.submit.addEventListener("click", (e) => {
   })
     .then(
       function(response){
-        if (response.status !== 200) {
-          alert("Email và tài khoản không tồn tại")
-          
-            responconsole.log('Looks like there was a problem. Status Code: ' +se.status);
-          return;
-        }
-        else {
-          window.location.replace("../adminPage/index.html");
-        }
+        
         response.json().then(function(data) {
-          console.log(data);
+          if (response.status !== 200) {
+            alert("Email và tài khoản không tồn tại")
+              responconsole.log('Looks like there was a problem. Status Code: ' +se.status);
+            return;
+          }
+          else {
+            var x = data.user.role  ;
+            console.log(x);
+            if (x = "user"){
+              window.location.replace("/index.html");
+            }
+            else{
+              window.location.replace("../adminPage/index.html");
+            // if (data)
+            }
+            // window.location.replace("../adminPage/index.html");
+            // if (data)
+          }
+          // console.log(data);
+          
         });
       }
     )

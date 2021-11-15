@@ -1,4 +1,17 @@
-const divisionData = "http://134.209.106.33:8888/v1/divisio?page=1";
+function myFunction(x) {
+    console.log(x);
+    // localStorage.setItem("idClass",x);
+    // window.location.replace("classDetail.html");
+}
+
+// var el = document.getElementById("classClick");
+// el.addEventListener("click", getClass());
+// document.getElementById('classClick').onclick = function () {
+//     getClass();
+//     // document.getElementById('divisioClick').disabled = true;
+// }
+function getClass(){
+const classData = "http://134.209.106.33:8888/v1/classis?page=1";
 var myHeaders = new Headers();
 var requestOptions = {
     method: 'GET',
@@ -6,51 +19,40 @@ var requestOptions = {
     redirect: 'follow'
 };
 
-fetch(divisionData,requestOptions)
+fetch(classData,requestOptions)
     .then(function (response){
         response.json().then(function (data) {
-            var table = document.getElementById('divisonBody')  
-            // localStorage.setItem('divisio',data);    
-            console.log(data.totalPages)
+            var table = document.getElementById('classBody')  
             for (var j = 0; j < data.results.length; j++)
             {
-                var row = `<tr onclick="myFunction(this)">
+                var row = `<tr onclick="myFunction('${data.results[j].id}')">
                     <td>${j + 1}</td>
                     <td>${data.results[j].Ten_KH}</td>
                     <td>${data.results[j].Ten_TV}</td>
                 </tr>`
                 table.innerHTML += row
             }
-            function myFunction(x) {
-                tenKH = x.getElementsByTagName('td')[1].innerHTML;
-                console.log('tenKH: ' + tenKH);
-            }
-            let perPage = 10;
-            // var division = JSON.parse(JSON.stringify(localStorage.getItem('divisio')))
+            
+            // let perPage = 10;
             function renderpagination (){
-            var pagin = document.getElementById('pagination')
-            pagin.innerHTML += '<a href="#"> << </a>'
-            // console.log(division.totalPages)
+            var pagin = document.getElementById('paginationClass')
             for(var i = 1; i <= data.totalPages; i++){
                 pagin.innerHTML += '<a class="page-number" href="#">' + i + '</a>'
             }
-            pagin.innerHTML += '<a href="#"> >> </a>'
         };
         let currentPage = 1;
         function renderdivision (page){
-        var divisionDataPage = "http://134.209.106.33:8888/v1/divisio?page=" + page;
-        fetch(divisionDataPage,requestOptions)
+        var classDataPage = "http://134.209.106.33:8888/v1/classis?page=" + page;
+        fetch(classDataPage,requestOptions)
         .then(function (response){
             response.json().then(function (data) {
 
-            // localStorage.setItem("division", JSON.stringify(data))
-
-            var table = document.getElementById('divisonBody')  
+            var table = document.getElementById('classBody')  
             var idShow = (page - 1) * 10 + 1
             for (var j = 0; j < data.results.length; j++)
             {
                 
-                var row = `<tr onclick="myFunction(this)">
+                var row = `<tr onclick="myFunction('${data.results[j].id}')">
                     <td>${idShow}</td>
                     <td>${data.results[j].Ten_KH}</td>
                     <td>${data.results[j].Ten_TV}</td>
@@ -80,10 +82,12 @@ $('.page-number').click( function(e) {
     return false; 
 });
 })
-            })
+    })
     .catch(function (err) {
         console.log('error: ' + err);
     })
+
+}
 
 
 
