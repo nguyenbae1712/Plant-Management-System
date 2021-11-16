@@ -3,14 +3,6 @@ function loadClassById(x) {
     localStorage.setItem("idClass",x);
     window.location.replace("classDetail.html");
 }
-
-// var el = document.getElementById("classClick");
-// el.addEventListener("click", getClass());
-// document.getElementById('classClick').onclick = function () {
-//     getClass();
-//     // document.getElementById('divisioClick').disabled = true;
-// }
-// function getClass(){
 const classData = "http://134.209.106.33:8888/v1/classis?page=1";
 var myHeaders = new Headers();
 var requestOptions = {

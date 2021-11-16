@@ -1663,7 +1663,7 @@ ul li a:focus {
   .avatar {
     height: 40px;
     width: 40px;
-    border: 4px solid #108DB6 !important;
+    border: 4px solid #8bc18d !important;
     margin-top: 5px;
   }
 
@@ -3027,7 +3027,7 @@ ul li a:focus {
   -ms-transition: height .25s ease, width .25s ease;
   -o-transition: height .25s ease, width .25s ease;
   transition: height .25s ease, width .25s ease;
-  -webkit-transform: transform: translate(-50%, -50%);
+  /* -webkit-transform: transform: translate(-50%, -50%);
   -moz-transform: transform: translate(-50%, -50%);
   -ms-transform: transform: translate(-50%, -50%);
   -o-transform: transform: translate(-50%, -50%);
@@ -3038,7 +3038,7 @@ ul li a:focus {
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   margin-top: 90px;
-  margin-left: 50px;
+  margin-left: 50px; */
 }
 
 .rainy .shadow:before,
@@ -3770,7 +3770,7 @@ ul li a:focus {
   animation: moveclouds 10s linear infinite;
 }
 
-@-webkit-keyframes moveclouds {
+/* @-webkit-keyframes moveclouds {
   0% {
     margin-left: 50px;
   }
@@ -3793,7 +3793,7 @@ ul li a:focus {
   100% {
     margin-left: -50px;
   }
-}
+} */
 /*============ Hazy ================*/
 
 .hazy {
@@ -6494,4 +6494,28 @@ ul li a:focus {
     display: none;
   }
 
+}
+/* thiết lập style cho thẻ a */
+.pagination a {
+  color: black;
+  float: left;
+  padding:  12px 18px;
+  text-decoration: none;
+}
+/* thiết lập style cho class active */
+.pagination a.active {
+  background-color: dodgerblue;
+  color: white;
+  /*Thiết kế hình tròn với CSS*/
+  border-radius: 50%;
+}
+/* thêm màu nền khi người dùng hover vào class không active */
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+  /*Thiết kế hình tròn với CSS*/
+  border-radius: 50%;
+}
+.pagination a:focus{
+  background-color: #a9db90;
+  border-radius: 60%;
 }

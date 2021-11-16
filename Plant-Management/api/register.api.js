@@ -72,7 +72,7 @@ function registerApi(data){
     .then(function(response){
         if (response.status !== 200) {
             alert("Email và tài khoản đã tồn tại")
-            responconsole.log('Looks like there was a problem. Status Code: ' +se.status);
+            // responconsole.log('Looks like there was a problem. Status Code: ' +se.status);
             return;
         }
         else {

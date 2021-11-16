@@ -39,6 +39,7 @@ let button = form.submit.addEventListener("click", (e) => {
           }
           else {
             var x = data.user.role  ;
+            localStorage.setItem("user",data.user.email);
             console.log(x);
             if (x == "admin"){
               

@@ -21,7 +21,7 @@
 
     <!-- end: Css -->
 
-    <link rel="shortcut icon" href="/Content/asset/img/logo1.png" />
+    <link rel="shortcut icon" href="/Content/asset/img/favicon.ico" />
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -58,20 +58,20 @@
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right user-nav">
-                    <li class="user-name"><span>ADMIN</span></li>
-                    <li class="dropdown avatar-dropdown">
-                        <img src="/Content/asset/UploadFile/avatar.jpg" class="img-circle avatar" alt="user name"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" />
-                        <ul class="dropdown-menu user-dropdown">
-                            <li>
-                                <a href="Profile.html"><span class="fa fa-user"></span> My Profile</a>
-                            </li>
-                            <li>
-                                <a href="../mainPage/index.html"><span class="fa fa-sign-out"></span> Log out</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
+          <li class="user-name"><span id="emailUser"></span></li>
+          <li class="dropdown avatar-dropdown">
+            <img src="/Content/asset/UploadFile/avatar.jpg" class="img-circle avatar" alt="user name"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" />
+            <ul class="dropdown-menu user-dropdown">
+              <li>
+                <a href="Profile.html"><span class="fa fa-user"></span> My Profile</a>
+              </li>
+              <li>
+                <a href="../loginPage/index.html"><span class="fa fa-sign-out"></span> Log out</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
             </div>
         </div>
     </nav>
@@ -328,15 +328,15 @@
                                         form="formDelete">Yes</button>
                                     <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
                                 </div>
-                            </div><!-- /.modal-content -->
-                        </div><!-- /.modal-dialog -->
-                    </div><!-- /.modal -->
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- end: content -->
             </div>
 
             <!-- start: Mobile -->
-            <div id="mimin-mobile" class="reverse">
+            <!-- <div id="mimin-mobile" class="reverse">
                 <div class="mimin-mobile-menu-list">
                     <div class="col-md-12 sub-mimin-mobile-menu-list animated fadeInLeft">
                         <ul class="nav nav-list">
@@ -477,7 +477,7 @@
             </div>
             <button id="mimin-mobile-menu-opener" class="animated rubberBand btn btn-circle btn-danger">
                 <span class="fa fa-bars"></span>
-            </button>
+            </button> -->
             <!-- end: Mobile -->
             <!-- start: Javascript -->
 
@@ -496,7 +496,9 @@
 
             <!-- custom -->
             <script src="/Content/asset/js/main.js"></script>
-            <script type="text/javascript">
+            <script src="/adminAPI/main.js"></script>
+            <!-- <script type="text/javascript">
+                
                 (function (jQuery) {
                     // start: Chart =============
 
@@ -785,7 +787,7 @@
 
                     // end: Maps==============
                 })(jQuery);
-            </script>
+            </script> -->
             <!-- end: Javascript -->
 </body>
 
