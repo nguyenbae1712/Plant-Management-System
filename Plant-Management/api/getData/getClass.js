@@ -1,6 +1,5 @@
-function myFunction(x) {
+function loadClassById(x) {
     console.log(x);
-    console.log('from myclass function');
     localStorage.setItem("idClass",x);
     window.location.replace("classDetail.html");
 }
@@ -11,7 +10,7 @@ function myFunction(x) {
 //     getClass();
 //     // document.getElementById('divisioClick').disabled = true;
 // }
-function getClass(){
+// function getClass(){
 const classData = "http://134.209.106.33:8888/v1/classis?page=1";
 var myHeaders = new Headers();
 var requestOptions = {
@@ -26,7 +25,7 @@ fetch(classData,requestOptions)
             var table = document.getElementById('classBody')  
             for (var j = 0; j < data.results.length; j++)
             {
-                var row = `<tr onclick="myFunction('${data.results[j].id}')">
+                var row = `<tr onclick="loadClassById('${data.results[j].id}')">
                     <td>${j + 1}</td>
                     <td>${data.results[j].Ten_KH}</td>
                     <td>${data.results[j].Ten_TV}</td>
@@ -53,7 +52,7 @@ fetch(classData,requestOptions)
             for (var j = 0; j < data.results.length; j++)
             {
                 
-                var row = `<tr onclick="myFunction('${data.results[j].id}')">
+                var row = `<tr onclick="loadClassById('${data.results[j].id}')">
                     <td>${idShow}</td>
                     <td>${data.results[j].Ten_KH}</td>
                     <td>${data.results[j].Ten_TV}</td>
@@ -88,7 +87,7 @@ $('.page-number').click( function(e) {
         console.log('error: ' + err);
     })
 
-}
+// }
 
 
 

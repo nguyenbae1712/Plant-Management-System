@@ -1,6 +1,10 @@
 function classbyId(id){
     var id = localStorage.getItem("idClass");
     console.log(id);
+    // if (id = null){
+    //     return false;
+    // }
+    // else{
     const classData = "http://134.209.106.33:8888/v1/classis";
     var myHeaders = new Headers();
     var requestOptions = {
@@ -33,4 +37,5 @@ function classbyId(id){
 
 
 })
-}
+    }
+// }

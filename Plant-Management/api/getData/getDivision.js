@@ -1,6 +1,5 @@
-function myDivisionFunction(x) {
+function loadDivsionDetail(x) {
     console.log(x);
-    console.log('from myDivisionFunction');
     localStorage.setItem("idDivision",x);
     window.location.replace("divisionDetail.html");
 }
@@ -25,7 +24,7 @@ fetch(divisionData,requestOptions)
             for (var j = 0; j < data.results.length; j++)
             {
                 // console.log(data.results[j].id);
-                var row = `<tr onclick="myDivisionFunction('${data.results[j].id}')">
+                var row = `<tr onclick="loadDivsionDetail('${data.results[j].id}')">
                 
                     <td>${j + 1}</td>
                     <td>${data.results[j].Ten_KH}</td>
@@ -53,7 +52,7 @@ fetch(divisionData,requestOptions)
             for (var j = 0; j < data.results.length; j++)
             {
                 
-                var row = `<tr onclick="myDivisionFunction('${data.results[j].id}')">
+                var row = `<tr onclick="loadDivsionDetail('${data.results[j].id}')">
                     <td>${idShow}</td>
                     <td>${data.results[j].Ten_KH}</td>
                     <td>${data.results[j].Ten_TV}</td>
