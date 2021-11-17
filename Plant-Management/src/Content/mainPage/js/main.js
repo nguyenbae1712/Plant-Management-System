@@ -1,7 +1,7 @@
 window.onload = function(){
   document.getElementById('divisioClick').click();
 }
-// filterSelection('divisio');
+
 function filterSelection(c) {
   var x, i;
   x = document.getElementsByClassName("filterDiv");

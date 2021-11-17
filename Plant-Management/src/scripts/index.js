@@ -13,6 +13,9 @@ const myLocalStorage = {
 		const data = localStorage.getItem(key);
 		return JSON.parse(data);
 	},
+	clear:() => {
+		localStorage.clear();
+	}
 };
 
 const checkTokenExpire = async () => {
@@ -81,6 +84,9 @@ const UserService = {
 	refreshToken: async ({ refreshToken }) => {
 		return instance.post('v1/auth/refresh-tokens', { refreshToken });
 	},
+	logout: async ({ refreshToken }) => {
+		return instance.post('v1/auth/logout', { refreshToken });
+	},
 };
 
 /* ----- DIVISIO SEVICE ----- */
@@ -132,7 +138,7 @@ var tokens;
 
 const register = () => {
 	window.open('../registerPage/index.html');
-	alert('Hello');
+	// alert('Hello');
 };
 
 const form = {
@@ -169,10 +175,23 @@ form.submit.addEventListener('click', async (e) => {
 			myLocalStorage.setItem(TOKENS, tokens);
 
 			setAuthorization(token);
-			window.location = '../../index.html';
+			// window.location = '../../index.html';
+			const role = userProfile.role;
+						console.log(role);
+						if (role === 'admin') {
+							window.location.replace('../adminPage/index.html');
+							console.log(role);
+						} else {
+							// console.log(x)
+							window.location.replace('/index.html');
+							// if (data)
+						}
 		}
 	} catch (e) {
 		/* handle error */
 		alert('Something went wrong!!!');
 	}
 });
+
+
+

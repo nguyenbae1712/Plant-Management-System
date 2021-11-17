@@ -6,9 +6,14 @@ window.onload = function () {
 	let html;
 
 	if (userProfile && userProfile.name) {
-		html = `
-						<i class="fa fa-user" aria-hidden="true"></i>
-						<span style="font-size: 15px; color: white">${userProfile.name}</syypan>
+		html = `	
+					<div style = "display :flex; "> 
+						<div style =" display: flex;
+						align-items: center; padding-right : 10px"><i style = "padding-right:5px; color : #70C745;" class="fa fa-user" aria-hidden="true"></i>
+						<span style="font-size: 15px; color: white">${userProfile.name}</span>
+						</div>
+						<button id="btnLogout" style="padding:1px; border-radius:10%; color:black">Logout</button>
+					</div>
 					`;
 	} else {
 		html = `
@@ -35,4 +40,20 @@ window.onload = function () {
 	`;
 
 	topHeaderElm[0].innerHTML = topHeaderHTML;
+
+	const logout = document.getElementById('btnLogout');
+	logout.addEventListener('click', async (e) => {
+	e.preventDefault();
+	tokens = myLocalStorage.getItem(TOKENS);
+	console.log(tokens);
+	try {
+	responese = await UserService.logout({refreshToken:tokens.refresh.token});
+	myLocalStorage.clear() ;
+	window.location.replace('/index.html');
+	}
+	catch(err) {
+		alert("okk");
+	}
+})
 };
+
