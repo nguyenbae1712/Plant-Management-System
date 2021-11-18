@@ -129,7 +129,7 @@
                       <th>ID</th>
                       <th>Tên Khoa Học</th>
                       <th>Tên Tiếng Việt</th>
-                      <th></th>
+                      <!-- <th></th> -->
                     </tr>
                   </thead>
                   <tbody id="divisionBody"></tbody>
@@ -143,7 +143,44 @@
           </div>
         </div>
       </div>
+      <div class="modal fade" id="view" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content" style="overflow:auto;">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 id="stt" class="modal-title">Division Detail</h4>
+                </div>
+                <div class="modal-body" style="overflow:auto;">
+                    <form id="formAddDivision" >
+                      <div style="padding-left: 5px; font-size: 18px; flex-direction: column; display: flex; margin-top:20px !important;">
+                        <label>ID</label>
+                        <p id="txtID" name="txtID" ></p>
+                      </div>
 
+                      <div style="padding-left: 5px; font-size: 18px; flex-direction: column; display: flex; margin-top:20px !important;">
+                        <label>Tên Khoa Học</label>
+                        <p id="txtTenKH" ></p>
+                      </div>
+
+                      <div style="padding-left: 5px; font-size: 18px; flex-direction: column; display: flex; margin-top:20px !important;">
+                        <label>Tên Tiếng Việt</label>
+                        <p id="txtTenTV" ></p>
+                      </div>
+
+                      <div style="padding-left: 5px; font-size: 18px; flex-direction: column; display: flex; margin-top:20px !important;">
+                        <label>Mô tả</label>
+                        <p id="txtMota" ></p>
+                      </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
         <div class="modal fade" id="add" role="dialog">
           <div class="modal-dialog">
   
@@ -159,10 +196,9 @@
                               <input type="text" id="addID" class="form-text" required>
                               <span class="bar"></span>
                               <label>ID</label>
-                          </div>
-   -->
+                          </div>-->
                           <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                              <input type="text" id ="addTenKh" class="form-text" id="validate_email" required>
+                              <input type="text" id ="addTenKh" class="form-text" required>
                               <span class="bar"></span>
                               <label> Tên Khoa Học</label>
                           </div>
@@ -202,25 +238,23 @@
                     <form id="formEditDivision" >
                         <div style="padding-left: 5px; font-size: 18px; flex-direction: column; display: flex; margin-top:20px !important;">
                           <label>ID</label>
-                          <p id="txtID" name="txtID" ></p>
-                          <!-- <span class="bar"></span> -->
-                            
+                          <p id="editID"></p>
                         </div>
 
                         <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                            <textarea id="txtTenKH" name="txtTenKH" class="form-text" required></textarea>
+                            <textarea id="editTenKH" class="form-text" required></textarea>
                             <span class="bar"></span>
                             <label>Tên Khoa Học</label>
                         </div>
 
                         <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                            <textarea id="txtTenTV" name="txtTenTV" class="form-text mask-phone_us" required></textarea>
+                            <textarea id="editTenTV" class="form-text mask-phone_us" required></textarea>
                             <span class="bar"></span>
                             <label>Tên Khoa Học</label>
                         </div>
 
                         <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                            <textarea rows="50" id="txtMota" name="txtMota" class="form-text" required></textarea>
+                            <textarea rows="15" id="editMota" class="form-text" required></textarea>
                             <span class="bar"></span>
                             <label>Mô tả</label>
                         </div>
@@ -228,7 +262,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary" form="formEditDivision">Edit Division</button>
+                    <button onclick="editDivisionApi()" id="btnEdit" type="button" class="btn btn-primary" form="formEditDivision">Edit Division</button>
                 </div>
             </div>
 
@@ -246,7 +280,7 @@
                   <h5> Are you sure to delete this Division?</h5>
               </div>
               <div class="modal-footer">
-                  <button onclick="deleteDivision()" type="submit" name="btnDelUp" value="delete" class="btn btn-default">Yes</button>
+                  <button id="btnDelete" type="button" name="btnDelUp" class="btn btn-default">Yes</button>
                   <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
               </div>
           </div>

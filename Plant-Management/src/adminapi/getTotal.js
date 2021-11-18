@@ -18,7 +18,7 @@ function getDivisionAll(){
     fetch(divisionData,requestOptions)
     .then(function (response){
         response.json().then(function (data){
-            console.log(data.totalResults);
+            // console.log(data.totalResults);
             divisionTotal.innerHTML = `<td id="divisionTotal">${data.totalResults}</td>`
         })
     })
@@ -35,7 +35,7 @@ function getClassAll(){
     fetch(classData,requestOptions)
     .then(function (response){
         response.json().then(function (data){
-            console.log(data.totalResults);
+            // console.log(data.totalResults);
             classTotal.innerHTML = `<td id="classTotal">${data.totalResults}</td>`
         })
     })
@@ -53,7 +53,7 @@ function getOrderAll(){
     fetch(orderData,requestOptions)
     .then(function (response){
         response.json().then(function (data){
-            console.log(data.totalResults);
+            // console.log(data.totalResults);
             orderTotal.innerHTML = `<td id="orderTotal">${data.totalResults}</td>`
         })
     })
@@ -70,7 +70,7 @@ function getFamilyAll(){
     fetch(familyData,requestOptions)
     .then(function(response){
         response.json().then(function(data){
-            console.log(data.totalResults);
+            // console.log(data.totalResults);
             familyTotal.innerHTML = `<td id="familyTotal">${data.totalResults}</td>`
             
         })
@@ -87,7 +87,7 @@ function getGenusAll(){
     fetch(genusData,requestOptions)
     .then(function(response){
         response.json().then(function(data){
-            console.log(data.totalResults);
+            // console.log(data.totalResults);
             genusTotal.innerHTML = `<td id="genusTotal">${data.totalResults}</td>`
             
         })
@@ -104,7 +104,7 @@ function getSpeciesAll(){
     fetch(speciesData,requestOptions)
     .then(function(response){
         response.json().then(function(data){
-            console.log(data.totalResults);
+            // console.log(data.totalResults);
             speciesTotal.innerHTML = `<td id="speciesTotal">${data.totalResults}</td>`
         })
     })
