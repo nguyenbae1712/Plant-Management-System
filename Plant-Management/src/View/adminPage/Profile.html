@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="description" content="Miminium Admin Template v.1">
+    <meta name="author" content="Isna Nur Azis">
+    <meta name="keyword" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Plant Management</title>
+
+    <!-- start: Css -->
+    <link rel="stylesheet" type="text/css" href="/Content/asset/css/bootstrap.min.css">
+
+    <!-- plugins -->
+    <link rel="stylesheet" type="text/css" href="/Content/asset/css/plugins/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/asset/css/plugins/simple-line-icons.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/asset/css/plugins/animate.min.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/asset/css/plugins/fullcalendar.min.css" />
+    <link href="/Content/asset/css/style.css" rel="stylesheet">
+    <!-- end: Css -->
+
+    <link rel="shortcut icon" href="/Content/asset/img/favicon.ico" />
+
+    
+</head>
+
+<body id="mimin" class="dashboard">
+    <!-- start: Header -->
+    <nav class="navbar navbar-default header navbar-fixed-top">
+        <div class="col-md-12 nav-wrapper">
+          <div class="navbar-header" style="width: 100%">
+            <div class="opener-left-menu is-open">
+              <span class="top"></span>
+              <span class="middle"></span>
+              <span class="bottom"></span>
+            </div>
+            <a href="index.html" class="navbar-brand">
+              <b>PLANT</b>
+            </a>
+    
+            <ul class="nav navbar-nav search-nav">
+              <li>
+                <div class="search">
+                  <span class="fa fa-search icon-search" style="font-size: 23px"></span>
+                  <div class="form-group form-animate-text">
+                    <input type="text" class="form-text" required />
+                    <span class="bar"></span>
+                    <label class="label-search"><b>Search</b>
+                    </label>
+                  </div>
+                </div>
+              </li>
+            </ul>
+    
+            <div class="adminLogin"></div>
+          </div>
+        </div>
+      </nav>
+    <!-- end: Header -->
+
+    <div class="container-fluid mimin-wrapper">
+
+        <!-- start:Left Menu -->
+        <div id="left-menu">
+            <div class="sub-left-menu scroll">
+                <ul class="nav nav-list">
+                    <li><div class="left-bg"></div></li>
+                    <li class="time">
+                        <h1 class="animated fadeInLeft">21:00</h1>
+                        <p class="animated fadeInRight">Sat,October 1st 2029</p>
+                    </li>
+                    <li class="active ripple">
+                        <a class="tree-toggle nav-header">
+                            <i class="fa fa-leaf"></i> Plant
+                            <span class="fa-angle-right fa right-arrow text-right"></span>
+                        </a>
+                        <ul class="nav nav-list tree">
+                            <li><a href="Division.html">Division</a></li>
+                            <li><a href="Class.html">Class</a></li>
+                            <li><a href="Order.html">Order</a></li>
+                            <li><a href="Family.html">Family</a></li>
+                            <li><a href="Genus.html">Genus</a></li>
+                            <li><a href="Species.html">Species</a></li>
+                        </ul>
+                    </li>
+                    <li class="ripple">
+                        <a href="ManagerAccount.html">
+                            <span class="fa fa-user"></span> Account
+                        </a>
+                    </li>
+                    <li class="ripple">
+                        <a class="tree-toggle nav-header">
+                            <span class="fa fa-pencil-square"></span> Blog
+                            <span class="fa-angle-right fa right-arrow text-right"></span>
+                        </a>
+                        <ul class="nav nav-list tree">
+                            <li><a href="NewBlog.html">Write new Blog</a></li>
+                            <li><a href="ManageBlog.html">Blog Management</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <!-- end: Left Menu -->
+        <!-- start: content -->
+        <div id="content">
+            <div style="width: 100%; position:relative; text-align:center;">
+    
+    <div style="width: 20%; height: 20%; margin:auto; padding-top:20px; position:relative;">
+                <img src="/Content/asset/UploadFile/ava-img/jin_ava.jpg" style="width:250px; height:250px; text-align:center;" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" />
+        <div class="icon-box" data-toggle="modal" data-target="#changeAvatar" style="background-color:#8bc18d; opacity:0.8 ; width:65px; height:65px; border-radius:50%; position:absolute; bottom:0; padding-top:5%; cursor:pointer;">
+            <span class="icons icon-camera" style="font-size:300%; color:white;"></span>
+        </div>
+    </div>
+    <div class="panel" style="width: 65%; display:block; overflow:auto; margin:auto; margin-top:20px; background-color:#76AE7B; border-radius:20px;">
+        <div style="width: 100%; padding-left:28%; overflow:auto; padding-bottom:30px;">
+            <div class="form-group" style="width: 100%; margin-top:40px; text-align:left;">
+                <label class="control-label text-right" style="margin-right:20px; display:inline-block; color:white; font-size:150%;">Name</label>
+                <br />
+                <div style="width:65%; display:inline-block;"><input placeholder="" style="width:100%;" type="text" class="form-control" disabled></div>
+            </div>
+            <div class="form-group" style="width: 100%; margin-top:40px; text-align:left;">
+                <label class="control-label text-right" style="margin-right:20px; display:inline-block; color:white; font-size:150%;">Email</label>
+                <br />
+                <div style="width:65%; display:inline-block;"><input placeholder="" style="width:100%;" type="text" class="form-control" disabled></div>
+            </div>
+            <div class="form-group" style="width: 100%; margin-top:40px; margin-bottom:30px; text-align:left; margin-left:-20%;">
+                <div class="col-md-6" style="margin-top:5px; display:inline-block; height:45px;">
+                    <button class="btn ripple btn-round bg-white" type="button" data-toggle="modal" data-target="#edit">
+                        <div>
+                            <span style="color:#918C8C;">Edit Profile</span>
+                        </div>
+                    </button>
+                </div>
+                <div class="col-md-6" style="margin-top:5px; display:inline-block;">
+                    <button data-toggle="modal" data-target="#changePassword" class="btn ripple btn-outline btn-primary" type="button" style="border-color: white !important; color:white !important; border-radius:24px !important;">
+                        <div>
+                            <span>Change Password</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal ChangeAvatar-->
+    <div class="modal fade" id="changeAvatar" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content" style="overflow:auto;">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Change Avatar</h4>
+                </div>
+                <div class="modal-body" style="overflow:auto;">
+                    <div class="col-md-12">
+                        <div class="panel">
+                            <div class="panel-heading"></div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                            <div class="input-group fileupload-v1" style="width:100%;">
+
+                                                <input type="file" name="manualfile" class="fileupload-v1-file hidden" accept="image/*" />
+                                                <input type="text" class="form-control fileupload-v1-path" style="display:inline; width:74%;" placeholder="File Path..." disabled>
+                                                <span class="input-group-btn" style="display:inline;">
+                                                    <button class="btn fileupload-v1-btn" type="button"><i class="fa fa-folder"></i> Choose File</button>
+                                                </span>
+                                            </div>
+                                    </div>>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" form="formChangeAvatar">Save changes</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- modal Edit Profile-->
+    <div class="modal fade" id="edit" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content" style="overflow:auto;">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Edit Profile</h4>
+                </div>
+                <div class="modal-body" style="overflow:auto;">
+
+                    <form id="formEditProfile" method="post" action="/admin/Home/editProfile">
+
+                        <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                            <input type="text" name="txtName" class="form-text" required>
+                            <span class="bar"></span>
+                            <label>Name</label>
+                        </div>
+
+                        <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                            <input type="text" name="txtEmail" class="form-text" id="validate_email" required>
+                            <span class="bar"></span>
+                            <label>Email</label>
+                        </div>
+
+                        <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                            <input type="text" name="txtPhone" class="form-text mask-phone_us" required>
+                            <span class="bar"></span>
+                            <label>Phone Number</label>
+                        </div>
+
+                        <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                            <input type="text" name="txtAddress" class="form-text" required>
+                            <span class="bar"></span>
+                            <label>Address</label>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" form="formEditProfile">Save changes</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- modal Change Password-->
+    <div class="modal fade" id="changePassword" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content" style="overflow:auto;">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Change Password</h4>
+                </div>
+                <div class="modal-body" style="overflow:auto;">
+
+                    <form id="signupForm" class="cmxform" method="post" action="/admin/Home/changePassword">
+                        <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                            <input type="text" class="form-text" id="validate_username" name="validate_username" required>
+                            <span class="bar"></span>
+                            <label>Username</label>
+                        </div>
+
+                        <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                            <input type="password" class="form-text" id="validate_password" name="validate_password" required>
+                            <span class="bar"></span>
+                            <label>Old Password</label>
+                        </div>
+
+                        <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                            <input type="password" class="form-text" id="validate_password" name="validate_Newpassword" required>
+                            <span class="bar"></span>
+                            <label>New Password</label>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button data-toggle="modal" data-target="#NotiChangePassword" type="submit" class="btn btn-primary" form="signupForm">Save changes</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--modal noti change Pass-->
+    <!-- @if (TempData["changePass"] != null)
+    {
+        if (TempData["changePass"] == "true")
+        {
+            <div style="position:sticky; bottom:0px; left:5px; width:30%; opacity:0.8;" class="alert alert-success col-md-12 col-sm-12  alert-icon alert-dismissible fade in" role="alert">
+                <div class="col-md-2 col-sm-2 icon-wrapper text-center">
+                    <span class="fa fa-check fa-2x"></span>
+                </div>
+                <div class="col-md-10 col-sm-10">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <p><strong>Success!</strong> Change Password successfully!</p>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div style="position:sticky; bottom:0px; left:5px; width:30%; opacity:0.8;" class="alert alert-warning col-md-12 col-sm-12 alert-icon alert-dismissible fade in" role="alert">
+                <div class="col-md-2 col-sm-2 icon-wrapper text-center">
+                    <span class="fa fa-exclamation-triangle fa-2x"></span>
+                </div>
+                <div class="col-md-10 col-sm-10">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <p><strong>Warning!</strong> Can not change password! Please check your Username and Old Password.</p>
+                </div>
+            </div>
+        }
+
+    } -->
+</div>
+        </div>
+        <!-- end: content -->
+        
+
+    </div>
+
+
+    <!-- start: Javascript -->
+
+    <script src="/Content/asset/js/jquery.min.js"></script>
+    <script src="/Content/asset/js/jquery.ui.min.js"></script>
+    <script src="/Content/asset/js/bootstrap.min.js"></script>
+
+
+    <!-- plugins -->
+    <script src="/Content/asset/js/plugins/moment.min.js"></script>
+    <script src="/Content/asset/js/plugins/fullcalendar.min.js"></script>
+    <script src="/Content/asset/js/plugins/jquery.nicescroll.js"></script>
+    <script src="/Content/asset/js/plugins/jquery.vmap.min.js"></script>
+    <script src="/Content/asset/js/plugins/maps/jquery.vmap.world.js"></script>
+    <script src="/Content/asset/js/plugins/jquery.vmap.sampledata.js"></script>
+    <script src="/Content/asset/js/plugins/chart.min.js"></script>
+
+
+    <!-- custom -->
+    <script src="/Content/asset/js/main.js"></script>
+    <script src="/adminAPI/main.js"></script>
+</body>
+</html>
