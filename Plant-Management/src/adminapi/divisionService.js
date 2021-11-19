@@ -264,3 +264,36 @@ function getDivisionbyID(id){
         console.log('error: ' + err);
     })
 }
+
+
+function showResults() {
+    var edValue = document.getElementById("testSuggest");
+    var s = edValue.value;
+    console.log(s);
+    res = document.getElementById("resultSuggest");
+    res.innerHTML = '';
+    if (s == '') {
+      return;
+    }
+    let list = '';
+    const suggest = "http://localhost:8888/v1/divisio/suggest/";
+    let myHeaders = new Headers();
+    let requestOptions = {
+    method: 'GET',
+    headers: myHeaders,
+    redirect: 'follow'
+    };
+    fetch(suggest + s,requestOptions).then(
+     function (response) {
+       return response.json();
+     }).then(function (data) {
+       for (i=0; i<data.length; i++) {
+         list += '<li>' + data[i] + '</li>';
+       }
+       res.innerHTML = '<ul>' + list + '</ul>';
+       return true;
+     }).catch(function (err) {
+       console.warn('Something went wrong.', err);
+       return false;
+     });
+  }
