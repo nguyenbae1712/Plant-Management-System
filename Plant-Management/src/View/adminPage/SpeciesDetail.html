@@ -115,114 +115,52 @@
         <div class="col-md-12">
           <div class="panel">
             <div class="panel-heading">
-              <h3>Division Management</h3>
+              <h3>Species Detail</h3>
             </div>
             <div class="panel-body">
               <div class="responsive-table">
-                <div style="padding-bottom: 10px;">
-                  <button type="button" data-toggle="modal" data-target="#add"><span style="font-size: 18px;">Add Division</span></button>
+                <div class="breadcrumb-area">
+                    
+                        <div class="row">
+                            <!-- <div class="col-12"> -->
+                                <nav aria-label="breadcrumb">
+                                    <ol  class="breadcrumb">
+                                        <li  class="breadcrumb-item">
+                                            <a style="text-decoration: none; color: black; font-size: 16px;" href="Species.html">Species</a></li>
+                                        <li  class="breadcrumb-item active">
+                                            <a style="text-decoration: none; color: black; font-size: 16px;" href="divisionDetail.html">Species Details</a></li>
+                                    </ol>
+                                </nav>
+                            <!-- </div> -->
+                        </div>
+                    <!-- </div> -->
                 </div>
-                <table id="datatables-example" class="table table-striped table-bordered" width="100%" cellspacing="0">
-                  <thead>
-                    <tr>
-                      <th>STT</th>
-                      <th>ID</th>
-                      <th>Tên Khoa Học</th>
-                      <th>Tên Tiếng Việt</th>
-                      <!-- <th></th> -->
-                    </tr>
-                  </thead>
-                  <tbody id="divisionBody"></tbody>
-                </table>
-                <div style="width: 100%;" class="row">
-                  <div style="display: flex; justify-content: center; padding-left: 45px; width: 100%;;border-top: #70c74561 solid 2px;" class="pagination" id="paginationDivision">
+                <div class="fillData" style="padding: 20px; width: 100%;">
+                    <div class="image" id="image">
+                        <!-- <img src="http://www.vncreatures.net/pictures/plant/2288.JPG"> -->
+                    </div>
+                            <h3 id="tenKH" class="title"></h3>
+                            <h4 id="tenTV"></h4>
+                            <h4 id="idChi"></h4>
+                            <div class="short_overview">
+                                <p id="dacdiem" style="font-size: 16px;"></p>
+                                <p id="sinhhoc" style="font-size: 16px;"></p>
+                                <p id="phanbo" style="font-size: 16px;"></p>
+                                <p id="giatri" style="font-size: 16px;"></p>
+                                <p id="tinhtrang" style="font-size: 16px;"></p>
+                                <p id="baove" style="font-size: 16px;"></p>
+                                <p id="dangsong" style="font-size: 16px;"></p>
+                            </div>
+                    <!-- </div> -->
+                    <div style="display: flex; flex-direction: rơw; justify-content: space-between;" class="action">
+                        <button id="btnViewEdit" data-toggle="modal" data-target="#edit" type="button" class="update btn btn-warning btn-sm"><span style="padding: 5px;" class="glyphicon glyphicon-pencil"></span>Edit Species</button>
+                        <button data-toggle="modal" data-target="#delete" type="button" class="delete btn btn-danger btn-sm"><span style="padding: 5px;" class="glyphicon glyphicon-trash"></span>Delete Species</button>
                     </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="modal fade" id="view" role="dialog">
-        <div class="modal-dialog">
-            <!-- Modal content-->
-            <div class="modal-content" style="overflow:auto;">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 id="stt" class="modal-title">Division Detail</h4>
-                </div>
-                <div class="modal-body" style="overflow:auto;">
-                    <form id="formAddDivision" >
-                      <div style="padding-left: 5px; font-size: 18px; flex-direction: column; display: flex; margin-top:20px !important;">
-                        <label>ID</label>
-                        <p id="txtID" name="txtID" ></p>
-                      </div>
-
-                      <div style="padding-left: 5px; font-size: 18px; flex-direction: column; display: flex; margin-top:20px !important;">
-                        <label>Tên Khoa Học</label>
-                        <p id="txtTenKH" ></p>
-                      </div>
-
-                      <div style="padding-left: 5px; font-size: 18px; flex-direction: column; display: flex; margin-top:20px !important;">
-                        <label>Tên Tiếng Việt</label>
-                        <p id="txtTenTV" ></p>
-                      </div>
-
-                      <div style="padding-left: 5px; font-size: 18px; flex-direction: column; display: flex; margin-top:20px !important;">
-                        <label>Mô tả</label>
-                        <p id="txtMota" ></p>
-                      </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
-        <div class="modal fade" id="add" role="dialog">
-          <div class="modal-dialog">
-  
-              <!-- Modal content-->
-              <div class="modal-content" style="overflow:auto;">
-                  <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                      <h4 class="modal-title">Add New Division</h4>
-                  </div>
-                  <div class="modal-body" style="overflow:auto;">
-                      <form id="formAddDivision" >
-                          <!-- <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                              <input type="text" id="addID" class="form-text" required>
-                              <span class="bar"></span>
-                              <label>ID</label>
-                          </div>-->
-                          <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                              <input type="text" id ="addTenKh" class="form-text" required>
-                              <span class="bar"></span>
-                              <label> Tên Khoa Học</label>
-                          </div>
-  
-                          <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                              <input type="text" id ="addTenTV" class="form-text mask-phone_us" required>
-                              <span class="bar"></span>
-                              <label>Tên Tiếng Việt</label>
-                          </div>
-  
-                          <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                              <input type="text" id ="addMota" class="form-text" required>
-                              <span class="bar"></span>
-                              <label>Mô tả</label>
-                          </div>
-                      </form>
-                  </div>
-                  <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                      <button onclick="addDivision()" type="button" class="btn btn-primary" form="formAddDivision">Add New Division</button>
-                  </div>
-              </div>
-  
-          </div>
       </div>
 
       <div class="edit modal fade" id="edit" role="dialog">
@@ -232,7 +170,7 @@
             <div class="modal-content" style="overflow:auto;">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Edit Division</h4>
+                    <h4 class="modal-title">Edit Species</h4>
                 </div>
                 <div class="modal-body" style="overflow:auto;">
                     <form id="formEditDivision" >
@@ -241,28 +179,72 @@
                           <p id="editID"></p>
                         </div>
 
-                        <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                        <div class="form-group form-animate-text" style="margin-top:20px !important;">
                             <textarea id="editTenKH" class="form-text" required></textarea>
                             <span class="bar"></span>
                             <label>Tên Khoa Học</label>
                         </div>
 
-                        <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                        <div class="form-group form-animate-text" style="margin-top:20px !important;">
                             <textarea id="editTenTV" class="form-text mask-phone_us" required></textarea>
                             <span class="bar"></span>
-                            <label>Tên Khoa Học</label>
+                            <label>Tên Tiếng Việt</label>
                         </div>
 
-                        <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                            <textarea rows="15" id="editMota" class="form-text" required></textarea>
+                        <div class="form-group form-animate-text" style="margin-top:20px !important;">
+                            <form autocomplete="off">
+                              <input class="form-text" type="text" id="editSuggest" onInput="editResults()" />
+                              <div style="font-size: 18px;" id="editResult"></div>
+                              <label style="font-size: 18px;">Chi</label>
+                              <p id="message"></p>
+                            </form>
+                        </div>
+
+                        <div class="form-group form-animate-text" style="margin-top:20px !important;">
+                            <textarea rows="10" id="editDacdiem" class="form-text mask-phone_us" required></textarea>
                             <span class="bar"></span>
-                            <label>Mô tả</label>
+                            <label>Đặc điểm nhận dạng</label>
+                        </div>
+
+                        <div class="form-group form-animate-text" style="margin-top:20px !important;">
+                            <textarea id="editSinhhoc" class="form-text mask-phone_us" required></textarea>
+                            <span class="bar"></span>
+                            <label>Sinh học Sinh Thái</label>
+                        </div>
+
+                        <div class="form-group form-animate-text" style="margin-top:20px !important;">
+                            <textarea id="editPhanbo" class="form-text mask-phone_us" required></textarea>
+                            <span class="bar"></span>
+                            <label>Phân bố</label>
+                        </div>
+
+                        <div class="form-group form-animate-text" style="margin-top:20px !important;">
+                            <textarea id="editGiatri" class="form-text mask-phone_us" required></textarea>
+                            <span class="bar"></span>
+                            <label>Giá trị </label>
+                        </div>
+
+                        <div class="form-group form-animate-text" style="margin-top:20px !important;">
+                            <textarea id="editTinhtrang" class="form-text mask-phone_us" required></textarea>
+                            <span class="bar"></span>
+                            <label>Tình trạng </label>
+                        </div>
+                        <div class="form-group form-animate-text" style="margin-top:20px !important;">
+                            <textarea id="editBaove" class="form-text" required></textarea>
+                            <span class="bar"></span>
+                            <label>Biện pháp bảo vệ</label>
+                        </div>
+
+                        <div class="form-group form-animate-text" style="margin-top:20px !important;">
+                            <textarea id="editDangsong" class="form-text" required></textarea>
+                            <span class="bar"></span>
+                            <label>Dạng sống</label>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button id="btnEdit" type="button" class="btn btn-primary" form="formEditDivision">Edit Division</button>
+                    <button id="btnEdit" type="button" class="btn btn-primary" form="formEditDivision">Edit Species</button>
                 </div>
             </div>
 
@@ -277,7 +259,7 @@
                   <h4 class="modal-title">Delete</h4>
               </div>
               <div class="modal-body">
-                  <h5> Are you sure to delete this Division?</h5>
+                  <h5> Are you sure to delete this Species?</h5>
               </div>
               <div class="modal-footer">
                   <button id="btnDelete" type="button" name="btnDelUp" class="btn btn-default">Yes</button>
@@ -309,9 +291,9 @@
       <script src="/scripts/index.js"></script>
       <script src="/scripts/adminHeader.js"></script>
 
-      <script src="/adminapi/divisionService.js"></script>
-      <!-- <script src="/adminAPI/main.js"></script> -->
-      <!-- <script src="/adminAPI/getData/getDivision.js"></script> -->
+      <script src="/adminapi/speciesDetail.js"></script>
+
+      <div id="add-js-file"></div>
       <!-- end: Javascript -->
 </body>
 

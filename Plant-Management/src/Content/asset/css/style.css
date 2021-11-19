@@ -6497,25 +6497,31 @@ ul li a:focus {
 }
 /* thiết lập style cho thẻ a */
 .pagination a {
-  color: black;
-  float: left;
-  padding:  12px 18px;
-  text-decoration: none;
+  color: black !important;
+  float: left !important;
+  padding:  12px 18px !important;
+  text-decoration: none !important;
 }
 /* thiết lập style cho class active */
 .pagination a.active {
-  background-color: dodgerblue;
-  color: white;
+  background-color: red !important;
+  color: white !important;
   /*Thiết kế hình tròn với CSS*/
-  border-radius: 50%;
+  border-radius: 50% !important;
 }
 /* thêm màu nền khi người dùng hover vào class không active */
 .pagination a:hover:not(.active) {
-  background-color: #ddd;
+  background-color: #ddd ;
   /*Thiết kế hình tròn với CSS*/
-  border-radius: 50%;
+  border-radius: 50% ;
 }
 .pagination a:focus{
-  background-color: #a9db90;
-  border-radius: 60%;
+  background-color: #a9db90 !important;
+  border-radius: 60% !important ;
 }
+
+/* .pagination a::after{
+  background-color: #a9db90 !important;
+  border-radius: 60% !important ;
+} */
+

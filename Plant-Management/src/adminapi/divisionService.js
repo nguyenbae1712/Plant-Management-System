@@ -21,6 +21,7 @@ function deleteDivisionID(id){
               fetch(divisionID + '/' + id ,addOptions)
               .then(function (response){     
                 response.text();
+                alert("Successfully Deleted");
                 window.location.reload();
                 })
               .catch((err) => {
@@ -60,6 +61,7 @@ function addDivisionApi(data){
       fetch(divisionID,addOptions)
       .then(function (response){     
         response.json();
+        alert("Successfully Added");
         window.location.reload();
         })
       .catch((err) => {
@@ -159,38 +161,6 @@ $('.page-number').click( function(e) {
         console.log('error: ' + err);
     })
 
-function editDivisionApi(id){
-    let tenKH = document.getElementById('editTenKH').value;
-    let tenTV = document.getElementById('editTenTV').value;
-    let mota = document.getElementById('editMota').value;
-    let formData ={
-        Ten_KH : tenKH,
-        Ten_Latin :tenTV,
-        Mo_Ta : mota ,
-        };
-    console.log(id);
-    console.log(formData);
-    const divisionID = "http://134.209.106.33:8888/v1/divisio";
-    const headers = {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${tokens.access.token}`
-    }
-    let addOptions = {
-        method: 'PATCH',
-        headers,
-        body: JSON.stringify(formData),
-      };
-
-      fetch(divisionID + '/' + id,addOptions)
-      .then(function (response){     
-        response.json();
-        // editDivisionbyID(id);
-        })
-      .catch((err) => {
-        console.log(err);
-      });
-}
-
 function editDivisionbyID(id){
         const divisionID = "http://134.209.106.33:8888/v1/divisio";
         let requestOptions = {
@@ -220,12 +190,49 @@ function editDivisionbyID(id){
                 editTenTV.innerHTML = `${data.Ten_Latin}`;
             }
             })
+        })
         .catch((err) => {
             console.log(err);
         });
         console.log(id);
         // console.log(id,formData);
-})
+
+
+        let btnEdit = document.getElementById('btnEdit');
+        btnEdit.addEventListener('click' ,async (e) =>{
+            e.preventDefault();
+            // alert("ok");
+            let tenKH = document.getElementById('editTenKH').value;
+            let tenTV = document.getElementById('editTenTV').value;
+            let mota = document.getElementById('editMota').value;
+            let formData ={
+                Ten_KH : tenKH,
+                Ten_Latin :tenTV,
+                Mo_Ta : mota ,
+                };
+            console.log(id);
+            console.log(formData);
+            const divisionID = "http://134.209.106.33:8888/v1/divisio";
+            const headers = {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${tokens.access.token}`
+            }
+            let addOptions = {
+                method: 'PATCH',
+                headers,
+                body: JSON.stringify(formData),
+            };
+
+            fetch(divisionID + '/' + id,addOptions)
+            .then(function (response){     
+                response.json();
+                window.location.reload();
+                })
+            .catch((err) => {
+                console.log(err);
+            });
+
+        })
 }
 
 function getDivisionbyID(id){
