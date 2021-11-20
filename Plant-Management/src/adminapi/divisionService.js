@@ -171,13 +171,13 @@ function editDivisionbyID(id){
         fetch(divisionID + '/' + id,requestOptions)
         .then(function (response){     
             response.json().then( function (data){
-            // console.log(data);
             editID.innerHTML = `${data.id}`;
             editTenKH.innerHTML = `${data.Ten_KH}`;
+            // editMota.innerHTML = `${data.Mo_ta}`
             if (data.Mo_ta == undefined){
                 editMota.innerHTML = `${data.Mo_Ta}`;
                 if(data.Mo_Ta == undefined){    
-                    editMota.innerHTML = `Chưa có thông tin`;
+                editMota.innerHTML = `Chưa có thông tin`;
                 }
             }
             else{
@@ -195,8 +195,6 @@ function editDivisionbyID(id){
             console.log(err);
         });
         console.log(id);
-        // console.log(id,formData);
-
 
         let btnEdit = document.getElementById('btnEdit');
         btnEdit.addEventListener('click' ,async (e) =>{

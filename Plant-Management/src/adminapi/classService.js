@@ -386,7 +386,6 @@ function getClassbyID(id){
                 fetch(divisionDatabyId + '/' + id,requestOptions)
                 .then( function (response) {
                     response.json().then( function (data){
-                        // console.log(data);
                         txtNganh.innerHTML = `${data.Ten_KH}`;
                     })
                 })
