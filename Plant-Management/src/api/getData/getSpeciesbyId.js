@@ -7,12 +7,18 @@ function speciesbyId(id) {
 	// else{
 	const speciesData = 'http://134.209.106.33:8888/v1/species';
 	const speciesImage = 'http://134.209.106.33:8888/v1/image/getByIdLoai';
+	// const genus = 'http://134.209.106.33:8888/v1/genus';
+	// const family = 'http://134.209.106.33:8888/v1/familia/';
+	// const order = 'http://134.209.106.33:8888/v1/ordo/';
+	// const classiss = 'http://134.209.106.33:8888/v1/classis/';
+	// const divisio = 'http://134.209.106.33:8888/v1/divisio/';
 	var myHeaders = new Headers();
 	var requestOptions = {
 		method: 'GET',
 		headers: myHeaders,
 		redirect: 'follow',
 	};
+
 	fetch(speciesData + '/' + id, requestOptions).then(function (response) {
 		response
 			.json()
@@ -43,6 +49,7 @@ function speciesbyId(id) {
 				console.log('error abc: ' + err);
 			});
 	});
+
 	fetch(speciesImage + '/' + id, requestOptions)
 		.then((response) => {
 			return response.text();
@@ -55,4 +62,3 @@ function speciesbyId(id) {
 			console.log('error image: ' + err);
 		});
 }
-// }
