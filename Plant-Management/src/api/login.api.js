@@ -1,7 +1,3 @@
-function register() {
-	window.open('../registerPage/index.html');
-	alert('Hello');
-}
 
 const form = {
 	email: document.getElementById('email'),
@@ -56,3 +52,9 @@ let button = form.submit.addEventListener('click', (e) => {
 			});
 	}
 });
+
+
+function register() {
+	window.open('../registerPage/index.html');
+	alert('Hello');
+}

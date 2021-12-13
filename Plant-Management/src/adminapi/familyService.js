@@ -34,7 +34,6 @@ function deleteDivisionID(id){
 }
 
 function addDivision(){
-    // var ID = document.getElementById('addID').value;
     var tenKH = document.getElementById('addTenKh').value;
     var tenTV = document.getElementById('addTenTV').value;
     var mota = document.getElementById('addMota').value;
@@ -53,9 +52,9 @@ function addDivision(){
             var divisioId = data[0].id ;       
             var formData ={
                 Ten_KH : tenKH,
-                Ten_Latin :tenTV,
+                Ten_TV :tenTV,
                 Mo_Ta : mota ,
-                ordoId : divisioId,
+                idBo : divisioId,
             };
             addDivisionApi(formData);
         })
@@ -196,8 +195,21 @@ function renderdivision (page){
                 <button onclick="editDivisionbyID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#edit" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button>
                 <button onclick="deleteDivisionID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#delete" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button>
                 </td>
+                </tr>`
+                if (data.results[j].Ten_TV == undefined){
+                    var row = `<tr >
+                <td>${idShow}</td>
+                <td>${data.results[j].id}</td>
+                <td data-toggle="modal" data-target="#view" onclick="getClassbyID('${data.results[j].id}')">${data.results[j].Ten_KH}</td>
+                <td>Chưa có thông tin</td>
+                <td style = "width: 130px;">
+                <button onclick="editDivisionbyID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#edit" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button>
+                <button onclick="deleteDivisionID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#delete" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button>
+                </td>
             </tr>`
+                }
             }
+            
             else{
                 var row = `<tr >
                 <td>${idShow}</td>
@@ -210,7 +222,6 @@ function renderdivision (page){
                 </td>
             </tr>`
             }
-            
             idShow += 1
             if (j == 0) {
                 table.innerHTML = row
@@ -230,18 +241,44 @@ fetch(divisionData,requestOptions)
             var table = document.getElementById('divisionBody')  
             for (var j = 0; j < data.results.length; j++)
             {
-                    var row = `<tr>
+                if (data.results[j].Ten_Latin == undefined){
+                    var row = `<tr >
                     <td>${j + 1}</td>
                     <td>${data.results[j].id}</td>
                     <td data-toggle="modal" data-target="#view" onclick="getClassbyID('${data.results[j].id}')">${data.results[j].Ten_KH}</td>
                     <td>${data.results[j].Ten_TV}</td>
                     <td style = "width: 130px;">
                     <button onclick="editDivisionbyID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#edit" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button>
-		            <button onclick="deleteDivisionID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#delete" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></td>
+                    <button onclick="deleteDivisionID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#delete" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button>
+                    </td>
+                    </tr>`
+                    if (data.results[j].Ten_TV == undefined){
+                        var row = `<tr >
+                    <td>${j + 1}</td>
+                    <td>${data.results[j].id}</td>
+                    <td data-toggle="modal" data-target="#view" onclick="getClassbyID('${data.results[j].id}')">${data.results[j].Ten_KH}</td>
+                    <td>Chưa có thông tin</td>
+                    <td style = "width: 130px;">
+                    <button onclick="editDivisionbyID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#edit" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button>
+                    <button onclick="deleteDivisionID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#delete" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button>
+                    </td>
                 </tr>`
+                    }
+                }
+                else{
+                    var row = `<tr >
+                    <td>${idShow}</td>
+                    <td>${data.results[j].id}</td>
+                    <td data-toggle="modal" data-target="#view" onclick="getClassbyID('${data.results[j].id}')">${data.results[j].Ten_KH}</td>
+                    <td>${data.results[j].Ten_Latin}</td>
+                    <td style = "width: 130px;">
+                    <button onclick="editDivisionbyID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#edit" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button>
+                    <button onclick="deleteDivisionID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#delete" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button>
+                    </td>
+                </tr>`
+                }
                 table.innerHTML += row
             }
-
             totalPages = data.totalPages;
 
             pagination(1, parseInt(data.totalPages));
@@ -304,8 +341,7 @@ function editDivisionbyID(id){
                 };
                 fetch(divisionDatabyId + '/' + id,requestOptions)
                 .then( function (response) {
-                    response.json().then( function (data){
-                        // console.log(data.Ten_KH);                    
+                    response.json().then( function (data){            
                         editSuggest.value = data.Ten_KH;                      
                     })
                 })
@@ -340,9 +376,9 @@ function editDivisionbyID(id){
                         var divisioId = data[0].id ;       
                         var formData ={
                             Ten_KH : tenKH,
-                            Ten_Latin :tenTV,
+                            Ten_TV :tenTV,
                             Mo_Ta : mota ,
-                            ordoId : divisioId,
+                            idBo : divisioId,
                         };
                         console.log(id);
                         console.log(formData);

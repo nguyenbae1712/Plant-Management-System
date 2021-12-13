@@ -1,12 +1,10 @@
 tokens = myLocalStorage.getItem(TOKENS);
-// console.log(tokens);
 const accessToken = tokens.access.token ;
 console.log(accessToken);
 function deleteDivisionID(id){
     var btnDelele = document.getElementById('btnDelete');
     btnDelele.addEventListener('click' , async (e) => {
         e.preventDefault();
-        // console.log(id);
         function deleteDivisionApi(id){
             const divisionID = "http://134.209.106.33:8888/v1/classis";
             const headers = {
@@ -34,15 +32,11 @@ function deleteDivisionID(id){
 }
 
 function addDivision(){
-    // var ID = document.getElementById('addID').value;
     var tenKH = document.getElementById('addTenKh').value;
     var tenTV = document.getElementById('addTenTV').value;
     var mota = document.getElementById('addMota').value;
     var divisionSuggest = document.getElementById('divisionSuggest').value;
-    // console.log(divisionSuggest);
-    // showResults(divisionSuggest);
     var myHeaders = new Headers();
-
     var requestOptions = {
     method: 'GET',
     headers: myHeaders,
@@ -55,11 +49,10 @@ function addDivision(){
             var divisioId = data[0].id ;       
             var formData ={
                 Ten_KH : tenKH,
-                Ten_Latin :tenTV,
+                Ten_TV :tenTV,
                 Mo_Ta : mota ,
                 divisioId : divisioId,
             };
-            // console.log(formData);
             addDivisionApi(formData);
         })
     })
@@ -67,7 +60,6 @@ function addDivision(){
 
 function showResults() {
     var edValue = document.getElementById("divisionSuggest");
-
     var s = edValue.value;
     console.log(s);
     mes = document.getElementById("message");
@@ -176,7 +168,7 @@ fetch(divisionData,requestOptions)
             var idShow = (page - 1) * 10 + 1
             for (var j = 0; j < data.results.length; j++)
             {
-                if (data.results[j].Ten_Latin == undefined){
+                // if (data.results[j].Ten_Latin == undefined){
                     var row = `<tr >
                     <td>${idShow}</td>
                     <td>${data.results[j].id}</td>
@@ -187,19 +179,6 @@ fetch(divisionData,requestOptions)
                     <button onclick="deleteDivisionID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#delete" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button>
                     </td>
                 </tr>`
-                }
-                else{
-                    var row = `<tr >
-                    <td>${idShow}</td>
-                    <td>${data.results[j].id}</td>
-                    <td data-toggle="modal" data-target="#view" onclick="getClassbyID('${data.results[j].id}')">${data.results[j].Ten_KH}</td>
-                    <td>${data.results[j].Ten_Latin}</td>
-                    <td style = "width: 130px;">
-                    <button onclick="editDivisionbyID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#edit" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button>
-                    <button onclick="deleteDivisionID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#delete" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button>
-                    </td>
-                </tr>`
-                }
                 
                 idShow += 1
                 if (j == 0) {
@@ -227,7 +206,6 @@ $('.page-number').click( function(e) {
     })
 
 function editDivisionbyID(id){
-        // var editSuggest = document.getElementById('editSuggest');
         const divisionID = "http://134.209.106.33:8888/v1/classis";
         let requestOptions = {
             method: 'GET',
@@ -300,15 +278,15 @@ function editDivisionbyID(id){
                 })
                 .then( function (response) {
                     response.json().then ( function (data) {
-                        var divisioID = data[0].id ;       
+                        var divisioId = data[0].id ;       
                         var formData ={
                             Ten_KH : tenKH,
-                            Ten_Latin :tenTV,
+                            Ten_TV :tenTV,
                             Mo_Ta : mota ,
-                            divisioId : divisioID,
+                            idNganh : divisioId,
                         };
                         console.log(formData);
-                        //     const divisionID = "http://134.209.106.33:8888/v1/classis";
+                        const divisionID = "http://134.209.106.33:8888/v1/classis";
                                 const headers = {
                                     'Content-Type': 'application/json',
                                     'Authorization': `Bearer ${tokens.access.token}`
@@ -318,7 +296,6 @@ function editDivisionbyID(id){
                                     headers,
                                     body: JSON.stringify(formData),
                                 };
-                                // console.log(id);
                                 fetch(divisionID + '/' + id,addOptions)
                                 .then(function (response){     
                                     response.json();
@@ -374,7 +351,6 @@ function getClassbyID(id){
             else{
                 getDivisionbyID(data.idNganh);
             }
-            // getDivisionbyID(data.idNganh);
             function getDivisionbyID(id){
                 const divisionDatabyId = "http://134.209.106.33:8888/v1/divisio";
                 let myHeaders = new Headers();
@@ -434,9 +410,6 @@ function editResults() {
         editSuggest.value = target.innerHTML ;
         res.innerHTML = '';
        };
-    //    if (!data.length){
-    //     mes.innerHTML = 'Division not found';
-    // }
      }).catch(function (err) {
        console.warn('Something went wrong.', err);
        return false;

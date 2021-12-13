@@ -1,12 +1,10 @@
 tokens = myLocalStorage.getItem(TOKENS);
-// console.log(tokens);
 const accessToken = tokens.access.token ;
 console.log(accessToken);
 function deleteDivisionID(id){
     var btnDelele = document.getElementById('btnDelete');
     btnDelele.addEventListener('click' , async (e) => {
         e.preventDefault();
-        // console.log(id);
         function deleteDivisionApi(id){
             const divisionID = "http://134.209.106.33:8888/v1/divisio";
             const headers = {
@@ -34,13 +32,12 @@ function deleteDivisionID(id){
 }
 
 function addDivision(){
-    // var ID = document.getElementById('addID').value;
     var tenKH = document.getElementById('addTenKh').value;
     var tenTV = document.getElementById('addTenTV').value;
     var mota = document.getElementById('addMota').value;
     var formData ={
         Ten_KH : tenKH,
-        Ten_Latin :tenTV,
+        Ten_TV :tenTV,
         Mo_Ta : mota ,
     };
     console.log(formData);
@@ -205,7 +202,7 @@ function editDivisionbyID(id){
             let mota = document.getElementById('editMota').value;
             let formData ={
                 Ten_KH : tenKH,
-                Ten_Latin :tenTV,
+                Ten_TV :tenTV,
                 Mo_Ta : mota ,
                 };
             console.log(id);
@@ -224,6 +221,7 @@ function editDivisionbyID(id){
             fetch(divisionID + '/' + id,addOptions)
             .then(function (response){     
                 response.json();
+                alert("Successfully Edited");
                 window.location.reload();
                 })
             .catch((err) => {
@@ -271,34 +269,34 @@ function getDivisionbyID(id){
 }
 
 
-function showResults() {
-    var edValue = document.getElementById("testSuggest");
-    var s = edValue.value;
-    console.log(s);
-    res = document.getElementById("resultSuggest");
-    res.innerHTML = '';
-    if (s == '') {
-      return;
-    }
-    let list = '';
-    const suggest = "http://localhost:8888/v1/divisio/suggest/";
-    let myHeaders = new Headers();
-    let requestOptions = {
-    method: 'GET',
-    headers: myHeaders,
-    redirect: 'follow'
-    };
-    fetch(suggest + s,requestOptions).then(
-     function (response) {
-       return response.json();
-     }).then(function (data) {
-       for (i=0; i<data.length; i++) {
-         list += '<li>' + data[i] + '</li>';
-       }
-       res.innerHTML = '<ul>' + list + '</ul>';
-       return true;
-     }).catch(function (err) {
-       console.warn('Something went wrong.', err);
-       return false;
-     });
-  }
+// function showResults() {
+//     var edValue = document.getElementById("testSuggest");
+//     var s = edValue.value;
+//     console.log(s);
+//     res = document.getElementById("resultSuggest");
+//     res.innerHTML = '';
+//     if (s == '') {
+//       return;
+//     }
+//     let list = '';
+//     const suggest = "http://localhost:8888/v1/divisio/suggest/";
+//     let myHeaders = new Headers();
+//     let requestOptions = {
+//     method: 'GET',
+//     headers: myHeaders,
+//     redirect: 'follow'
+//     };
+//     fetch(suggest + s,requestOptions).then(
+//      function (response) {
+//        return response.json();
+//      }).then(function (data) {
+//        for (i=0; i<data.length; i++) {
+//          list += '<li>' + data[i] + '</li>';
+//        }
+//        res.innerHTML = '<ul>' + list + '</ul>';
+//        return true;
+//      }).catch(function (err) {
+//        console.warn('Something went wrong.', err);
+//        return false;
+//      });
+//   }

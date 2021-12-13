@@ -11,6 +11,7 @@
 
   <!-- start: Css -->
   <link rel="stylesheet" type="text/css" href="/Content/asset/css/bootstrap.min.css" />
+  
 
   <!-- plugins -->
   <link rel="stylesheet" type="text/css" href="/Content/asset/css/plugins/font-awesome.min.css" />
@@ -128,7 +129,7 @@
                                         <li  class="breadcrumb-item">
                                             <a style="text-decoration: none; color: black; font-size: 16px;" href="Species.html">Species</a></li>
                                         <li  class="breadcrumb-item active">
-                                            <a style="text-decoration: none; color: black; font-size: 16px;" href="divisionDetail.html">Species Details</a></li>
+                                            <a style="text-decoration: none; color: black; font-size: 16px;" href="SpeciesDetail.html">Species Details</a></li>
                                     </ol>
                                 </nav>
                             <!-- </div> -->
@@ -136,11 +137,15 @@
                     <!-- </div> -->
                 </div>
                 <div class="fillData" style="padding: 20px; width: 100%;">
+                  <button id="addImage" style="margin: 10px; font-size: 15px;" data-toggle="modal" data-target="#AddImage" type="button" class="btn">Add Image Species</button>
                     <div class="image" id="image">
-                        <!-- <img src="http://www.vncreatures.net/pictures/plant/2288.JPG"> -->
                     </div>
                             <h3 id="tenKH" class="title"></h3>
                             <h4 id="tenTV"></h4>
+                            <h4 id="idNganh"></h4>
+                            <h4 id="idLop"></h4>
+                            <h4 id="idBo"></h4>
+                            <h4 id="idHo"></h4>
                             <h4 id="idChi"></h4>
                             <div class="short_overview">
                                 <p id="dacdiem" style="font-size: 16px;"></p>
@@ -153,8 +158,8 @@
                             </div>
                     <!-- </div> -->
                     <div style="display: flex; flex-direction: rơw; justify-content: space-between;" class="action">
-                        <button id="btnViewEdit" data-toggle="modal" data-target="#edit" type="button" class="update btn btn-warning btn-sm"><span style="padding: 5px;" class="glyphicon glyphicon-pencil"></span>Edit Species</button>
-                        <button data-toggle="modal" data-target="#delete" type="button" class="delete btn btn-danger btn-sm"><span style="padding: 5px;" class="glyphicon glyphicon-trash"></span>Delete Species</button>
+                        <button style="font-size: 15px;" id="btnViewEdit" data-toggle="modal" data-target="#edit" type="button" class="update btn btn-warning btn-sm"><span style="padding: 5px;" class="glyphicon glyphicon-pencil"></span>Edit Species</button>
+                        <button style="font-size: 15px;" data-toggle="modal" data-target="#delete" type="button" class="delete btn btn-danger btn-sm"><span style="padding: 5px;" class="glyphicon glyphicon-trash"></span>Delete Species</button>
                     </div>
                 </div>
               </div>
@@ -162,7 +167,31 @@
           </div>
         </div>
       </div>
-
+      <div class="modal fade" id ="AddImage" role="dialog" aria-hidden="true" >
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content" style="overflow:auto;">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add Image Species</h4>
+                </div>
+                <div class="modal-body" style="overflow:auto;">
+                    <form>
+                        <div class="form-group form-animate-text" style="margin-top:20px !important;">
+                            <input type="text"id="AddImageURL" class="form-text" required></input>
+                            <span class="bar"></span>
+                            <label>URL</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button id="btnAddImage" type="button" class="btn btn-primary">Add Image Species</button>
+                </div>
+            </div>
+    
+        </div>
+    </div>
       <div class="edit modal fade" id="edit" role="dialog">
         <div class="modal-dialog">
 
@@ -201,7 +230,7 @@
                         </div>
 
                         <div class="form-group form-animate-text" style="margin-top:20px !important;">
-                            <textarea rows="10" id="editDacdiem" class="form-text mask-phone_us" required></textarea>
+                            <textarea id="editDacdiem" class="form-text mask-phone_us" required></textarea>
                             <span class="bar"></span>
                             <label>Đặc điểm nhận dạng</label>
                         </div>
@@ -268,6 +297,7 @@
           </div>
       </div>
   </div>
+
 
       <!-- start: Javascript -->
 

@@ -5,7 +5,6 @@ function deleteDivisionID(id){
     var btnDelele = document.getElementById('btnDelete');
     btnDelele.addEventListener('click' , async (e) => {
         e.preventDefault();
-        // console.log(id);
         function deleteDivisionApi(id){
             const divisionID = "http://134.209.106.33:8888/v1/genus";
             const headers = {
@@ -99,9 +98,7 @@ function showResults() {
         res.innerHTML = '';
        };
        if (!data.length){
-        // mes.innerHTML = 'Division not found';
     }
-    //    return true;
      }).catch(function (err) {
        console.warn('Something went wrong.', err);
        return false;
@@ -362,7 +359,6 @@ function editDivisionbyID(id){
         let btnEdit = document.getElementById('btnEdit');
         btnEdit.addEventListener('click' ,async (e) =>{
             e.preventDefault();
-            // alert("ok");
             let tenKH = document.getElementById('editTenKH').value;
             let tenTV = document.getElementById('editTenTV').value;
             let mota = document.getElementById('editMota').value;
@@ -379,12 +375,12 @@ function editDivisionbyID(id){
                 .then( function (response) {
                     response.json().then ( function (data) {
                         console.log(data);
-                        var divisioId = data[0].id ;       
+                        var divisioId = data[0].id ;  
                         var formData ={
                             Ten_KH : tenKH,
-                            Ten_Latin :tenTV,
+                            Ten_TV :tenTV,
                             Mo_Ta : mota ,
-                            familiaId : divisioId
+                            idHo : divisioId
                             };
                         console.log(id);
                         console.log(formData);
@@ -398,7 +394,6 @@ function editDivisionbyID(id){
                             headers,
                             body: JSON.stringify(formData),
                         };
-
                         fetch(divisionID + '/' + id,addOptions)
                         .then(function (response){     
                             response.json();
@@ -489,7 +484,7 @@ function editResults() {
       return;
     }
     let list = '';
-    const suggest = "http://134.209.106.33:8888/v1/ordo/suggest/";
+    const suggest = "http://134.209.106.33:8888/v1/familia/suggest/";
     let myHeaders = new Headers();
     let requestOptions = {
     method: 'GET',

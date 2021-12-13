@@ -1,6 +1,6 @@
 tokens = myLocalStorage.getItem(TOKENS);
 const accessToken = tokens.access.token ;
-console.log(accessToken);
+// console.log(accessToken);
 
 function loadSpeciesById(x) {
     console.log(x);
@@ -12,7 +12,6 @@ function deleteDivisionID(id){
     var btnDelele = document.getElementById('btnDelete');
     btnDelele.addEventListener('click' , async (e) => {
         e.preventDefault();
-        // console.log(id);
         function deleteDivisionApi(id){
             const divisionID = "http://134.209.106.33:8888/v1/species";
             const headers = {
@@ -40,9 +39,15 @@ function deleteDivisionID(id){
 }
 
 function addDivision(){
-    var tenKH = document.getElementById('addTenKh').value;
-    var tenTV = document.getElementById('addTenTV').value;
-    var mota = document.getElementById('addMota').value;
+    var addTenKh = document.getElementById('addTenKh').value;
+    var addTenTV = document.getElementById('addTenTV').value;
+    var addDacdiem = document.getElementById('addDacdiem').value;
+    var addSinhhoc = document.getElementById('addSinhhoc').value;
+    var addPhanbo = document.getElementById('addPhanbo').value;
+    var addGiatri = document.getElementById('addGiatri').value;
+    var addTinhtrang = document.getElementById('addTinhtrang').value;
+    var addBienphap = document.getElementById('addBienphap').value;
+    var addDangsong = document.getElementById('addDangsong').value;
     var divisionSuggest = document.getElementById('divisionSuggest').value;
     var myHeaders = new Headers();
 
@@ -57,13 +62,20 @@ function addDivision(){
         response.json().then ( function (data) {
             console.log(data);
             var divisioId = data[0].id ;       
-            var formData ={
-                Ten_KH : tenKH,
-                Ten_Latin :tenTV,
-                Mo_Ta : mota ,
-                genusId : divisioId,
+            var formData = {
+                Ten_KH : addTenKh,
+                Ten_TV :addTenTV,
+                Dac_Diem_Nhan_Dang : addDacdiem ,
+                Sinh_Hoc_Sinh_Thai : addSinhhoc,
+                Phan_Bo : addPhanbo,
+                Gia_Tri : addGiatri,
+                Tinh_Trang : addTinhtrang ,
+                Bien_Phap_BV : addBienphap,
+                Dang_Song : addDangsong,
+                idChi : divisioId,
             };
             addDivisionApi(formData);
+            console.log(formData);
         })
     })
 }
@@ -72,7 +84,7 @@ function showResults() {
     var edValue = document.getElementById("divisionSuggest");
 
     var s = edValue.value;
-    console.log(s);
+    // console.log(s);
     mes = document.getElementById("message");
     res = document.getElementById("resultSuggest");
     res.innerHTML = '';
@@ -181,7 +193,7 @@ function pagination(c, m) {
         paginationTest.innerHTML += '<a class="page-number-order" href="#">' + i + '</a>';
         l = i;
     }
-    console.log('form getOrder: ' + rangeWithDots)
+    // console.log('form getOrder: ' + rangeWithDots)
 }
 
 function renderdivision (page){
@@ -200,10 +212,6 @@ function renderdivision (page){
                 <td>${data.results[j].id}</td>
                 <td>${data.results[j].Ten_KH}</td>
                 <td>${data.results[j].Ten_TV}</td>
-                <td style = "width: 130px;">
-                <button onclick="editDivisionbyID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#edit" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button>
-                <button onclick="deleteDivisionID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#delete" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button>
-                </td>
                 </tr>`
                 if (data.results[j].Ten_TV == undefined){
                     var row = `<tr onclick="loadSpeciesById('${data.results[j].id}')" >
@@ -211,10 +219,6 @@ function renderdivision (page){
                 <td>${data.results[j].id}</td>
                 <td>${data.results[j].Ten_KH}</td>
                 <td>Chưa có thông tin</td>
-                <td style = "width: 130px;">
-                <button onclick="editDivisionbyID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#edit" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button>
-                <button onclick="deleteDivisionID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#delete" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button>
-                </td>
             </tr>`
                 }
             }
@@ -225,10 +229,6 @@ function renderdivision (page){
                 <td>${data.results[j].id}</td>
                 <td>${data.results[j].Ten_KH}</td>
                 <td>${data.results[j].Ten_Latin}</td>
-                <td style = "width: 130px;">
-                <button onclick="editDivisionbyID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#edit" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button>
-                <button onclick="deleteDivisionID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#delete" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button>
-                </td>
             </tr>`
             }
             idShow += 1
@@ -256,10 +256,6 @@ fetch(divisionData,requestOptions)
                     <td>${data.results[j].id}</td>
                     <td>${data.results[j].Ten_KH}</td>
                     <td>${data.results[j].Ten_TV}</td>
-                    <td style = "width: 130px;">
-                    <button onclick="editDivisionbyID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#edit" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button>
-                    <button onclick="deleteDivisionID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#delete" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button>
-                    </td>
                     </tr>`
                     if (data.results[j].Ten_TV == undefined){
                         var row = `<tr onclick="loadSpeciesById('${data.results[j].id}')"  >
@@ -267,10 +263,6 @@ fetch(divisionData,requestOptions)
                     <td>${data.results[j].id}</td>
                     <td>${data.results[j].Ten_KH}</td>
                     <td>Chưa có thông tin</td>
-                    <td style = "width: 130px;">
-                    <button onclick="editDivisionbyID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#edit" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button>
-                    <button onclick="deleteDivisionID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#delete" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button>
-                    </td>
                 </tr>`
                     }
                 }
@@ -281,10 +273,6 @@ fetch(divisionData,requestOptions)
                     <td>${data.results[j].id}</td>
                     <td>${data.results[j].Ten_KH}</td>
                     <td>${data.results[j].Ten_Latin}</td>
-                    <td style = "width: 130px;">
-                    <button onclick="editDivisionbyID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#edit" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button>
-                    <button onclick="deleteDivisionID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#delete" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button>
-                    </td>
                 </tr>`
                 }
                 table.innerHTML += row
@@ -308,184 +296,184 @@ fetch(divisionData,requestOptions)
         console.log('error: ' + err);
     })
 
-function editDivisionbyID(id){
-        var editSuggest =document.getElementById('editSuggest');
-        const divisionID = "http://134.209.106.33:8888/v1/species";
-        let requestOptions = {
-            method: 'GET',
-            headers: myHeaders,
-            redirect: 'follow'
-            };
-        fetch(divisionID + '/' + id,requestOptions)
-        .then(function (response){     
-            response.json().then( function (data){
-            editID.innerHTML = `${data.id}`;
-            editTenKH.innerHTML = `${data.Ten_KH}`;
-            if (data.Mo_ta == undefined){
-                editMota.innerHTML = `${data.Mo_Ta}`;
-                if(data.Mo_Ta == undefined){    
-                    editMota.innerHTML = `Chưa có thông tin`;
-                }
-            }
-            else{
-                editMota.innerHTML = `${data.Mo_ta}`;
-            }
-            if( data.Ten_Latin == undefined){
-                editTenTV.innerHTML = `${data.Ten_TV}`;
-            }
-            else{
-                editTenTV.innerHTML = `${data.Ten_Latin}`;
-            }
-            if( data.idChi == undefined){
-                getDivisionbyID(data.Chi);
-            }
-            else{
-                getDivisionbyID(data.idChi);
-            }
+// function editDivisionbyID(id){
+//         var editSuggest =document.getElementById('editSuggest');
+//         const divisionID = "http://134.209.106.33:8888/v1/species";
+//         let requestOptions = {
+//             method: 'GET',
+//             headers: myHeaders,
+//             redirect: 'follow'
+//             };
+//         fetch(divisionID + '/' + id,requestOptions)
+//         .then(function (response){     
+//             response.json().then( function (data){
+//             editID.innerHTML = `${data.id}`;
+//             editTenKH.innerHTML = `${data.Ten_KH}`;
+//             if (data.Mo_ta == undefined){
+//                 editMota.innerHTML = `${data.Mo_Ta}`;
+//                 if(data.Mo_Ta == undefined){    
+//                     editMota.innerHTML = `Chưa có thông tin`;
+//                 }
+//             }
+//             else{
+//                 editMota.innerHTML = `${data.Mo_ta}`;
+//             }
+//             if( data.Ten_Latin == undefined){
+//                 editTenTV.innerHTML = `${data.Ten_TV}`;
+//             }
+//             else{
+//                 editTenTV.innerHTML = `${data.Ten_Latin}`;
+//             }
+//             if( data.idChi == undefined){
+//                 getDivisionbyID(data.Chi);
+//             }
+//             else{
+//                 getDivisionbyID(data.idChi);
+//             }
 
-            function getDivisionbyID(id){
-                const divisionDatabyId = "http://134.209.106.33:8888/v1/familia";
-                let myHeaders = new Headers();
-                let requestOptions = {
-                method: 'GET',
-                headers: myHeaders,
-                redirect: 'follow'
-                };
-                fetch(divisionDatabyId + '/' + id,requestOptions)
-                .then( function (response) {
-                    response.json().then( function (data){
-                        editSuggest.value = data.Ten_KH;
-                    })
-                })
-                .catch(function (err) {
-                    console.log('error: ' + err);
-                })
-            }
-            })
-        })
-        .catch((err) => {
-            console.log(err);
-        });
-        console.log(id);
-        let btnEdit = document.getElementById('btnEdit');
-        btnEdit.addEventListener('click' ,async (e) =>{
-            e.preventDefault();
-            // alert("ok");
-            let tenKH = document.getElementById('editTenKH').value;
-            let tenTV = document.getElementById('editTenTV').value;
-            let mota = document.getElementById('editMota').value;
-            let editNganh = document.getElementById('editSuggest').value;
+//             function getDivisionbyID(id){
+//                 const divisionDatabyId = "http://134.209.106.33:8888/v1/familia";
+//                 let myHeaders = new Headers();
+//                 let requestOptions = {
+//                 method: 'GET',
+//                 headers: myHeaders,
+//                 redirect: 'follow'
+//                 };
+//                 fetch(divisionDatabyId + '/' + id,requestOptions)
+//                 .then( function (response) {
+//                     response.json().then( function (data){
+//                         editSuggest.value = data.Ten_KH;
+//                     })
+//                 })
+//                 .catch(function (err) {
+//                     console.log('error: ' + err);
+//                 })
+//             }
+//             })
+//         })
+//         .catch((err) => {
+//             console.log(err);
+//         });
+//         console.log(id);
+//         let btnEdit = document.getElementById('btnEdit');
+//         btnEdit.addEventListener('click' ,async (e) =>{
+//             e.preventDefault();
+//             // alert("ok");
+//             let tenKH = document.getElementById('editTenKH').value;
+//             let tenTV = document.getElementById('editTenTV').value;
+//             let mota = document.getElementById('editMota').value;
+//             let editNganh = document.getElementById('editSuggest').value;
 
-            var myHeaders = new Headers();
-                var requestOptions = {
-                method: 'GET',
-                headers: myHeaders,
-                redirect: 'follow'
-                };
+//             var myHeaders = new Headers();
+//                 var requestOptions = {
+//                 method: 'GET',
+//                 headers: myHeaders,
+//                 redirect: 'follow'
+//                 };
 
-                fetch("http://134.209.106.33:8888/v1/familia/getByName" + '/' + editNganh, requestOptions)
-                .then( function (response) {
-                    response.json().then ( function (data) {
-                        console.log(data);
-                        var divisioId = data[0].id ;       
-                        var formData ={
-                            Ten_KH : tenKH,
-                            Ten_Latin :tenTV,
-                            Mo_Ta : mota ,
-                            genusId : divisioId
-                            };
-                        console.log(id);
-                        console.log(formData);
-                        const divisionID = "http://134.209.106.33:8888/v1/species";
-                        const headers = {
-                            'Content-Type': 'application/json',
-                            'Authorization': `Bearer ${tokens.access.token}`
-                        }
-                        let addOptions = {
-                            method: 'PATCH',
-                            headers,
-                            body: JSON.stringify(formData),
-                        };
+//                 fetch("http://134.209.106.33:8888/v1/familia/getByName" + '/' + editNganh, requestOptions)
+//                 .then( function (response) {
+//                     response.json().then ( function (data) {
+//                         console.log(data);
+//                         var divisioId = data[0].id ;       
+//                         var formData ={
+//                             Ten_KH : tenKH,
+//                             Ten_Latin :tenTV,
+//                             Mo_Ta : mota ,
+//                             genusId : divisioId
+//                             };
+//                         console.log(id);
+//                         console.log(formData);
+//                         const divisionID = "http://134.209.106.33:8888/v1/species";
+//                         const headers = {
+//                             'Content-Type': 'application/json',
+//                             'Authorization': `Bearer ${tokens.access.token}`
+//                         }
+//                         let addOptions = {
+//                             method: 'PATCH',
+//                             headers,
+//                             body: JSON.stringify(formData),
+//                         };
 
-                        fetch(divisionID + '/' + id,addOptions)
-                        .then(function (response){     
-                            response.json();
-                            alert("Successfully Edited");
-                            window.location.reload();
-                            })
-                        .catch((err) => {
-                            console.log(err);
-                        });
-                                })
-                            })
+//                         fetch(divisionID + '/' + id,addOptions)
+//                         .then(function (response){     
+//                             response.json();
+//                             alert("Successfully Edited");
+//                             window.location.reload();
+//                             })
+//                         .catch((err) => {
+//                             console.log(err);
+//                         });
+//                                 })
+//                             })
 
-        })
-}
+//         })
+// }
 // getClassbyID(idSpecies);
-function getClassbyID(id){
-    const divisionDatabyId = "http://134.209.106.33:8888/v1/species";
-    let myHeaders = new Headers();
-    let requestOptions = {
-    method: 'GET',
-    headers: myHeaders,
-    redirect: 'follow'
-    };
-    fetch(divisionDatabyId + '/' + id,requestOptions)
-    .then( function (response) {
-        response.json().then( function (data){
-            console.log(data);
-                txtID.innerHTML = `${data.id}`;
-                txtTenKH.innerHTML = `${data.Ten_KH}`;
-            if (data.Mo_ta == undefined){
-                txtMota.innerHTML = `${data.Mo_Ta}`;
-                if(data.Mo_Ta == undefined){    
-                txtMota.innerHTML = `Chưa có thông tin`;
-                }
-            }
-            else{
-                txtMota.innerHTML = `${data.Mo_ta}`;
-            }
-            if( data.Ten_Latin == undefined){
-                txtTenTV.innerHTML = `${data.Ten_TV}`;
-                if (data.Ten_TV == undefined){
-                    txtTenTV.innerHTML = `Chưa có thông tin`;
-                }
-            }
-            else{
-                txtTenTV.innerHTML = `${data.Ten_Latin}`;
-            }
-            if( data.idChi == undefined){
-                getDivisionbyID(data.Chi);
-                // console.log(data.Ho)
-            }
-            else{
-                getDivisionbyID(data.idChi);
-                // console.log(data.idHo)
-            }
-            function getDivisionbyID(id){
-                const divisionDatabyId = "http://134.209.106.33:8888/v1/genus";
-                let myHeaders = new Headers();
-                let requestOptions = {
-                method: 'GET',
-                headers: myHeaders,
-                redirect: 'follow'
-                };
-                fetch(divisionDatabyId + '/' + id,requestOptions)
-                .then( function (response) {
-                    response.json().then( function (data){
-                        txtLop.innerHTML = `${data.Ten_KH}`;
-                    })
-                })
-                .catch(function (err) {
-                    console.log('error: ' + err);
-                })
-            }
-        })
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-    })
-}
+// function getClassbyID(id){
+//     const divisionDatabyId = "http://134.209.106.33:8888/v1/species";
+//     let myHeaders = new Headers();
+//     let requestOptions = {
+//     method: 'GET',
+//     headers: myHeaders,
+//     redirect: 'follow'
+//     };
+//     fetch(divisionDatabyId + '/' + id,requestOptions)
+//     .then( function (response) {
+//         response.json().then( function (data){
+//             console.log(data);
+//                 txtID.innerHTML = `${data.id}`;
+//                 txtTenKH.innerHTML = `${data.Ten_KH}`;
+//             if (data.Mo_ta == undefined){
+//                 txtMota.innerHTML = `${data.Mo_Ta}`;
+//                 if(data.Mo_Ta == undefined){    
+//                 txtMota.innerHTML = `Chưa có thông tin`;
+//                 }
+//             }
+//             else{
+//                 txtMota.innerHTML = `${data.Mo_ta}`;
+//             }
+//             if( data.Ten_Latin == undefined){
+//                 txtTenTV.innerHTML = `${data.Ten_TV}`;
+//                 if (data.Ten_TV == undefined){
+//                     txtTenTV.innerHTML = `Chưa có thông tin`;
+//                 }
+//             }
+//             else{
+//                 txtTenTV.innerHTML = `${data.Ten_Latin}`;
+//             }
+//             if( data.idChi == undefined){
+//                 getDivisionbyID(data.Chi);
+//                 // console.log(data.Ho)
+//             }
+//             else{
+//                 getDivisionbyID(data.idChi);
+//                 // console.log(data.idHo)
+//             }
+//             function getDivisionbyID(id){
+//                 const divisionDatabyId = "http://134.209.106.33:8888/v1/genus";
+//                 let myHeaders = new Headers();
+//                 let requestOptions = {
+//                 method: 'GET',
+//                 headers: myHeaders,
+//                 redirect: 'follow'
+//                 };
+//                 fetch(divisionDatabyId + '/' + id,requestOptions)
+//                 .then( function (response) {
+//                     response.json().then( function (data){
+//                         txtLop.innerHTML = `${data.Ten_KH}`;
+//                     })
+//                 })
+//                 .catch(function (err) {
+//                     console.log('error: ' + err);
+//                 })
+//             }
+//         })
+//     })
+//     .catch(function (err) {
+//         console.log('error: ' + err);
+//     })
+// }
 
 
 function editResults() {
