@@ -6,6 +6,7 @@ function getTotal(){
     getFamilyAll();
     getGenusAll();
     getSpeciesAll();
+    getImageAll();
 }
 function getDivisionAll(){
     const divisionData = "http://134.209.106.33:8888/v1/divisio";
@@ -106,6 +107,23 @@ function getSpeciesAll(){
         response.json().then(function(data){
             // console.log(data.totalResults);
             speciesTotal.innerHTML = `<td id="speciesTotal">${data.totalResults}</td>`
+        })
+    })
+}
+
+function getImageAll(){
+    const imageData = "http://134.209.106.33:8888/v1/image";
+    var myHeaders = new Headers();
+    var requestOptions = {
+    method: 'GET',
+    headers: myHeaders, 
+    redirect: 'follow'
+};
+    fetch(imageData,requestOptions)
+    .then(function (response){
+        response.json().then(function (data){
+            // console.log(data.totalResults);
+            imagesTotal.innerHTML = `${data.totalResults}`
         })
     })
 }

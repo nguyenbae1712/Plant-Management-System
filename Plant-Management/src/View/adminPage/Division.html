@@ -199,11 +199,6 @@
 						</div>
 						<div class="modal-body" style="overflow:auto;">
 							<form id="formAddDivision">
-								<!-- <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                              <input type="text" id="addID" class="form-text" required>
-                              <span class="bar"></span>
-                              <label>ID</label>
-                          </div>-->
 								<div class="form-group form-animate-text" style="margin-top:40px !important;">
 									<input type="text" id="addTenKh" class="form-text" required>
 									<span class="bar"></span>
@@ -255,29 +250,23 @@
 									<span class="bar"></span>
 									<label>Tên Khoa Học</label>
 								</div>
-								<form autocomplete="off">
-                  <input type="text" id="testSuggest" onInput="showResults()" />
-									<div id="resultSuggest"></div>
-								</form>
 								<div class="form-group form-animate-text" style="margin-top:40px !important;">
 									<textarea id="editTenTV" class="form-text mask-phone_us" required></textarea>
 									<span class="bar"></span>
 									<label>Tên Tiếng Việt</label>
 								</div>
-
-								<div class="form-group form-animate-text" style="margin-top:40px !important;">
-									<textarea rows="15" id="editMota" class="form-text" required></textarea>
-									<span class="bar"></span>
-									<label>Mô tả</label>
-								</div>
-							</form>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-							<button onclick="editDivisionApi()" id="btnEdit" type="button" class="btn btn-primary"
-								form="formEditDivision">Edit Division</button>
-						</div>
-					</div>
+                        <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                            <textarea rows="15" id="editMota" class="form-text" required></textarea>
+                            <span class="bar"></span>
+                            <label>Mô tả</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button id="btnEdit" type="button" class="btn btn-primary" form="formEditDivision">Edit Division</button>
+                </div>
+            </div>
 
 				</div>
 			</div>

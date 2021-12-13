@@ -8,7 +8,7 @@ function deleteDivisionID(id){
         e.preventDefault();
         // console.log(id);
         function deleteDivisionApi(id){
-            const divisionID = "http://134.209.106.33:8888/v1/divisio";
+            const divisionID = "http://134.209.106.33:8888/v1/classis";
             const headers = {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${tokens.access.token}`
@@ -38,16 +38,82 @@ function addDivision(){
     var tenKH = document.getElementById('addTenKh').value;
     var tenTV = document.getElementById('addTenTV').value;
     var mota = document.getElementById('addMota').value;
-    var formData ={
-        Ten_KH : tenKH,
-        Ten_Latin :tenTV,
-        Mo_Ta : mota ,
+    var divisionSuggest = document.getElementById('divisionSuggest').value;
+    // console.log(divisionSuggest);
+    // showResults(divisionSuggest);
+    var myHeaders = new Headers();
+
+    var requestOptions = {
+    method: 'GET',
+    headers: myHeaders,
+    redirect: 'follow'
     };
-    console.log(formData);
-    addDivisionApi(formData);
+    fetch("http://134.209.106.33:8888/v1/divisio/getByName" + '/' + divisionSuggest, requestOptions)
+    .then( function (response) {
+        response.json().then ( function (data) {
+            console.log(data);
+            var divisioId = data[0].id ;       
+            var formData ={
+                Ten_KH : tenKH,
+                Ten_Latin :tenTV,
+                Mo_Ta : mota ,
+                divisioId : divisioId,
+            };
+            // console.log(formData);
+            addDivisionApi(formData);
+        })
+    })
 }
+
+function showResults() {
+    var edValue = document.getElementById("divisionSuggest");
+
+    var s = edValue.value;
+    console.log(s);
+    mes = document.getElementById("message");
+    res = document.getElementById("resultSuggest");
+    res.innerHTML = '';
+    if (s == '') {
+      return;
+    }
+    let list = '';
+    const suggest = "http://134.209.106.33:8888/v1/divisio/suggest/";
+    let myHeaders = new Headers();
+    let requestOptions = {
+    method: 'GET',
+    headers: myHeaders,
+    redirect: 'follow'
+    };
+    fetch(suggest + s,requestOptions).then(
+     function (response) {
+       return response.json();
+     }).then(function (data) {
+       for (i=0; i<data.length; i++) {
+         list += '<li >' + data[i] + '</li>';
+       }
+       res.innerHTML = '<ul id="test">' + list + '</ul>';
+       test = document.getElementById('test');
+       function getEventTarget(e) {
+        e = e || window.event;
+        return e.target || e.srcElement; 
+        }
+       test.onclick = function (event){
+        var target = getEventTarget(event);
+        edValue.value = target.innerHTML ;
+        res.innerHTML = '';
+       };
+       if (!data.length){
+        // mes.innerHTML = 'Division not found';
+    }
+    //    return true;
+     }).catch(function (err) {
+       console.warn('Something went wrong.', err);
+       return false;
+     });
+  }
+
 function addDivisionApi(data){
-    const divisionID = "http://134.209.106.33:8888/v1/divisio";
+    const divisionID = "http://134.209.106.33:8888/v1/classis";
     const headers = {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${tokens.access.token}`
@@ -57,7 +123,6 @@ function addDivisionApi(data){
         headers,
         body: JSON.stringify(data),
       };
-
       fetch(divisionID,addOptions)
       .then(function (response){     
         response.json();
@@ -69,7 +134,7 @@ function addDivisionApi(data){
       });
 }
 
-const divisionData = "http://134.209.106.33:8888/v1/divisio?page=1";
+const divisionData = "http://134.209.106.33:8888/v1/classis?page=1";
 var myHeaders = new Headers();
 var requestOptions = {
     method: 'GET',
@@ -86,7 +151,7 @@ fetch(divisionData,requestOptions)
                     var row = `<tr>
                     <td>${j + 1}</td>
                     <td>${data.results[j].id}</td>
-                    <td data-toggle="modal" data-target="#view" onclick="getDivisionbyID('${data.results[j].id}')">${data.results[j].Ten_KH}</td>
+                    <td data-toggle="modal" data-target="#view" onclick="getClassbyID('${data.results[j].id}')">${data.results[j].Ten_KH}</td>
                     <td>${data.results[j].Ten_TV}</td>
                     <td style = "width: 130px;">
                     <button onclick="editDivisionbyID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#edit" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button>
@@ -102,7 +167,7 @@ fetch(divisionData,requestOptions)
             }
         };
         function renderdivision (page){
-        var divisionDataPage = "http://134.209.106.33:8888/v1/divisio?page=" + page;
+        var divisionDataPage = "http://134.209.106.33:8888/v1/classis?page=" + page;
         fetch(divisionDataPage,requestOptions)
         .then(function (response){
             response.json().then(function (data) {
@@ -115,7 +180,7 @@ fetch(divisionData,requestOptions)
                     var row = `<tr >
                     <td>${idShow}</td>
                     <td>${data.results[j].id}</td>
-                    <td data-toggle="modal" data-target="#view" onclick="getDivisionbyID('${data.results[j].id}')">${data.results[j].Ten_KH}</td>
+                    <td data-toggle="modal" data-target="#view" onclick="getClassbyID('${data.results[j].id}')">${data.results[j].Ten_KH}</td>
                     <td>${data.results[j].Ten_TV}</td>
                     <td style = "width: 130px;">
                     <button onclick="editDivisionbyID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#edit" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button>
@@ -127,7 +192,7 @@ fetch(divisionData,requestOptions)
                     var row = `<tr >
                     <td>${idShow}</td>
                     <td>${data.results[j].id}</td>
-                    <td data-toggle="modal" data-target="#view" onclick="getDivisionbyID('${data.results[j].id}')">${data.results[j].Ten_KH}</td>
+                    <td data-toggle="modal" data-target="#view" onclick="getClassbyID('${data.results[j].id}')">${data.results[j].Ten_KH}</td>
                     <td>${data.results[j].Ten_Latin}</td>
                     <td style = "width: 130px;">
                     <button onclick="editDivisionbyID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#edit" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button>
@@ -162,7 +227,8 @@ $('.page-number').click( function(e) {
     })
 
 function editDivisionbyID(id){
-        const divisionID = "http://134.209.106.33:8888/v1/divisio";
+        // var editSuggest = document.getElementById('editSuggest');
+        const divisionID = "http://134.209.106.33:8888/v1/classis";
         let requestOptions = {
             method: 'GET',
             headers: myHeaders,
@@ -173,11 +239,10 @@ function editDivisionbyID(id){
             response.json().then( function (data){
             editID.innerHTML = `${data.id}`;
             editTenKH.innerHTML = `${data.Ten_KH}`;
-            // editMota.innerHTML = `${data.Mo_ta}`
             if (data.Mo_ta == undefined){
                 editMota.innerHTML = `${data.Mo_Ta}`;
                 if(data.Mo_Ta == undefined){    
-                editMota.innerHTML = `Chưa có thông tin`;
+                    editMota.innerHTML = `Chưa có thông tin`;
                 }
             }
             else{
@@ -189,52 +254,92 @@ function editDivisionbyID(id){
             else{
                 editTenTV.innerHTML = `${data.Ten_Latin}`;
             }
+            if( data.idNganh == undefined){
+                getDivisionbyID(data.Nganh);
+            }
+            else{
+                getDivisionbyID(data.idNganh);
+            }
+
+            function getDivisionbyID(id){
+                const divisionDatabyId = "http://134.209.106.33:8888/v1/divisio";
+                let myHeaders = new Headers();
+                let requestOptions = {
+                method: 'GET',
+                headers: myHeaders,
+                redirect: 'follow'
+                };
+                fetch(divisionDatabyId + '/' + id,requestOptions)
+                .then( function (response) {
+                    response.json().then( function (data){                  
+                        editSuggest.innerHTML = `${data.Ten_KH}`;                      
+                    })
+                })
+                .catch(function (err) {
+                    console.log('error: ' + err);
+                })
+            }
             })
         })
         .catch((err) => {
             console.log(err);
         });
         console.log(id);
-
         let btnEdit = document.getElementById('btnEdit');
         btnEdit.addEventListener('click' ,async (e) =>{
             e.preventDefault();
-            // alert("ok");
             let tenKH = document.getElementById('editTenKH').value;
             let tenTV = document.getElementById('editTenTV').value;
             let mota = document.getElementById('editMota').value;
-            let formData ={
-                Ten_KH : tenKH,
-                Ten_Latin :tenTV,
-                Mo_Ta : mota ,
-                };
-            console.log(id);
-            console.log(formData);
-            const divisionID = "http://134.209.106.33:8888/v1/divisio";
-            const headers = {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${tokens.access.token}`
-            }
-            let addOptions = {
-                method: 'PATCH',
-                headers,
-                body: JSON.stringify(formData),
-            };
-
-            fetch(divisionID + '/' + id,addOptions)
-            .then(function (response){     
-                response.json();
-                window.location.reload();
+            let editNganh = document.getElementById('editSuggest').value;
+            console.log(editNganh);
+                fetch("http://134.209.106.33:8888/v1/divisio/getByName" + '/' + editNganh, {
+                method: 'GET',
+                headers: myHeaders,
+                redirect: 'follow'
                 })
-            .catch((err) => {
-                console.log(err);
-            });
-
+                .then( function (response) {
+                    response.json().then ( function (data) {
+                        var divisioID = data[0].id ;       
+                        var formData ={
+                            Ten_KH : tenKH,
+                            Ten_Latin :tenTV,
+                            Mo_Ta : mota ,
+                            divisioId : divisioID,
+                        };
+                        console.log(formData);
+                        //     const divisionID = "http://134.209.106.33:8888/v1/classis";
+                                const headers = {
+                                    'Content-Type': 'application/json',
+                                    'Authorization': `Bearer ${tokens.access.token}`
+                                }
+                                let addOptions = {
+                                    method: 'PATCH',
+                                    headers,
+                                    body: JSON.stringify(formData),
+                                };
+                                // console.log(id);
+                                fetch(divisionID + '/' + id,addOptions)
+                                .then(function (response){     
+                                    response.json();
+                                    alert("Successfully Edited");
+                                    window.location.reload();
+                                    })
+                                .catch((err) => {
+                                    console.log(err);
+                                });
+                        
+                    })
+                    })
+                .catch((err) => {
+                    console.log(err);
+                    });
+                    
+                    
         })
 }
-
-function getDivisionbyID(id){
-    const divisionDatabyId = "http://134.209.106.33:8888/v1/divisio";
+function getClassbyID(id){
+    const divisionDatabyId = "http://134.209.106.33:8888/v1/classis";
     let myHeaders = new Headers();
     let requestOptions = {
     method: 'GET',
@@ -244,7 +349,7 @@ function getDivisionbyID(id){
     fetch(divisionDatabyId + '/' + id,requestOptions)
     .then( function (response) {
         response.json().then( function (data){
-            console.log(data);
+            // console.log(data);
                 txtID.innerHTML = `${data.id}`;
                 txtTenKH.innerHTML = `${data.Ten_KH}`;
             if (data.Mo_ta == undefined){
@@ -263,6 +368,31 @@ function getDivisionbyID(id){
             else{
                 txtTenTV.innerHTML = `${data.Ten_Latin}`;
             }
+            if( data.idNganh == undefined){
+                getDivisionbyID(data.Nganh);
+            }
+            else{
+                getDivisionbyID(data.idNganh);
+            }
+            // getDivisionbyID(data.idNganh);
+            function getDivisionbyID(id){
+                const divisionDatabyId = "http://134.209.106.33:8888/v1/divisio";
+                let myHeaders = new Headers();
+                let requestOptions = {
+                method: 'GET',
+                headers: myHeaders,
+                redirect: 'follow'
+                };
+                fetch(divisionDatabyId + '/' + id,requestOptions)
+                .then( function (response) {
+                    response.json().then( function (data){
+                        txtNganh.innerHTML = `${data.Ten_KH}`;
+                    })
+                })
+                .catch(function (err) {
+                    console.log('error: ' + err);
+                })
+            }
         })
     })
     .catch(function (err) {
@@ -270,18 +400,16 @@ function getDivisionbyID(id){
     })
 }
 
-
-function showResults() {
-    var edValue = document.getElementById("testSuggest");
-    var s = edValue.value;
-    console.log(s);
-    res = document.getElementById("resultSuggest");
+function editResults() {
+    var editSuggest = document.getElementById("editSuggest");
+    s = editSuggest.value ;
+    res = document.getElementById("editResult");
     res.innerHTML = '';
     if (s == '') {
       return;
     }
     let list = '';
-    const suggest = "http://localhost:8888/v1/divisio/suggest/";
+    const suggest = "http://134.209.106.33:8888/v1/divisio/suggest/";
     let myHeaders = new Headers();
     let requestOptions = {
     method: 'GET',
@@ -293,10 +421,22 @@ function showResults() {
        return response.json();
      }).then(function (data) {
        for (i=0; i<data.length; i++) {
-         list += '<li>' + data[i] + '</li>';
+         list += '<li >' + data[i] + '</li>';
        }
-       res.innerHTML = '<ul>' + list + '</ul>';
-       return true;
+       res.innerHTML = '<ul id="test">' + list + '</ul>';
+       test = document.getElementById('test');
+       function getEventTarget(e) {
+        e = e || window.event;
+        return e.target || e.srcElement; 
+        }
+        test.onclick = function (event){
+        var target = getEventTarget(event);
+        editSuggest.value = target.innerHTML ;
+        res.innerHTML = '';
+       };
+    //    if (!data.length){
+    //     mes.innerHTML = 'Division not found';
+    // }
      }).catch(function (err) {
        console.warn('Something went wrong.', err);
        return false;
