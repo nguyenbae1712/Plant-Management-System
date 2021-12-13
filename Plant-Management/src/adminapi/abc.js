@@ -1,4 +1,3 @@
-
 function loadOrderById(x) {
     console.log(x);
     localStorage.setItem("idOrder", x);
@@ -12,7 +11,7 @@ var requestOptions = {
     redirect: 'follow'
 };
 
-let totalPages = 0; // thằng ni là để bên file handlePagination gọi luôn
+let totalPages = 0; 
 
 //để hàm ngoài ni để file handlePagination có thể gọi được á
 function pagination(c, m) {

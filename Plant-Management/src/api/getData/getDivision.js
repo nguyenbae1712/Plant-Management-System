@@ -3,10 +3,6 @@ function loadDivsionDetail(x) {
     localStorage.setItem("idDivision", x);
     window.location.replace("divisionDetail.html");
 }
-// document.getElementById('divisioClick').onclick = function () {
-//     getDivision();
-// }
-// function getDivision() {
 const divisionData = "http://134.209.106.33:8888/v1/divisio?page=1";
 var myHeaders = new Headers();
 var requestOptions = {
@@ -19,10 +15,7 @@ fetch(divisionData, requestOptions)
     .then(function (response) {
         response.json().then(function (data) {
             var table = document.getElementById('divisonBody')
-            // localStorage.setItem('divisio',data);    
-            // console.log(data.totalPages)
             for (var j = 0; j < data.results.length; j++) {
-                // console.log(data.results[j].id);
                 var row = `<tr onclick="loadDivsionDetail('${data.results[j].id}')">
                 
                     <td>${j + 1}</td>

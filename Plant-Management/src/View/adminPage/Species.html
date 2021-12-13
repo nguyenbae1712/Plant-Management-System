@@ -68,9 +68,6 @@
     <div id="left-menu">
       <div class="sub-left-menu scroll">
         <ul class="nav nav-list">
-          <li>
-            <div class="left-bg"></div>
-          </li>
           <li class="time">
             <h1 class="animated fadeInLeft">21:00</h1>
             <p class="animated fadeInRight">Sat,October 1st 2029</p>
@@ -210,8 +207,6 @@
     </div>
         <div class="modal fade" id="add" role="dialog">
           <div class="modal-dialog">
-  
-              <!-- Modal content-->
               <div class="modal-content" style="overflow:auto;">
                   <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -219,11 +214,6 @@
                   </div>
                   <div class="modal-body" style="overflow:auto;">
                       <form id="formAddDivision" >
-                          <!-- <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                              <input type="text" id="addID" class="form-text" required>
-                              <span class="bar"></span>
-                              <label>ID</label>
-                          </div>-->
                           <div class="form-group form-animate-text" style="margin-top:40px !important;">
                               <input type="text" id ="addTenKh" class="form-text" required>
                               <span class="bar"></span>
@@ -231,7 +221,7 @@
                           </div>
   
                           <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                              <input type="text" id ="addTenTV" class="form-text mask-phone_us" required>
+                              <input type="text" id ="addTenTV" class="form-text mask-phone_us" value= "" required>
                               <span class="bar"></span>
                               <label>Tên Tiếng Việt</label>
                           </div>
@@ -240,16 +230,48 @@
                             <form autocomplete="off">
                               <input class="form-text" type="text" id="divisionSuggest" onInput="showResults()" />
                               <div style="font-size: 18px;" id="resultSuggest"></div>
-                              <label style="font-size: 18px;">Họ</label>
+                              <label style="font-size: 18px;">Chi</label>
                               <p id="message"></p>
                             </form>
+                          </div>
+                          <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                              <input type="text" id ="addDacdiem" class="form-text" value= "" required>
+                              <span class="bar"></span>
+                              <label>Đặc điểm nhận dạng</label>
+                          </div>
+                          <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                            <input type="text" id ="addSinhhoc" class="form-text" required value= "">
+                            <span class="bar"></span>
+                            <label>Sinh học Sinh Thái</label>
                         </div>
+                        <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                              <input type="text" id ="addPhanbo" class="form-text" required value= "">
+                              <span class="bar"></span>
+                              <label>Phân bố </label>
+                          </div>
 
                           <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                              <input type="text" id ="addMota" class="form-text" required>
-                              <span class="bar"></span>
-                              <label>Mô tả</label>
-                          </div>
+                            <input type="text" id ="addGiatri" class="form-text" required value= "">
+                            <span class="bar"></span>
+                            <label>Giá trị</label>
+                        </div>
+
+                        <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                          <input type="text" id ="addTinhtrang" class="form-text" required value= "">
+                          <span class="bar"></span>
+                          <label>Tình trạng</label>
+                        </div>
+
+                        <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                          <input type="text" id ="addBienphap" class="form-text" required value= "">
+                          <span class="bar"></span>
+                          <label>Biện pháp bảo vệ</label>
+                       </div>
+                        <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                        <input type="text" id ="addDangsong" class="form-text" required value= "">
+                        <span class="bar"></span>
+                        <label>Dạng sống</label>
+                      </div>
                       </form>
                   </div>
                   <div class="modal-footer">

@@ -1,12 +1,10 @@
 tokens = myLocalStorage.getItem(TOKENS);
-// console.log(tokens);
 const accessToken = tokens.access.token ;
 console.log(accessToken);
 function deleteDivisionID(id){
     var btnDelele = document.getElementById('btnDelete');
     btnDelele.addEventListener('click' , async (e) => {
         e.preventDefault();
-        // console.log(id);
         function deleteDivisionApi(id){
             const divisionID = "http://134.209.106.33:8888/v1/ordo";
             const headers = {
@@ -34,7 +32,6 @@ function deleteDivisionID(id){
 }
 
 function addDivision(){
-    // var ID = document.getElementById('addID').value;
     var tenKH = document.getElementById('addTenKh').value;
     var tenTV = document.getElementById('addTenTV').value;
     var mota = document.getElementById('addMota').value;
@@ -53,9 +50,9 @@ function addDivision(){
             var divisioId = data[0].id ;       
             var formData ={
                 Ten_KH : tenKH,
-                Ten_Latin :tenTV,
+                Ten_TV :tenTV,
                 Mo_Ta : mota ,
-                classisId : divisioId,
+                idLop : divisioId,
             };
             addDivisionApi(formData);
         })
@@ -341,9 +338,9 @@ function editDivisionbyID(id){
                         var divisioId = data[0].id ;       
                         var formData ={
                             Ten_KH : tenKH,
-                            Ten_Latin :tenTV,
+                            Ten_TV :tenTV,
                             Mo_Ta : mota ,
-                            classisId : divisioId,
+                            idLop : divisioId,
                         };
                         console.log(id);
                         console.log(formData);
