@@ -34,6 +34,25 @@ function deleteDivisionID(id){
     })
 }
 
+function restoreDivisionbyID(id) {
+    const divisionID = "http://localhost:8888/v1/divisio/restore";
+    const headers = new Headers();
+    let addOptions = {
+        method: 'PATCH',
+        headers
+    };
+
+    fetch(divisionID + '/' + id ,addOptions)
+    .then(function (response){     
+    response.text();
+    alert("Successfully Restore");
+    window.location.reload();
+    })
+    .catch((err) => {
+    console.log(err);
+    });
+}
+
 function addDivision(){
     var tenKH = document.getElementById('addTenKh').value;
     var tenTV = document.getElementById('addTenTV').value;
@@ -69,7 +88,7 @@ function addDivisionApi(data){
       });
 }
 
-const divisionData = "http://localhost:8888/v1/divisio?page=1";
+const divisionData = "http://localhost:8888/v1/divisio?deleted=1&page=1";
 var myHeaders = new Headers();
 var requestOptions = {
     method: 'GET',
@@ -83,14 +102,16 @@ fetch(divisionData,requestOptions)
             var table = document.getElementById('divisionBody')  
             for (var j = 0; j < data.results.length; j++)
             {
-                    var row = `<tr>
-                    <td>${j + 1}</td>
-                    <td>${data.results[j].id}</td>
-                    <td data-toggle="modal" data-target="#view" onclick="getDivisionbyID('${data.results[j].id}')">${data.results[j].Ten_KH}</td>
-                    <td>${data.results[j].Ten_TV}</td>
-                    <td style = "width: 130px;">
-                    <button onclick="editDivisionbyID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#edit" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button>
-		            <button onclick="deleteDivisionID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#delete" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></td>
+                var row = `<tr>
+                <td>${j + 1}</td>
+                <td>${data.results[j].id}</td>
+                <td data-toggle="modal" data-target="#view" onclick="getDivisionbyID('${data.results[j].id}')">${data.results[j].Ten_KH}</td>
+                <td>${data.results[j].Ten_TV}</td>
+                <td>${data.results[j].deletedBy}</td>
+                <td>${data.results[j].deletedAt}</td>
+                <td style = "width: 130px;">
+                <button onclick="restoreDivisionbyID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#edit" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-repeat"></span></button>
+                <button onclick="deleteDivisionID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#delete" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></td>
                 </tr>`
                 table.innerHTML += row
             }
@@ -102,7 +123,7 @@ fetch(divisionData,requestOptions)
             }
         };
         function renderdivision (page){
-        var divisionDataPage = "http://localhost:8888/v1/divisio?page=" + page;
+        var divisionDataPage = "http://localhost:8888/v1/divisio?deleted=1&page=" + page;
         fetch(divisionDataPage,requestOptions)
         .then(function (response){
             response.json().then(function (data) {
@@ -118,7 +139,7 @@ fetch(divisionData,requestOptions)
                     <td data-toggle="modal" data-target="#view" onclick="getDivisionbyID('${data.results[j].id}')">${data.results[j].Ten_KH}</td>
                     <td>${data.results[j].Ten_TV}</td>
                     <td style = "width: 130px;">
-                    <button onclick="editDivisionbyID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#edit" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button>
+                    <button onclick="restoreDivisionbyID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#edit" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-repeat"></span></button>
                     <button onclick="deleteDivisionID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#delete" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button>
                     </td>
                 </tr>`
@@ -130,7 +151,7 @@ fetch(divisionData,requestOptions)
                     <td data-toggle="modal" data-target="#view" onclick="getDivisionbyID('${data.results[j].id}')">${data.results[j].Ten_KH}</td>
                     <td>${data.results[j].Ten_Latin}</td>
                     <td style = "width: 130px;">
-                    <button onclick="editDivisionbyID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#edit" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button>
+                    <button onclick="restoreDivisionbyID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#edit" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-repeat"></span></button>
                     <button onclick="deleteDivisionID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#delete" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button>
                     </td>
                 </tr>`
@@ -270,6 +291,7 @@ function getDivisionbyID(id){
         console.log('error: ' + err);
     })
 }
+
 
 
 // function showResults() {
