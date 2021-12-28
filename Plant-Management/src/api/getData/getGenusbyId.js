@@ -1,5 +1,40 @@
 function genusbyId(id) {
 	var id = localStorage.getItem('idGenus');
+	const getChild = (tenKH) => {
+		fetch(`http://134.209.106.33:8888/v1/species//getChildOfGenus/${tenKH}`, requestOptions).then(
+			(response) => {
+				response.json().then((data) => {
+					console.log('data', data);
+					var tbody = document.getElementById('genusChild');
+					var table = document.getElementById('tableGenusDetail');
+
+					if (data.children?.length > 0) {
+						if (data.children?.length < 10) {
+							for (var j = 0; j < data.children?.length; j++) {
+								var row = `
+                            <tr>
+                            
+                            <td>${data.children[j]}</td>
+                            </tr>`;
+								tbody.innerHTML += row;
+							}
+						} else {
+							for (var j = 0; j < 10; j++) {
+								var row = `
+                            <tr>
+                            
+                            <td>${data.children[j]}</td>
+                            </tr>`;
+								tbody.innerHTML += row;
+							}
+						}
+					} else {
+						table.remove();
+					}
+				});
+			},
+		);
+	};
 	console.log(id);
 	// if(id = undefined){
 	//     return false;
@@ -28,6 +63,7 @@ function genusbyId(id) {
 					tenTV.innerHTML = `<h4>${data.Ten_TV}</h4>`;
 					mota.innerHTML = `<p style="font-size: 18px;">${data.Mo_ta}</h4>`;
 				}
+				return getChild(data.Ten_KH);
 			})
 			.catch(function (err) {
 				console.log('error: ' + err);

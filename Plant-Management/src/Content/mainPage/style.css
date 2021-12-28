@@ -1039,21 +1039,22 @@ img {
   padding: 50px 0;
   border-top: 1px solid #ebebeb;
   border-bottom: 1px solid #ebebeb; }
-  .product_details_tab .nav-tabs {
+  .product_details_tab .nav-pills {
     border-bottom: none;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
     margin-bottom: 30px; }
-    .product_details_tab .nav-tabs .nav-link {
+    .product_details_tab .nav-pills .nav-link {
       border: none;
       border-top-left-radius: 0;
       border-top-right-radius: 0;
-      padding: 0 15px;
+      padding: 5px 15px;
       font-size: 20px;
       color: #303030; }
-      .product_details_tab .nav-tabs .nav-link.active, .product_details_tab .nav-tabs .nav-link:hover {
-        color: #70c745; }
+      .product_details_tab .nav-pills .nav-link.active, .product_details_tab .nav-pills .nav-link:hover {
+        /* color: #70c745;  */
+      }
   .product_details_tab .additional_info_area p {
     color: #303030; }
     .product_details_tab .additional_info_area p span {
@@ -2671,6 +2672,34 @@ img {
   background-color: #a9db90;
   border-radius: 60%;
 }
+ input[name="search"] {
+      width: 325px;
+      box-sizing: border-box;
+      border: 1px solid black;
+      border-radius: 4px;
+      outline:none;
+      padding: 8px 14px;
+      transition:0.6s ease-in-out;
+}
+.nav-item a{
+  text-decoration: none;
+  color: black;
+  font-weight: 400;
+  font-size: 17px;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+  color: black;
+  background-color: #8bc18d !important;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: black;
+    background-color: #8bc18d;
+     border-radius: 0.25rem;
+}
+
 /* ======= The End ======= */
 
 /*# sourceMappingURL=style.css.map */
+
+
