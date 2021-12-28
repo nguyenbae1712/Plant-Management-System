@@ -15,10 +15,10 @@ window.onload = function () {
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" />
                       <ul class="dropdown-menu user-dropdown">
                         <li>
-                          <a href="Profile.html"><span class="fa fa-user"></span> My Profile</a>
+							<a href="Profile.html"><span class="fa fa-user"></span> My Profile</a>
                         </li>
                         <li>
-                        <a href="#" id="btnLogout"><span class="fa fa-sign-out">Logout</a>
+                        	<a href="#" id="btnLogout"><span class="fa fa-sign-out">Logout</a>
                         </li>
                       </ul>
                     </li>

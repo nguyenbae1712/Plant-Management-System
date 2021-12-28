@@ -30,3 +30,10 @@ $('.page-number-species').click(function (e) {
     paginationSpecies(parseInt($(this).text()), parseInt(totalSpeciesPage));
     $('#add-js-file').append(`<script src="/scripts/handlePagination.js"></script>`);
 });
+
+$('.page-number-images').click(function (e) {
+    e.preventDefault();
+    renderImage($(this).text());
+    pagination(parseInt($(this).text()), parseInt(totalPages));
+    $('#add-js-file').append(`<script src="/scripts/handlePagination.js"></script>`);
+});

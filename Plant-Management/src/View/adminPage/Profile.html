@@ -106,35 +106,41 @@
         <!-- end: Left Menu -->
         <!-- start: content -->
         <div id="content">
-            <div style="width: 100%; position:relative; text-align:center;">
+            <div style="width: 100%; position:relative; text-align:center; display: flex;">
     
-    <div style="width: 20%; height: 20%; margin:auto; padding-top:20px; position:relative;">
+    <div style="width: 20%; height: 20%; margin:auto; padding-top:20px; position:relative; ">
                 <img src="/Content/asset/UploadFile/ava-img/jin_ava.jpg" style="width:250px; height:250px; text-align:center;" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" />
         <div class="icon-box" data-toggle="modal" data-target="#changeAvatar" style="background-color:#8bc18d; opacity:0.8 ; width:65px; height:65px; border-radius:50%; position:absolute; bottom:0; padding-top:5%; cursor:pointer;">
             <span class="icons icon-camera" style="font-size:300%; color:white;"></span>
         </div>
     </div>
-    <div class="panel" style="width: 65%; display:block; overflow:auto; margin:auto; margin-top:20px; background-color:#76AE7B; border-radius:20px;">
-        <div style="width: 100%; padding-left:28%; overflow:auto; padding-bottom:30px;">
-            <div class="form-group" style="width: 100%; margin-top:40px; text-align:left;">
-                <label class="control-label text-right" style="margin-right:20px; display:inline-block; color:white; font-size:150%;">Name</label>
-                <br />
-                <div style="width:65%; display:inline-block;"><input placeholder="" style="width:100%;" type="text" class="form-control" disabled></div>
+    <div class="panel" style="width: 60%; display:block; overflow:auto; margin:auto; margin-top:20px; background-color:#76AE7B; border-radius:20px;">
+        <div style="width: 100%; overflow:auto; padding-bottom:30px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <div class="form-group" style="width: 50%; margin-top:40px; text-align:left;display: flex;">
+                <p class="labelInfo">Name</p>    
+                <p class="txtInfo" id="txtName"></p>
             </div>
-            <div class="form-group" style="width: 100%; margin-top:40px; text-align:left;">
-                <label class="control-label text-right" style="margin-right:20px; display:inline-block; color:white; font-size:150%;">Email</label>
-                <br />
-                <div style="width:65%; display:inline-block;"><input placeholder="" style="width:100%;" type="text" class="form-control" disabled></div>
+            <div class="form-group" style="width: 50%; margin-top:30px; text-align:left;display: flex;">
+                <p class="labelInfo">Email</p>    
+                <p class="txtInfo" id="txtEmail"></p>
             </div>
-            <div class="form-group" style="width: 100%; margin-top:40px; margin-bottom:30px; text-align:left; margin-left:-20%;">
-                <div class="col-md-6" style="margin-top:5px; display:inline-block; height:45px;">
+            <div class="form-group" style="width: 50%; margin-top:30px; text-align:left;display: flex;">
+                <p class="labelInfo">Role</p>    
+                <p class="txtInfo" id="txtRole"></p>
+            </div>
+            <!-- <div class="form-group" style="width: 50%; margin-top:30px; text-align:left;display: flex;">
+                <p class="labelInfo">ID</p>    
+                <p class="txtInfo" id="txtID"></p>
+            </div> -->
+            <div class="form-group" style="width: 100%; margin-top:30px; margin-bottom:30px; display: flex; justify-content: space-around;">
+                <div style="margin-top:5px; display:flex; width: 30%;height:45px;">
                     <button class="btn ripple btn-round bg-white" type="button" data-toggle="modal" data-target="#edit">
                         <div>
-                            <span style="color:#918C8C;">Edit Profile</span>
+                            <span style="color:#918C8C; font: size 20px;">Edit Profile</span>
                         </div>
                     </button>
                 </div>
-                <div class="col-md-6" style="margin-top:5px; display:inline-block;">
+                <div style="margin-top:5px; display:flex; float: right; width: 30%;height:45px;">
                     <button data-toggle="modal" data-target="#changePassword" class="btn ripple btn-outline btn-primary" type="button" style="border-color: white !important; color:white !important; border-radius:24px !important;">
                         <div>
                             <span>Change Password</span>
@@ -260,7 +266,7 @@
                         </div>
 
                         <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                            <input type="password" class="form-text" id="validate_password" name="validate_Newpassword" required>
+                            <input type="password" class="form-text" id="validate_newpassword" name="validate_Newpassword" required>
                             <span class="bar"></span>
                             <label>New Password</label>
                         </div>
@@ -332,6 +338,10 @@
 
     <!-- custom -->
     <script src="/Content/asset/js/main.js"></script>
-    <script src="/adminAPI/main.js"></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/scripts/index.js"></script>
+    <script src="/scripts/adminHeader.js"></script>
+    <script src="/adminapi/profileService.js"></script>
 </body>
 </html>

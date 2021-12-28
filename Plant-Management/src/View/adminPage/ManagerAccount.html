@@ -22,11 +22,7 @@
     <!-- end: Css -->
 
     <link rel="shortcut icon" href="/Content/asset/img/favicon.ico" />
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    
 </head>
 
 <body id="mimin" class="dashboard">
@@ -43,7 +39,7 @@
                     <b>PLANT</b>
                 </a>
 
-                <ul class="nav navbar-nav search-nav">
+                <!-- <ul class="nav navbar-nav search-nav">
                     <li>
                         <div class="search">
                             <span class="fa fa-search icon-search" style="font-size: 23px"></span>
@@ -55,7 +51,7 @@
                             </div>
                         </div>
                     </li>
-                </ul>
+                </ul> -->
 
                 <div class="adminLogin"></div>
             </div>
@@ -94,16 +90,6 @@
                             <span class="fa fa-user"></span> Account
                         </a>
                     </li>
-                    <li class="ripple">
-                        <a class="tree-toggle nav-header">
-                            <span class="fa fa-pencil-square"></span> Blog
-                            <span class="fa-angle-right fa right-arrow text-right"></span>
-                        </a>
-                        <ul class="nav nav-list tree">
-                            <li><a href="NewBlog.html">Write new Blog</a></li>
-                            <li><a href="ManageBlog.html">Blog Management</a></li>
-                        </ul>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -111,10 +97,18 @@
         <!-- start: content -->
         <div id="content">
             <div class="col-md-12 top-20 padding-0">
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <div class="panel">
                         <div class="panel-heading">
-                            <h3>Account Management</h3>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-10">
+                                <h3>Account Management</h3>
+                            </div>
+                            <div class="col-md-1">
+								<button type="button" data-toggle="modal" data-target="#add" class="btn-add">
+									<i class="fa fa-plus"></i>
+								</button>
+							</div>
                         </div>
                         <div class="panel-body">
                             <div class="responsive-table">
@@ -122,29 +116,29 @@
                                     cellspacing="0">
                                     <thead>
                                         <tr>
+                                            <th>STT</th>
                                             <th>ID</th>
-                                            <th>Account</th>
-                                            <th>Password</th>
-                                            <th>Created Date</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Role</th>
+                                            <th>Status</th>
+                                            <th style="text-align: center;">Action</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr style="cursor:pointer;">
-                                            <td>Id</td>
-                                            <td>Name</td>
-                                            <td>******</td>
-                                            <td>14/10/2021</td>
-                                            <td>
-                                                <button>Delete</button> </td>
-                                        </tr>
-                                    </tbody>
+                                    <tbody id="accounts"></tbody>
                                 </table>
+                                <div style="width: 100%;" class="row">
+									<div
+										style="display: flex; justify-content: center; padding-left: 45px; width: 100%;;border-top: #70c74561 solid 2px;"
+										class="pagination" id="paginationAccount">
+									</div>
+								</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <!-- <div class="col-md-4">
                     <div class="panel">
                         <div class="panel-heading">
                             <h3>Add Account</h3>
@@ -201,177 +195,115 @@
                             </div>
                         </div>
                     </div>
+                </div> -->
+            </div>
+            <div class="modal fade" id="add" role="dialog">
+				<div class="modal-dialog">
 
+					<!-- Modal content-->
+					<div class="modal-content" style="overflow:auto;">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">Add New Account</h4>
+						</div>
+						<div class="modal-body" style="overflow:auto;">
+							<form id="formAddAccount">
+								<div class="form-group form-animate-text" style="margin-top:40px !important;">
+									<input type="text" id="addEmail" class="form-text" required>
+									<span class="bar"></span>
+									<label>Email</label>
+								</div>
 
+								<div class="form-group form-animate-text" style="margin-top:40px !important;">
+									<input type="text" id="addName" class="form-text mask-phone_us" required>
+									<span class="bar"></span>
+									<label>Name</label>
+								</div>
+								<div class="form-group form-animate-text" style="margin-top:40px !important;">
+									<input type="password" id="addPass" class="form-text" required>
+									<span class="bar"></span>
+									<label>Password</label>
+								</div>
+                                <div class="form-group form-animate-text" style="margin-top:40px !important;">
+									<!-- <input type="text" id="addPass" class="form-text" required> -->
+									<span class="bar"></span>
+                                    <select class="form-control" id="addRole">
+                                        <option value="admin">Admin</option>
+                                        <option value="user">User</option>
+                                      </select>
+								</div>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							<button onclick="addAccount()" type="button" class="btn btn-primary" form="formAddAccount">Add New
+								Account</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+            <div class="edit modal fade" id="edit" role="dialog">
+				<div class="modal-dialog">
+					<!-- Modal content-->
+					<div class="modal-content" style="overflow:auto;">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">Edit Account</h4>
+						</div>
+						<div class="modal-body" style="overflow:auto;">
+							<form id="formEditDivision">
+								<div
+									style="padding-left: 5px; font-size: 18px; flex-direction: column; display: flex; margin-top:20px !important;">
+									<label>ID</label>
+									<p id="editID"></p>
+								</div>
+
+								<div class="form-group form-animate-text" style="margin-top:40px !important;">
+									<textarea id="editEmail" class="form-text" required></textarea>
+									<span class="bar"></span>
+									<label>Email</label>
+								</div>
+								<div class="form-group form-animate-text" style="margin-top:40px !important;">
+									<textarea id="editName" class="form-text mask-phone_us" required></textarea>
+									<span class="bar"></span>
+									<label>Name</label>
+                                </div>
+                                <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                                    <input type="password" id="editPass" class="form-text" required></input>
+                                    <span class="bar"></span>
+                                    <label>Password</label>
+                                </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button id="btnEdit" type="button" class="btn btn-primary" form="formEditDivision">Edit Division</button>
                 </div>
             </div>
 
-            <div class="modal fade" id="notiDelete">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                    aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title">Delete</h4>
-                        </div>
-                        <div class="modal-body">
-                            <h5> Are you sure to add this account?</h5>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="submit" name="btnDelUp" value="delete" class="btn btn-default"
-                                form="formDelete">Yes</button>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
-                        </div>
-                    </div><!-- /.modal-content -->
-                </div><!-- /.modal-dialog -->
-            </div><!-- /.modal -->
+				</div>
+			</div>
+            <div class="modal fade" id="delete">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+									aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title">Delete</h4>
+						</div>
+						<div class="modal-body">
+							<h5> Are you sure to delete this Account?</h5>
+						</div>
+						<div class="modal-footer">
+							<button id="btnDelete" type="button" name="btnDelUp" class="btn btn-default">Yes</button>
+							<button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+						</div>
+					</div>
+				</div>
+			</div>
         </div>
 
-        <!-- start: Mobile -->
-        <div id="mimin-mobile" class="reverse">
-            <div class="mimin-mobile-menu-list">
-                <div class="col-md-12 sub-mimin-mobile-menu-list animated fadeInLeft">
-                    <ul class="nav nav-list">
-                        <li class="active ripple">
-                            <a class="tree-toggle nav-header">
-                                <span class="fa-home fa"></span>Dashboard
-                                <span class="fa-angle-right fa right-arrow text-right"></span>
-                            </a>
-                            <ul class="nav nav-list tree">
-                                <li><a href="dashboard-v1.html">Dashboard v.1</a></li>
-                                <li><a href="dashboard-v2.html">Dashboard v.2</a></li>
-                            </ul>
-                        </li>
-                        <li class="ripple">
-                            <a class="tree-toggle nav-header">
-                                <span class="fa-diamond fa"></span>Layout
-                                <span class="fa-angle-right fa right-arrow text-right"></span>
-                            </a>
-                            <ul class="nav nav-list tree">
-                                <li><a href="topnav.html">Top Navigation</a></li>
-                                <li><a href="boxed.html">Boxed</a></li>
-                            </ul>
-                        </li>
-                        <li class="ripple">
-                            <a class="tree-toggle nav-header">
-                                <span class="fa-area-chart fa"></span>Charts
-                                <span class="fa-angle-right fa right-arrow text-right"></span>
-                            </a>
-                            <ul class="nav nav-list tree">
-                                <li><a href="chartjs.html">ChartJs</a></li>
-                                <li><a href="morris.html">Morris</a></li>
-                                <li><a href="flot.html">Flot</a></li>
-                                <li><a href="sparkline.html">SparkLine</a></li>
-                            </ul>
-                        </li>
-                        <li class="ripple">
-                            <a class="tree-toggle nav-header">
-                                <span class="fa fa-pencil-square"></span>Ui Elements
-                                <span class="fa-angle-right fa right-arrow text-right"></span>
-                            </a>
-                            <ul class="nav nav-list tree">
-                                <li><a href="color.html">Color</a></li>
-                                <li><a href="weather.html">Weather</a></li>
-                                <li><a href="typography.html">Typography</a></li>
-                                <li><a href="icons.html">Icons</a></li>
-                                <li><a href="buttons.html">Buttons</a></li>
-                                <li><a href="media.html">Media</a></li>
-                                <li><a href="panels.html">Panels & Tabs</a></li>
-                                <li>
-                                    <a href="notifications.html">Notifications & Tooltip</a>
-                                </li>
-                                <li><a href="badges.html">Badges & Label</a></li>
-                                <li><a href="progress.html">Progress</a></li>
-                                <li><a href="sliders.html">Sliders</a></li>
-                                <li><a href="timeline.html">Timeline</a></li>
-                                <li><a href="modal.html">Modals</a></li>
-                            </ul>
-                        </li>
-                        <li class="ripple">
-                            <a class="tree-toggle nav-header">
-                                <span class="fa fa-check-square-o"></span>Forms
-                                <span class="fa-angle-right fa right-arrow text-right"></span>
-                            </a>
-                            <ul class="nav nav-list tree">
-                                <li><a href="formelement.html">Form Element</a></li>
-                                <li><a href="#">Wizard</a></li>
-                                <li><a href="#">File Upload</a></li>
-                                <li><a href="#">Text Editor</a></li>
-                            </ul>
-                        </li>
-                        <li class="ripple">
-                            <a class="tree-toggle nav-header">
-                                <span class="fa fa-table"></span>Tables
-                                <span class="fa-angle-right fa right-arrow text-right"></span>
-                            </a>
-                            <ul class="nav nav-list tree">
-                                <li><a href="datatables.html">Data Tables</a></li>
-                                <li><a href="handsontable.html">handsontable</a></li>
-                                <li><a href="tablestatic.html">Static</a></li>
-                            </ul>
-                        </li>
-                        <li class="ripple">
-                            <a href="calendar.html">
-                                <span class="fa fa-calendar-o"></span>Calendar
-                            </a>
-                        </li>
-                        <li class="ripple">
-                            <a class="tree-toggle nav-header">
-                                <span class="fa fa-envelope-o"></span>Mail
-                                <span class="fa-angle-right fa right-arrow text-right"></span>
-                            </a>
-                            <ul class="nav nav-list tree">
-                                <li><a href="mail-box.html">Inbox</a></li>
-                                <li><a href="compose-mail.html">Compose Mail</a></li>
-                                <li><a href="view-mail.html">View Mail</a></li>
-                            </ul>
-                        </li>
-                        <li class="ripple">
-                            <a class="tree-toggle nav-header">
-                                <span class="fa fa-file-code-o"></span>Pages
-                                <span class="fa-angle-right fa right-arrow text-right"></span>
-                            </a>
-                            <ul class="nav nav-list tree">
-                                <li><a href="forgotpass.html">Forgot Password</a></li>
-                                <li><a href="login.html">SignIn</a></li>
-                                <li><a href="reg.html">SignUp</a></li>
-                                <li><a href="article-v1.html">Article v1</a></li>
-                                <li><a href="search-v1.html">Search Result v1</a></li>
-                                <li><a href="productgrid.html">Product Grid</a></li>
-                                <li><a href="profile-v1.html">Profile v1</a></li>
-                                <li><a href="invoice-v1.html">Invoice v1</a></li>
-                            </ul>
-                        </li>
-                        <li class="ripple">
-                            <a class="tree-toggle nav-header"><span class="fa"></span> MultiLevel
-                                <span class="fa-angle-right fa right-arrow text-right"></span>
-                            </a>
-                            <ul class="nav nav-list tree">
-                                <li><a href="view-mail.html">Level 1</a></li>
-                                <li><a href="view-mail.html">Level 1</a></li>
-                                <li class="ripple">
-                                    <a class="sub-tree-toggle nav-header">
-                                        <span class="fa fa-envelope-o"></span> Level 1
-                                        <span class="fa-angle-right fa right-arrow text-right"></span>
-                                    </a>
-                                    <ul class="nav nav-list sub-tree">
-                                        <li><a href="mail-box.html">Level 2</a></li>
-                                        <li><a href="compose-mail.html">Level 2</a></li>
-                                        <li><a href="view-mail.html">Level 2</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="credits.html">Credits</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <button id="mimin-mobile-menu-opener" class="animated rubberBand btn btn-circle btn-danger">
-            <span class="fa fa-bars"></span>
-        </button>
-        <!-- end: Mobile -->
-        <!-- start: Javascript -->
 
         <script src="/Content/asset/js/jquery.min.js"></script>
         <script src="/Content/asset/js/jquery.ui.min.js"></script>
@@ -391,6 +323,8 @@
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="/scripts/index.js"></script>
         <script src="/scripts/adminHeader.js"></script>
+
+        <script src="/adminapi/accountsService.js"></script>
 </body>
 
 </html>

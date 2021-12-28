@@ -2,6 +2,11 @@
  * (c) Mimin Admin Page v1.0
  */
 
+ .view {
+  
+           width: 1000px;
+  
+         }
 body {
   font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 13px;
@@ -59,7 +64,7 @@ select{
   padding-right: 20px;
 }
 
-label{ font-weight:400; }
+label{ font-weight:500; }
 
 
 th { border-bottom: none !important; }
@@ -384,7 +389,6 @@ p.quote{
    
     .search-v1 #search-v1-images .post { height: 100px; background: cyan; margin-bottom: 20px; }
     .search-v1 #search-v1-images .tall { height: 200px; }
-}
 /*end: search v1*/
 
 
@@ -442,8 +446,13 @@ p.quote{
   padding: 20px !important;
 }
 /*end: invoice*/
-
-
+.table {
+  background-color: #0000001a;
+}
+.table th{
+  background-color: #8BC18D;
+  color: white
+}
 .box-shadow-none,.box-shadow-none:focus{
   -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;
@@ -473,6 +482,11 @@ p.quote{
 .panel-heading{
   line-height: 1.42857143 !important;
   color: #58666e !important;
+  display: flex;
+  float: left;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .panel-heading h3{
@@ -2702,7 +2716,7 @@ ul li a:focus {
   padding-bottom: 10px;
   padding-left: 230px;
   width: 100%;
-  color: #918C8C;
+  color: #585555;
 }
 
 
@@ -6525,3 +6539,93 @@ ul li a:focus {
   border-radius: 60% !important ;
 } */
 
+.btn-add{
+  border-radius: 50% ;
+  background-color: #8BC18D;
+  color: white;
+  border : none;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  margin-left: 0px !important;
+}
+
+.btn-menu{
+  border-radius: 3% ;
+  background-color: #8BC18D;
+  color: white;
+  border : none;
+  width: 180px;
+  height: 30px;
+  font-size: 18px;
+  font-weight: none;
+  text-align: center;
+}
+
+.btn-back{
+  border-radius: 5%;
+  background-color: white;
+  color: #8BC18D;
+  border : none;
+  width: 50px;
+  height: 40px;
+  font-size: 30px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+
+.txtInfo{
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.labelInfo{
+  color: white;
+  padding-right: 50px;
+  font-size: 20px;
+  width: 100px;
+}
+
+.nav-item a{
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+  color: black;
+  background-color: #8bc18d;
+}
+
+.additional_info_area{
+  padding:5px 20px;
+}
+.imageSpecies{
+  width : 250px;
+  height : 280px;
+}
+.imageSpecies img {
+  width : 250px;
+  height : 280px;
+}
+
+.editSpecies{
+  width: 300px;
+  height: 35px;
+  border-color: white;
+}
+.editDacdiemSpecies{
+  width: 100%;
+  height: 200px;
+}
+
+.viewallImages img {
+  width: 250px;
+  height: auto;
+}

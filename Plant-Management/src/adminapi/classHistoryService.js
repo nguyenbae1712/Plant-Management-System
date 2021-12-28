@@ -6,7 +6,7 @@ function deleteDivisionID(id){
     btnDelele.addEventListener('click' , async (e) => {
         e.preventDefault();
         function deleteDivisionApi(id){
-            const divisionID = "http://134.209.106.33:8888/v1/divisio";
+            const divisionID = "http://134.209.106.33:8888/v1/classis";
             const headers = {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${tokens.access.token}`
@@ -35,7 +35,7 @@ function restoreDivisionbyID(id){
     btnDelele.addEventListener('click' , async (e) => {
         e.preventDefault();
         function restoreDivisionApi(id) {
-            const divisionID = "http://134.209.106.33:8888/v1/divisio/restore";
+            const divisionID = "http://134.209.106.33:8888/v1/classis/restore";
             const headers = new Headers();
             let addOptions = {
                 method: 'PATCH',
@@ -59,7 +59,7 @@ function restoreDivisionbyID(id){
 
 
 
-const divisionData = "http://134.209.106.33:8888/v1/divisio?deleted=1&page=1";
+const divisionData = "http://134.209.106.33:8888/v1/classis?deleted=1&page=1";
 var myHeaders = new Headers();
 var requestOptions = {
     method: 'GET',
@@ -94,7 +94,7 @@ fetch(divisionData,requestOptions)
             }
         };
         function renderdivision (page){
-        var divisionDataPage = "http://134.209.106.33:8888/v1/divisio?deleted=1&page=" + page;
+        var divisionDataPage = "http://134.209.106.33:8888/v1/classis?deleted=1&page=" + page;
         fetch(divisionDataPage,requestOptions)
         .then(function (response){
             response.json().then(function (data) {
@@ -138,7 +138,7 @@ $('.page-number').click( function(e) {
         console.log('error: ' + err);
     })
 function getDivisionbyID(id){
-    const divisionDatabyId = "http://134.209.106.33:8888/v1/divisio";
+    const divisionDatabyId = "http://134.209.106.33:8888/v1/classis";
     let myHeaders = new Headers();
     let requestOptions = {
     method: 'GET',

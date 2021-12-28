@@ -6,7 +6,7 @@ function deleteDivisionID(id){
     btnDelele.addEventListener('click' , async (e) => {
         e.preventDefault();
         function deleteDivisionApi(id){
-            const divisionID = "http://134.209.106.33:8888/v1/divisio";
+            const divisionID = "http://134.209.106.33:8888/v1/genus";
             const headers = {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${tokens.access.token}`
@@ -35,7 +35,7 @@ function restoreDivisionbyID(id){
     btnDelele.addEventListener('click' , async (e) => {
         e.preventDefault();
         function restoreDivisionApi(id) {
-            const divisionID = "http://134.209.106.33:8888/v1/divisio/restore";
+            const divisionID = "http://134.209.106.33:8888/v1/genus/restore";
             const headers = new Headers();
             let addOptions = {
                 method: 'PATCH',
@@ -59,7 +59,7 @@ function restoreDivisionbyID(id){
 
 
 
-const divisionData = "http://134.209.106.33:8888/v1/divisio?deleted=1&page=1";
+const divisionData = "http://134.209.106.33:8888/v1/genus?deleted=1&page=1";
 var myHeaders = new Headers();
 var requestOptions = {
     method: 'GET',
@@ -84,6 +84,19 @@ fetch(divisionData,requestOptions)
                 <button onclick="restoreDivisionbyID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#restore" class="btn-info btn-sm"><span class="glyphicon glyphicon-repeat"></span></button>
                 <button onclick="deleteDivisionID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#delete" class="delete btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></td>
                 </tr>`
+                if (data.results[j].Ten_TV == undefined){
+                    var row = `<tr>
+                <td>${j + 1}</td>
+                <td>${data.results[j].id}</td>
+                <td data-toggle="modal" data-target="#view" onclick="getDivisionbyID('${data.results[j].id}')">${data.results[j].Ten_KH}</td>
+                <td>Chưa có thông tin</td>
+                <td>${data.results[j].deletedBy}</td>
+                <td>${data.results[j].deletedAt}</td>
+                <td style = "width: 100px; text-align: center">
+                <button onclick="restoreDivisionbyID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#restore" class="btn-info btn-sm"><span class="glyphicon glyphicon-repeat"></span></button>
+                <button onclick="deleteDivisionID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#delete" class="delete btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></td>
+                </tr>`
+                }  
                 table.innerHTML += row
             }
             
@@ -94,7 +107,7 @@ fetch(divisionData,requestOptions)
             }
         };
         function renderdivision (page){
-        var divisionDataPage = "http://134.209.106.33:8888/v1/divisio?deleted=1&page=" + page;
+        var divisionDataPage = "http://134.209.106.33:8888/v1/genus?deleted=1&page=" + page;
         fetch(divisionDataPage,requestOptions)
         .then(function (response){
             response.json().then(function (data) {
@@ -113,7 +126,20 @@ fetch(divisionData,requestOptions)
                     <td style = "width: 100px; text-align: center">
                     <button onclick="restoreDivisionbyID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#restore" class="btn-info btn-sm"><span class="glyphicon glyphicon-repeat"></span></button>
                     <button onclick="deleteDivisionID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#delete" class="delete btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></td>
-                    </tr>`                
+                    </tr>`
+                    if (data.results[j].Ten_TV == undefined){
+                        var row = `<tr>
+                    <td>${j + 1}</td>
+                    <td>${data.results[j].id}</td>
+                    <td data-toggle="modal" data-target="#view" onclick="getDivisionbyID('${data.results[j].id}')">${data.results[j].Ten_KH}</td>
+                    <td>Chưa có thông tin</td>
+                    <td>${data.results[j].deletedBy}</td>
+                    <td>${data.results[j].deletedAt}</td>
+                    <td style = "width: 100px; text-align: center">
+                    <button onclick="restoreDivisionbyID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#restore" class="btn-info btn-sm"><span class="glyphicon glyphicon-repeat"></span></button>
+                    <button onclick="deleteDivisionID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#delete" class="delete btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></td>
+                    </tr>`
+                    }              
                 idShow += 1
                 if (j == 0) {
                     table.innerHTML = row
@@ -138,7 +164,7 @@ $('.page-number').click( function(e) {
         console.log('error: ' + err);
     })
 function getDivisionbyID(id){
-    const divisionDatabyId = "http://134.209.106.33:8888/v1/divisio";
+    const divisionDatabyId = "http://134.209.106.33:8888/v1/genus";
     let myHeaders = new Headers();
     let requestOptions = {
     method: 'GET',
@@ -151,22 +177,8 @@ function getDivisionbyID(id){
             console.log(data);
                 txtID.innerHTML = `${data.id}`;
                 txtTenKH.innerHTML = `${data.Ten_KH}`;
-            if (data.Mo_ta == undefined){
-                txtMota.innerHTML = `${data.Mo_Ta}`;
-                if(data.Mo_Ta == undefined){    
-                    
-                    txtMota.innerHTML = `Chưa có thông tin`;
-                }
-            }
-            else{
-                txtMota.innerHTML = `${data.Mo_ta}`;
-            }
-            if( data.Ten_Latin == undefined){
                 txtTenTV.innerHTML = `${data.Ten_TV}`;
-            }
-            else{
-                txtTenTV.innerHTML = `${data.Ten_Latin}`;
-            }
+                txtMota.innerHTML = `${data.Mo_Ta}`;
         })
     })
     .catch(function (err) {

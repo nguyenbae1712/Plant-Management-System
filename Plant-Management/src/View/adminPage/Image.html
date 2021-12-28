@@ -100,7 +100,7 @@
             <div class="panel-heading">
               <div class="col-md-1"></div>
 							<div class="col-md-10">
-								<h3 style="padding-bottom: 5px;">Species Management</h3>
+								<h3 style="padding-bottom: 5px;">Images Management</h3>
 							</div>
 							<div class="col-md-1">
 								<button type="button" data-toggle="modal" data-target="#add" class="btn-add">
@@ -108,32 +108,14 @@
 								</button>
 							</div>
             </div>
-            <div class="col" style="padding-left: 15px !important; margin: 0px !important;">
-              <div class="btn-group">
-                <button onclick="window.location.href='SpeciesHistory.html'" 
-                type="button" class="btn-menu" data-toggle="dropdown">
-                  View Delete History
-                </button>
-              </div>
-          </div>
             <div class="panel-body">
-              <div class="responsive-table">
-                <table id="datatables-example" class="table table-striped table-bordered" width="100%" cellspacing="0">
-                  <thead>
-                    <tr>
-                      <th>STT</th>
-                      <th>ID</th>
-                      <th>Tên Khoa Học</th>
-                      <th>Tên Tiếng Việt</th>
-                      <th style="text-align: center;">Action</th>
-                    </tr>
-                  </thead>
-                  <tbody id="divisionBody"></tbody>
-                </table>
-                <div style="width: 100%;" class="row">
-                  <div style="display: flex; justify-content: center; padding-left: 30px; width: 100%;;border-top: #70c74561 solid 2px;" class="pagination" id="paginationDivision">
-                    </div>
+              <div class="col-md-12">
+                <div id="viewImages" class="row">
                 </div>
+              </div>
+              <div style="width: 100%;" class="row">
+                <div style="display: flex; justify-content: center; padding-left: 30px; width: 100%;;border-top: #70c74561 solid 2px;" class="pagination" id="paginationImages">
+                  </div>
               </div>
             </div>
           </div>
@@ -255,68 +237,21 @@
               <div class="modal-content" style="overflow:auto;">
                   <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal">&times;</button>
-                      <h4 class="modal-title">Add New Species</h4>
+                      <h4 class="modal-title">Add New Image</h4>
                   </div>
                   <div class="modal-body" style="overflow:auto;">
                       <form id="formAddDivision" >
                           <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                              <input type="text" id ="addTenKh" class="form-text" required>
+                              <input type="text" id ="addLoai" class="form-text" required>
                               <span class="bar"></span>
-                              <label> Tên Khoa Học</label>
+                              <label>Species</label>
                           </div>
   
                           <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                              <input type="text" id ="addTenTV" class="form-text mask-phone_us" value= "" required>
+                              <input type="text" id ="addURL" class="form-text mask-phone_us" value= "" required>
                               <span class="bar"></span>
-                              <label>Tên Tiếng Việt</label>
+                              <label>URL</label>
                           </div>
-
-                          <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                            <form autocomplete="off">
-                              <input class="form-text" type="text" id="divisionSuggest" onInput="showResults()" />
-                              <div style="font-size: 18px;" id="resultSuggest"></div>
-                              <label style="font-size: 18px;">Chi</label>
-                              <p id="message"></p>
-                            </form>
-                          </div>
-                          <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                              <input type="text" id ="addDacdiem" class="form-text" value= "" required>
-                              <span class="bar"></span>
-                              <label>Đặc điểm nhận dạng</label>
-                          </div>
-                          <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                            <input type="text" id ="addSinhhoc" class="form-text" required value= "">
-                            <span class="bar"></span>
-                            <label>Sinh học Sinh Thái</label>
-                        </div>
-                        <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                              <input type="text" id ="addPhanbo" class="form-text" required value= "">
-                              <span class="bar"></span>
-                              <label>Phân bố </label>
-                          </div>
-
-                          <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                            <input type="text" id ="addGiatri" class="form-text" required value= "">
-                            <span class="bar"></span>
-                            <label>Giá trị</label>
-                        </div>
-
-                        <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                          <input type="text" id ="addTinhtrang" class="form-text" required value= "">
-                          <span class="bar"></span>
-                          <label>Tình trạng</label>
-                        </div>
-
-                        <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                          <input type="text" id ="addBienphap" class="form-text" required value= "">
-                          <span class="bar"></span>
-                          <label>Biện pháp bảo vệ</label>
-                       </div>
-                        <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                        <input type="text" id ="addDangsong" class="form-text" required value= "">
-                        <span class="bar"></span>
-                        <label>Dạng sống</label>
-                      </div>
                       </form>
                   </div>
                   <div class="modal-footer">
@@ -474,32 +409,7 @@
 
       </div>
     </div>
-    <div class="modal fade" id="addImage" role="dialog" data-refresh="true">
-      <div class="modal-dialog">
 
-          <!-- Modal content-->
-          <div class="modal-content" style="overflow:auto;">
-              <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h4 class="modal-title">Add Image</h4>
-              </div>
-              <div class="modal-body" style="overflow:auto;">
-                <form>
-                  <div class="form-group form-animate-text" style="margin-top:20px !important;">
-                      <input type="text" id="AddImageURL" class="form-text" required></input>
-                      <span class="bar"></span>
-                      <label>URL</label>
-                  </div>
-              </form>
-            </div>
-              <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <button id="btnAddImage" type="submit" class="btn btn-primary">Add Image</button>
-              </div>
-          </div>
-
-      </div>
-  </div>
     <div class="modal fade" id="restore">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -536,6 +446,8 @@
           </div>
       </div>
   </div>
+    </div>
+    </div>
 
       <!-- start: Javascript -->
 
@@ -559,7 +471,7 @@
       <script src="/scripts/index.js"></script>
       <script src="/scripts/adminHeader.js"></script>
 
-      <script src="/adminapi/specieService.js"></script>
+      <script src="/adminapi/imagesService.js"></script>
 
       <div id="add-js-file"></div>
       <!-- end: Javascript -->
