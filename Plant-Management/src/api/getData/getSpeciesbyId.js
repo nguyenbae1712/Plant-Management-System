@@ -87,31 +87,38 @@ function speciesbyId(id) {
 		response
 			.json()
 			.then(function (data) {
-				if (data.Mo_ta == undefined) {
 					console.log(data);
 					console.log('idGenus' + data.idChi);
 					title.innerHTML = `<h3 class="title">${data.Ten_KH}</h3>`;
 					tenTV.innerHTML = `<h4>${data.Ten_TV}</h4>`;
-					giaTri.innerHTML = `<p style="font-size: 18px;"><b>Giá trị:</b><br>  ${data.Gia_Tri}</p>`;
-					dangsong.innerHTML = `<p style="font-size: 18px;"><b>Dạng sống:</b><br>  ${data.Dang_Song}</p>`;
+					if (data.Ten_TV == undefined) {
+						tenTV.innerHTML = `<h4>Chưa có thông tin</h4>`;
+					}
+					giaTri.innerHTML = `<p style="font-size: 18px;"><b>Giá trị:</b><br>${data.Gia_Tri}</p>`;
+					if(data.Gia_Tri == undefined) {
+						giaTri.innerHTML = `<p style="font-size: 18px;"><b>Giá trị:</b><br>Chưa có thông tin</p>`;
+					}
+					dangsong.innerHTML = `<p style="font-size: 18px;"><b>Dạng sống:</b><br>${data.Dang_Song}</p>`;
+					if(data.Dang_Song == undefined) {
+						dangsong.innerHTML = `<p style="font-size: 18px;"><b>Dạng sống:</b><br>Chưa có thông tin</p>`;
+					}
 					phanbo.innerHTML = `<p style="font-size: 18px;"><b> Phân bố:</b><br> ${data.Phan_Bo}</p>`;
-					dacdiem.innerHTML = `<p style="font-size: 18px;"><b>Đặc điểm nhận dạng:</b><br> ${data.Dac_Diem_Nhan_Dang}</p>`;
-					tinhtrang.innerHTML = `<p style="font-size: 18px;"><b>Tình trạng:</b><br> ${data.Tinh_Trang}</p>`;
-					sinhhoc.innerHTML = `<p style="font-size: 18px;"><b>Sinh học sinh thái:</b><br> ${data.Sinh_Hoc_Sinh_Thai}</p>`;
-					getParent(data.idChi);
-				} else {
-					console.log(data);
-					console.log('idGenus' + data.idChi);
-					title.innerHTML = `<h3 class="title">${data.Ten_KH}</h3>`;
-					tenTV.innerHTML = `<h4>${data.Ten_TV}</h4>`;
-					giaTri.innerHTML = `<p style="font-size: 18px;"><b>Giá trị:</b><br>  ${data.Gia_Tri}</p>`;
-					dangsong.innerHTML = `<p style="font-size: 18px;"><b>Dạng sống:</b><br>  ${data.Dang_Song}</p>`;
-					phanbo.innerHTML = `<p style="font-size: 18px;"><b> Phân bố:</b><br> ${data.Phan_Bo}</p>`;
+					if(data.Phan_Bo == undefined) {
+						phanbo.innerHTML = `<p style="font-size: 18px;"><b>Phân bố:</b><br>Chưa có thông tin</p>`;
+					}
 					dacdiem.innerHTML = `<p style="font-size: 18px;"><b>Đặc điểm nhận dạng:</b> ${data.Dac_Diem_Nhan_Dang}</p>`;
+					if(data.Dac_Diem_Nhan_Dang == undefined) {
+						dacdiem.innerHTML = `<p style="font-size: 18px;"><b>Đặc điểm nhận dạng:</b><br>Chưa có thông tin</p>`;
+					}
 					tinhtrang.innerHTML = `<p style="font-size: 18px;"><b>Tình trạng:</b> ${data.Tinh_Trang}</p>`;
+					if(data.Tinh_Trang == undefined) {
+						tinhtrang.innerHTML = `<p style="font-size: 18px;"><b>Tình trạng:</b><br>Chưa có thông tin</p>`;
+					}
 					sinhhoc.innerHTML = `<p style="font-size: 18px;"><b>Sinh học sinh thái:</b> ${data.Sinh_Hoc_Sinh_Thai}</p>`;
+					if(data.Sinh_Hoc_Sinh_Thai == undefined) {
+						sinhhoc.innerHTML = `<p style="font-size: 18px;"><b>Sinh học sinh thái:</b><br>Chưa có thông tin</p>`;
+					}
 					getParent(data.idChi);
-				}
 			})
 			.catch(function (err) {
 				console.log('error abc: ' + err);
@@ -124,9 +131,10 @@ function speciesbyId(id) {
 		})
 		.then(function (data) {
 			console.log('image data', data);
-			hinhanh.innerHTML = `<img class="d-block w-100" src="${data}" alt="1" />`;
+			hinhanh.innerHTML = `<img class="d-block w-75" src="${data}" alt="1" />`;
 		})
 		.catch(function (err) {
 			console.log('error image: ' + err);
 		});
 }
+

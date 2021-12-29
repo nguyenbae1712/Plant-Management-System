@@ -1,4 +1,5 @@
-window.onload = function(){
+getData();
+function getData(){
   document.getElementById('divisioClick').click();
 }
 
@@ -10,9 +11,6 @@ function filterSelection(c) {
   for (i = 0; i < x.length; i++) {
     w3RemoveClass(x[i], "show");
     if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show")
-    // else {
-    //   x.disabled = true ;
-    // }
   }
 }
 
@@ -41,7 +39,6 @@ function w3RemoveClass(element, name) {
   element.className = arr1.join(" ");
 }
 
-// Add active class to the current control button (highlight it)
 var btnContainer = document.getElementById("myBtnContainer");
 var btns = btnContainer.getElementsByClassName("btn");
 for (var i = 0; i < btns.length; i++) {

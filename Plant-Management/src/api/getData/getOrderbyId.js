@@ -6,7 +6,7 @@ function orderById(id) {
 				response.json().then((data) => {
 					console.log('data', data);
 					var tbody = document.getElementById('orderChild');
-					var table = document.getElementById('tableOrderDetail');
+					// var table = document.getElementById('tableOrderDetail');
 
 					if (data.children?.length > 0) {
 						if (data.children?.length < 10) {
@@ -29,17 +29,13 @@ function orderById(id) {
 							}
 						}
 					} else {
-						table.remove();
+						tbody.innerHTML = `<p style="padding-left: 12px;text-align:left">Not Found</p>`
 					}
 				});
 			},
 		);
 	};
 	console.log(id);
-	// if(id = undefined){
-	//     return false;
-	// }
-	// else{
 	const orderData = 'http://134.209.106.33:8888/v1/ordo';
 	var myHeaders = new Headers();
 	var requestOptions = {
@@ -54,12 +50,10 @@ function orderById(id) {
 				console.log(data);
 				if (data.Mo_ta == undefined) {
 					title.innerHTML = `<h3 class="title">${data.Ten_KH}</h3>`;
-					tenKH.innerHTML = `<h4>${data.Ten_KH}</h4>`;
 					tenTV.innerHTML = `<h4>${data.Ten_TV}</h4>`;
 					mota.innerHTML = `<p style="font-size: 18px;">Chưa có thông tin</h4>`;
 				} else {
 					title.innerHTML = `<h3 class="title">${data.Ten_KH}</h3>`;
-					tenKH.innerHTML = `<h4>${data.Ten_KH}</h4>`;
 					tenTV.innerHTML = `<h4>${data.Ten_TV}</h4>`;
 					mota.innerHTML = `<p style="font-size: 18px;">${data.Mo_ta}</h4>`;
 				}

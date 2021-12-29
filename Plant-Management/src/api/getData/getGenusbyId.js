@@ -29,17 +29,13 @@ function genusbyId(id) {
 							}
 						}
 					} else {
-						table.remove();
+						tbody.innerHTML = `<p style="padding-left: 12px;text-align:left">Not Found</p>`
 					}
 				});
 			},
 		);
 	};
 	console.log(id);
-	// if(id = undefined){
-	//     return false;
-	// }
-	// else{
 	const genusData = 'http://134.209.106.33:8888/v1/genus';
 	var myHeaders = new Headers();
 	var requestOptions = {
@@ -54,12 +50,10 @@ function genusbyId(id) {
 				console.log(data);
 				if (data.Mo_ta == undefined) {
 					title.innerHTML = `<h3 class="title">${data.Ten_KH}</h3>`;
-					tenKH.innerHTML = `<h4>${data.Ten_KH}</h4>`;
-					tenTV.innerHTML = `<h4>${data.Ten_TV}</h4>`;
+					tenTV.innerHTML = `<h4>Chưa có thông tin</h4>`;
 					mota.innerHTML = `<p style="font-size: 18px;">Chưa có thông tin</h4>`;
 				} else {
 					title.innerHTML = `<h3 class="title">${data.Ten_KH}</h3>`;
-					tenKH.innerHTML = `<h4>${data.Ten_KH}</h4>`;
 					tenTV.innerHTML = `<h4>${data.Ten_TV}</h4>`;
 					mota.innerHTML = `<p style="font-size: 18px;">${data.Mo_ta}</h4>`;
 				}

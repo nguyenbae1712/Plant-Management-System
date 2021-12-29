@@ -71,42 +71,31 @@
 			<div class="produts-details--content mb-50">
 				<div class="container">
 					<div class="row justify-content-between">
+						<div class="col-12"><h1 id="title" class="title"></h1></div>
+						
 						<div class="col-12 col-md-9">
 							<div class="single_product_desc">
-								<h3 id="title" class="title"></h3>
-								<h4 id="tenKH"></h4>
-								<h4 id="tenTV"></h4>
-								<br />
+								<h4 class="tenTViet" id="tenTV"></h4>
 								<div class="short_overview">
 									<h5>Mô tả chung</h5>
 									<p id="mota" style="font-size: 18px"></p>
 								</div>
 							</div>
 						</div>
-						<div class="col-12 col-md-3">
-							<table id="tableDivisionDetail" style="float: left; border-top: 0px" class="table">
+						<div class="col-12 col-md-2">
+							<table id="tableDivisionDetail" style="float: left; border: 5px" class="table">
 								<thead>
 									<tr>
-										<!-- <th scope="col">STT</th> -->
-										<th scope="col" style="border-top: 0px">Tên Khoa Học</th>
+										<th scope="col" style="font-size:20px; border: 0px; text-align:left">Class</th>
 									</tr>
 								</thead>
-								<tbody id="divisonChild"></tbody>
+								<tbody style="text-align:left;" id="divisonChild"></tbody>
 							</table>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-
-		<div style="width: 100%" class="row">
-			<div
-				style="padding-left: 45px; width: 100%; border-top: #70c74561 solid 2px"
-				class="pagination"
-				id="pagination"
-			></div>
-		</div>
-		<!-- ##### Single Product Details Area End ##### -->
 
 		<!-- ##### Footer Area Start ##### -->
 		<div w3-include-html="./layouts/footer.html"></div>
@@ -128,9 +117,6 @@
 		<script src="/Content/mainPage/js/csi.js"></script>
 
 		<script src="/api/getData/getDivisionbyId.js"></script>
-		<script>
-			divisionbyId();
-		</script>
 		<script>
 			includeHTML();
 		</script>

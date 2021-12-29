@@ -84,11 +84,21 @@ const fetchGenusData = () => {
 				var table = document.getElementById('genusBody');
 				var idShow = (page - 1) * 10 + 1;
 				for (var j = 0; j < data.results.length; j++) {
-					var row = `<tr onclick="loadGenusDetail('${data.results[j].id}')">
-		<td>${idShow}</td>
-		<td>${data.results[j].Ten_KH}</td>
-		<td>${data.results[j].Ten_TV}</td>
-	</tr>`;
+					if (data.results[j].Ten_TV == undefined){
+						var row = `<tr onclick="loadGenusDetail('${data.results[j].id}')">
+					<td>${idShow}</td>
+					<td>${data.results[j].Ten_KH}</td>
+					<td>Chưa có thông tin</td>
+						</tr>`;
+					}
+					else{
+						var row = `<tr onclick="loadGenusDetail('${data.results[j].id}')">
+						<td>${idShow}</td>
+						<td>${data.results[j].Ten_KH}</td>
+						<td>${data.results[j].Ten_TV}</td>
+						</tr>`;
+					}
+					
 					idShow += 1;
 					if (j == 0) {
 						table.innerHTML = row;
@@ -106,11 +116,20 @@ const fetchGenusData = () => {
 				var table = document.getElementById('genusBody');
 				table.innerHTML = '';
 				for (var j = 0; j < data.results.length; j++) {
-					var row = `<tr onclick="loadGenusDetail('${data.results[j].id}')">
-                    <td>${j + 1}</td>
-                    <td>${data.results[j].Ten_KH}</td>
-                    <td>${data.results[j].Ten_TV}</td>
-                </tr>`;
+					if (data.results[j].Ten_TV == undefined){
+						var row = `<tr onclick="loadGenusDetail('${data.results[j].id}')">
+					<td>${j+1}</td>
+					<td>${data.results[j].Ten_KH}</td>
+					<td>Chưa có thông tin</td>
+						</tr>`;
+					}
+					else{
+						var row = `<tr onclick="loadGenusDetail('${data.results[j].id}')">
+						<td>${j+1}</td>
+						<td>${data.results[j].Ten_KH}</td>
+						<td>${data.results[j].Ten_TV}</td>
+						</tr>`;
+					}
 					table.innerHTML += row;
 				}
 

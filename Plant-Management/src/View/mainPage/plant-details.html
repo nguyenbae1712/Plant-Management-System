@@ -69,11 +69,6 @@
 							<div id="product_details_slider" class="carousel slide" data-ride="carousel">
 								<div class="carousel-inner">
 									<div class="carousel-item active" id="hinhanh">
-										<!-- <a class="product-img" href="/Content/mainPage/img/bg-img/49.jpg"
-											title="Product Image">
-											<img class="d-block w-100" src="/Content/mainPage/img/bg-img/49.jpg"
-												alt="1" />
-										</a> -->
 									</div>
 								</div>
 							</div>
@@ -84,48 +79,32 @@
 						<div class="single_product_desc">
 							<h4 id="title" class="title"></h4><br>
 							<h4 id="tenTV"></h4>
-							<!-- <h4 id="giaTri"></h4> -->
-							<br />
-							<div class="short_overview">
-								<!-- <p id="dangsong" style="font-size: 16px"></p> -->
-								<!-- <p id="phanbo" style="font-size: 16px"></p> -->
-							</div>
 
 							<div class="products--meta">
-								<p>
-									<span>Divison</span>
-									<span id="divisioName" onclick="getParentDetail('divisio')"
-										style="font-size: 20px; font-weight: bold; color: black; cursor: pointer">/-----/</span>
-								</p>
-								<p>
-									<span>Class</span>
-									<span id="classisName" onclick="getParentDetail('classis')"
-										style="font-size: 20px; font-weight: bold; color: black; cursor: pointer">/-----/</span>
-								</p>
-								<p>
-									<span>Order</span>
-									<span id="orderName" onclick="getParentDetail('ordo')"
-										style="font-size: 20px; font-weight: bold; color: black; cursor: pointer">/-----/</span>
-								</p>
-								<p>
-									<span>Family</span>
-									<span id="familiaName" onclick="getParentDetail('familia')"
-										style="font-size: 20px; font-weight: bold; color: black; cursor: pointer">/-----/</span>
-								</p>
-								<p>
-									<span>Genus</span>
-									<span id="genusName" onclick="getParentDetail('genus')"
-										style="font-size: 20px; font-weight: bold; color: black; cursor: pointer">/-----/</span>
-								</p>
-								<!-- <p>
-                                    <span>Share on:</span>
-                                    <span>
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-pinterest"></i></a>
-                                    <a href="#"><i class="fa fa-google-plus"></i></a>
-                                </span>
-                                </p> -->
+								<div class="col-md-12" style="display: flex; flex-direction:columns;">
+									<div class="col-md-3">
+										<h5 style="margin-bottom: 15px; font-size: 20px;">Divison</h5>
+										<h5 style="margin-bottom: 15px; font-size: 20px;">Class</h5>
+										<h5 style="margin-bottom: 15px; font-size: 20px;">Order</h5>
+										<h5 style="margin-bottom: 15px; font-size: 20px;">Family</h5>
+										<h5 style="margin-bottom: 15px; font-size: 20px;">Genus</h5>
+									</div>
+									<div class="col-md-3">
+										<h5 id="divisioName" onclick="getParentDetail('divisio')"
+										style="padding-left: 10px; margin-bottom: 15px; font-size: 20px; font-weight: bold; color: black; cursor: pointer"></h5>
+										<h5 id="classisName" onclick="getParentDetail('classis')"
+										style="padding-left: 10px; margin-bottom: 15px; font-size: 20px; font-weight: bold; color: black; cursor: pointer"></h5>
+								
+										<h5 id="orderName" onclick="getParentDetail('ordo')"
+										style="padding-left: 10px; margin-bottom: 15px; font-size: 20px; font-weight: bold; color: black; cursor: pointer"></h5>
+										<h5 id="familiaName" onclick="getParentDetail('familia')"
+										style="padding-left: 10px; margin-bottom: 15px; font-size: 20px; font-weight: bold; color: black; cursor: pointer"></h5>
+										<h5 id="genusName" onclick="getParentDetail('genus')"
+										style="padding-left: 10px; margin-bottom: 15px;font-size: 20px; font-weight: bold; color: black; cursor: pointer"></h5>
+									</div>
+
+								</div>
+
 							</div>
 						</div>
 					</div>
@@ -140,8 +119,8 @@
 						<!-- Tabs -->
 						<ul class="nav nav-pills" role="tablist" id="product-details-tab"
 							style="display: flex; justify-content: space-between">
-							<li class="nav-item">
-								<a href="#dacdiemnhandang" class="nav-link" data-toggle="tab" role="tab">Đặc điểm nhận
+							<li id="autoClick" class="nav-item ">
+								<a href="#dacdiemnhandang" class="nav-link active" data-toggle="tab" role="tab">Đặc điểm nhận
 									dạng</a>
 							</li>
 							<li class="nav-item">
@@ -163,7 +142,7 @@
 						</ul>
 						<!-- Tab Content -->
 						<div style="margin-top: 10px !important; font-size: 17px" class="tab-content">
-							<div role="tabpanel" class="tab-pane fade" id="dacdiemnhandang">
+							<div role="tabpanel" class="tab-pane active" id="dacdiemnhandang">
 								<div class="additional_info_area">
 									<p id="dacdiem"></p>
 								</div>
@@ -194,15 +173,12 @@
 								</div>
 							</div>
 						</div>
+
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-	<!-- ##### Single Product Details Area End ##### -->
-
-	<!-- ##### Related Product Area Start ##### -->
-	<!-- ##### Related Product Area End ##### -->
 
 	<!-- ##### Footer Area Start ##### -->
 	<div w3-include-html="./layouts/footer.html"></div>
@@ -218,13 +194,13 @@
 	<!-- All Plugins js -->
 	<script src="/Content/mainPage/js/plugins/plugins.js"></script>
 	<!-- Active js -->
-	<script src="../../../scripts/index.js"></script>
-	<script src="../../../scripts/layoutHeader.js"></script>
+	<script src="../../scripts/index.js"></script>
+	<script src="../../scripts/layoutHeader.js"></script>
 	<script src="/Content/mainPage/js/active.js"></script>
 
 	<script src="/Content/mainPage/js/csi.js"></script>
 	<script src="/api/getData/getSpeciesbyId.js"></script>
-	<!-- <script src="/api/getData/getDivisionbyId.js"></script> -->
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script>
 		speciesbyId();
 	</script>
