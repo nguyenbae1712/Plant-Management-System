@@ -6629,3 +6629,7 @@ ul li a:focus {
   width: 250px;
   height: auto;
 }
+.modal-body {
+  position: relative;
+  padding: 5px 10px;
+}
