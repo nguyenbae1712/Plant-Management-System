@@ -6,29 +6,33 @@ function getParent(idGenus) {
 		headers: myHeaders,
 		redirect: 'follow',
 	};
-	fetch(speciesParent + '/' + idGenus, requestOptions).then(function (response) {
-		response.json().then(function (result) {
-			console.log('parent: ' + result.genusName);
-			genusName.innerHTML = result.genusName;
-			familiaName.innerHTML = result.familiaName;
-			orderName.innerHTML = result.orderName;
-			classisName.innerHTML = result.classisName;
-			divisioName.innerHTML = result.divisioName;
+	fetch(speciesParent + '/' + idGenus, requestOptions)
+		.then(function (response) {
+			response.json().then(function (result) {
+				console.log('parent: ' + result.genusName);
+				genusName.innerHTML = result.genusName;
+				familiaName.innerHTML = result.familiaName;
+				orderName.innerHTML = result.orderName;
+				classisName.innerHTML = result.classisName;
+				divisioName.innerHTML = result.divisioName;
+			});
 		})
-	}).catch(function (err) {
-		console.log('error :' + err);
-	});
+		.catch(function (err) {
+			console.log('error :' + err);
+		});
 }
 
 function getParentDetail(parent) {
-	const baseAPI = "http://134.209.106.33:8888/v1";
+	const baseAPI = 'http://134.209.106.33:8888/v1';
 	var myHeaders = new Headers();
 	var requestOptions = {
 		method: 'GET',
 		headers: myHeaders,
 		redirect: 'follow',
 	};
-	let parentName = '', idParent = '', parentDetailPage = '';
+	let parentName = '',
+		idParent = '',
+		parentDetailPage = '';
 	if (parent == 'genus') {
 		parentName = document.getElementById('genusName').innerHTML;
 		idParent = 'idGenus';
@@ -46,21 +50,26 @@ function getParentDetail(parent) {
 		idParent = 'idClass';
 		parentDetailPage = 'classDetail.html';
 	} else {
-		parent = 'divisio'
+		parent = 'divisio';
 		parentName = document.getElementById('divisioName').innerHTML;
 		idParent = 'idDivision';
 		parentDetailPage = 'divisionDetail.html';
 	}
 
-	fetch(baseAPI + '/'  + parent + '/getByName' + '/' + parentName, requestOptions).then((response) => {
-		response.json().then((responseData) =>{
-			alert(responseData[0].id + 'from getparent');
-			localStorage.setItem(idParent, responseData[0].id);
-			window.location.replace(parentDetailPage);
-		}).catch(function (err){
-			console.error(err);
-		})
-	})
+	fetch(baseAPI + '/' + parent + '/getByName' + '/' + parentName, requestOptions).then(
+		(response) => {
+			response
+				.json()
+				.then((responseData) => {
+					// alert(responseData[0].id + 'from getparent');
+					localStorage.setItem(idParent, responseData[0].id);
+					window.location.replace(parentDetailPage);
+				})
+				.catch(function (err) {
+					console.error(err);
+				});
+		},
+	);
 }
 
 function speciesbyId(id) {
@@ -83,22 +92,22 @@ function speciesbyId(id) {
 					console.log('idGenus' + data.idChi);
 					title.innerHTML = `<h3 class="title">${data.Ten_KH}</h3>`;
 					tenTV.innerHTML = `<h4>${data.Ten_TV}</h4>`;
-					giaTri.innerHTML = `<h5></h5>`;
-					dangsong.innerHTML = `<p style="font-size: 18px;"><b>Dạng sống:</b>  ${data.Dang_Song}</p>`;
-					phanbo.innerHTML = `<p style="font-size: 18px;">${data.Phan_Bo}</p>`;
-					dacdiem.innerHTML = `<p style="font-size: 18px;">${data.Dac_Diem_Nhan_Dang}</p>`;
-					tinhtrang.innerHTML = `<p style="font-size: 18px;"><b>Tình trạng:</b> ${data.Tinh_Trang}</p>`;
-					sinhhoc.innerHTML = `<p style="font-size: 18px;"><b>Sinh học sinh thái:</b> ${data.Sinh_Hoc_Sinh_Thai}</p>`;
+					giaTri.innerHTML = `<p style="font-size: 18px;"><b>Giá trị:</b><br>  ${data.Gia_Tri}</p>`;
+					dangsong.innerHTML = `<p style="font-size: 18px;"><b>Dạng sống:</b><br>  ${data.Dang_Song}</p>`;
+					phanbo.innerHTML = `<p style="font-size: 18px;"><b> Phân bố:</b><br> ${data.Phan_Bo}</p>`;
+					dacdiem.innerHTML = `<p style="font-size: 18px;"><b>Đặc điểm nhận dạng:</b><br> ${data.Dac_Diem_Nhan_Dang}</p>`;
+					tinhtrang.innerHTML = `<p style="font-size: 18px;"><b>Tình trạng:</b><br> ${data.Tinh_Trang}</p>`;
+					sinhhoc.innerHTML = `<p style="font-size: 18px;"><b>Sinh học sinh thái:</b><br> ${data.Sinh_Hoc_Sinh_Thai}</p>`;
 					getParent(data.idChi);
 				} else {
 					console.log(data);
 					console.log('idGenus' + data.idChi);
 					title.innerHTML = `<h3 class="title">${data.Ten_KH}</h3>`;
 					tenTV.innerHTML = `<h4>${data.Ten_TV}</h4>`;
-					giaTri.innerHTML = `<h5>${data.Gia_Tri}</h5>`;
-					dangsong.innerHTML = `<p style="font-size: 18px;"><b>Dạng sống:</b>  ${data.Dang_Song}</p>`;
-					phanbo.innerHTML = `<p style="font-size: 18px;">${data.Phan_Bo}</p>`;
-					dacdiem.innerHTML = `<p style="font-size: 18px;">${data.Dac_Diem_Nhan_Dang}</p>`;
+					giaTri.innerHTML = `<p style="font-size: 18px;"><b>Giá trị:</b><br>  ${data.Gia_Tri}</p>`;
+					dangsong.innerHTML = `<p style="font-size: 18px;"><b>Dạng sống:</b><br>  ${data.Dang_Song}</p>`;
+					phanbo.innerHTML = `<p style="font-size: 18px;"><b> Phân bố:</b><br> ${data.Phan_Bo}</p>`;
+					dacdiem.innerHTML = `<p style="font-size: 18px;"><b>Đặc điểm nhận dạng:</b> ${data.Dac_Diem_Nhan_Dang}</p>`;
 					tinhtrang.innerHTML = `<p style="font-size: 18px;"><b>Tình trạng:</b> ${data.Tinh_Trang}</p>`;
 					sinhhoc.innerHTML = `<p style="font-size: 18px;"><b>Sinh học sinh thái:</b> ${data.Sinh_Hoc_Sinh_Thai}</p>`;
 					getParent(data.idChi);
