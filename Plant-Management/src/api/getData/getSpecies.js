@@ -41,7 +41,7 @@ const searchFunctionSpecies = (id) => {
 		fetchSpeciesData();
 	}
 };
-const fetchSpeciesData = () => {
+// const fetchSpeciesData = () => {
 	let totalSpeciesPage = 0;
 
 	function paginationSpecies(c, m) {
@@ -130,5 +130,5 @@ const fetchSpeciesData = () => {
 		.catch(function (err) {
 			console.log('error: ' + err);
 		});
-};
-fetchSpeciesData();
+// };
+// fetchSpeciesData();

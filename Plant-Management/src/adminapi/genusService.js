@@ -163,20 +163,20 @@ function pagination(c, m) {
         if (l) {
             if (i - l === 2) {
                 rangeWithDots.push(l + 1);
-                paginationTest.innerHTML += '<a class="page-number-order" href="#">' + (l + 1) + '</a>';
+                paginationTest.innerHTML += '<a class="page-number-genus" href="#">' + (l + 1) + '</a>';
             } else if (i - l !== 1) {
                 rangeWithDots.push('...');
                 paginationTest.innerHTML += '<a>' + '...' + '</a>';
             }
         }
         rangeWithDots.push(i);
-        paginationTest.innerHTML += '<a class="page-number-order" href="#">' + i + '</a>';
+        paginationTest.innerHTML += '<a class="page-number-genus" href="#">' + i + '</a>';
         l = i;
     }
     console.log('form getOrder: ' + rangeWithDots)
 }
 
-function renderdivision (page){
+function rendergenus (page){
     var divisionDataPage = "http://134.209.106.33:8888/v1/genus?page=" + page;
     fetch(divisionDataPage,requestOptions)
     .then(function (response){
@@ -259,10 +259,10 @@ fetch(divisionData,requestOptions)
 
             pagination(1, parseInt(data.totalPages));
 
-            $('.page-number-order').click(function (e) {
+            $('.page-number-genus').click(function (e) {
                 e.preventDefault();
                 console.log('pagin clicked on ' + $(this).text())
-                renderdivision($(this).text());
+                rendergenus($(this).text());
                 pagination(parseInt($(this).text()), parseInt(data.totalPages));
                 $('#add-js-file').append(`<script src="/scripts/handlePagination.js"></script>`);
             });

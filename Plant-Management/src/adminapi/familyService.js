@@ -164,20 +164,20 @@ function pagination(c, m) {
         if (l) {
             if (i - l === 2) {
                 rangeWithDots.push(l + 1);
-                paginationTest.innerHTML += '<a class="page-number-order" href="#">' + (l + 1) + '</a>';
+                paginationTest.innerHTML += '<a class="page-number" href="#">' + (l + 1) + '</a>';
             } else if (i - l !== 1) {
                 rangeWithDots.push('...');
                 paginationTest.innerHTML += '<a>' + '...' + '</a>';
             }
         }
         rangeWithDots.push(i);
-        paginationTest.innerHTML += '<a class="page-number-order" href="#">' + i + '</a>';
+        paginationTest.innerHTML += '<a class="page-number" href="#">' + i + '</a>';
         l = i;
     }
     console.log('form getOrder: ' + rangeWithDots)
 }
 
-function renderdivision (page){
+function renderfamily (page){
     var divisionDataPage = "http://134.209.106.33:8888/v1/familia?page=" + page;
     fetch(divisionDataPage,requestOptions)
     .then(function (response){
@@ -198,6 +198,7 @@ function renderdivision (page){
                 <button onclick="deleteDivisionID('${data.results[j].id}')" type="button" data-toggle="modal" data-target="#delete" class="delete btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button>
                 </td>
                 </tr>`
+                
             idShow += 1
             if (j == 0) {
                 table.innerHTML = row
@@ -234,10 +235,10 @@ fetch(divisionData,requestOptions)
 
             pagination(1, parseInt(data.totalPages));
             
-            $('.page-number-order').click(function (e) {
+            $('.page-number').click(function (e) {
                 e.preventDefault();
                 console.log('pagin clicked on ' + $(this).text())
-                renderdivision($(this).text());
+                renderfamily($(this).text());
                 pagination(parseInt($(this).text()), parseInt(data.totalPages));
                 $('#add-js-file').append(`<script src="/scripts/handlePagination.js"></script>`);
             });

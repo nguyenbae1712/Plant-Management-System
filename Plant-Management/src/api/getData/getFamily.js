@@ -42,7 +42,7 @@ const searchFunctionFamily = (id) => {
 	}
 };
 
-const fetchFamilyData = () => {
+// const fetchFamilyData = () => {
 	let totalFamilyPages = 0;
 
 	function paginationFamily(c, m) {
@@ -130,5 +130,5 @@ const fetchFamilyData = () => {
 		.catch(function (err) {
 			console.log('error: ' + err);
 		});
-};
-fetchFamilyData();
+// };
+// fetchFamilyData();

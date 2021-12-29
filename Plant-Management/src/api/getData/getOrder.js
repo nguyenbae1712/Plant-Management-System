@@ -40,10 +40,9 @@ const searchFunctionOrder = (id) => {
 		fetchOrderData();
 	}
 };
-const fetchOrderData = () => {
+// const fetchOrderData = () => {
 	let totalOrderPages = 0; // thằng ni là để bên file handlePagination gọi luôn
 
-	//để hàm ngoài ni để file handlePagination có thể gọi được á
 	function pagination(c, m) {
 		var paginationTest = document.getElementById('paginationOrder');
 		paginationTest.innerHTML = '';
@@ -132,5 +131,5 @@ const fetchOrderData = () => {
 		.catch(function (err) {
 			console.log('error: ' + err);
 		});
-};
-fetchOrderData();
+// };
+// fetchOrderData();

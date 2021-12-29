@@ -170,7 +170,7 @@ function pagination(c, m) {
     console.log('form getOrder: ' + rangeWithDots)
 }
 
-function renderdivision (page){
+function renderOrder (page){
     var divisionDataPage = "http://134.209.106.33:8888/v1/ordo?page=" + page;
     fetch(divisionDataPage,requestOptions)
     .then(function (response){
@@ -247,7 +247,7 @@ fetch(divisionData,requestOptions)
             $('.page-number-order').click(function (e) {
                 e.preventDefault();
                 console.log('pagin clicked on ' + $(this).text())
-                renderdivision($(this).text());
+                renderOrder($(this).text());
                 pagination(parseInt($(this).text()), parseInt(data.totalPages));
                 $('#add-js-file').append(`<script src="/scripts/handlePagination.js"></script>`);
             });

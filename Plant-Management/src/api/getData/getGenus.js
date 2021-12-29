@@ -41,7 +41,7 @@ const searchFunctionGenus = (id) => {
 		fetchGenusData();
 	}
 };
-const fetchGenusData = () => {
+// const fetchGenusData = () => {
 	let totalGenusPages = 0;
 	function paginationGenus(c, m) {
 		var paginationTest = document.getElementById('paginationGenus');
@@ -147,5 +147,5 @@ const fetchGenusData = () => {
 		.catch(function (err) {
 			console.log('error: ' + err);
 		});
-};
-fetchGenusData();
+// };
+// fetchGenusData();
